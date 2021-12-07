@@ -19,6 +19,14 @@ public class Exercise {
         return type;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setType(ExerciseType type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "Exercise{" +
