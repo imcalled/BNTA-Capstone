@@ -3,10 +3,10 @@ CREATE TYPE ExerciseType as ENUM('CARDIO', 'CALISTHENICS', 'WEIGHTS');
 CREATE TABLE Exercise(
 id BIGSERIAL PRIMARY KEY,
 name TEXT,
-ExerciseType ExerciseType
+ExerciseType exerciseType
 );
 
-CREATE TABLE ExcerciseTarget(
+CREATE TABLE ExerciseTarget(
 id BIGSERIAL PRIMARY KEY,
 exerciseID INT REFERENCES Exercise(id),
 time INTERVAL,
@@ -15,7 +15,7 @@ reps INT,
 weight, INT
 );
 
-CREATE TABLE ExcerciseDataPoint(
+CREATE TABLE ExerciseDataPoint(
 id BIGSERIAL PRIMARY KEY,
 exerciseID INT REFERENCES Exercise(id),
 timeAchieved INTERVAL,
@@ -27,5 +27,5 @@ weightAchieved, INT
 CREATE TABLE Workouts(
 id BIGSERIAL PRIMARY KEY,
 name TEXT,
-ListOfExcerciseTargets INT REFERENCES ExerciseTarget(id)
+listOfExerciseTargets INT REFERENCES ExerciseTarget(id)
 );

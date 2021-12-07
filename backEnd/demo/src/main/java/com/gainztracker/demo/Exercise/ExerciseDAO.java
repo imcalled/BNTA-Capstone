@@ -8,9 +8,9 @@ public interface ExerciseDAO {
     List<Exercise> getAllExercises();
     Optional<Exercise> getExerciseById(int id);
     Optional<Exercise> getExerciseByName(String name);
-    void createExercise(Exercise exercise);
-    void updateExerciseById(int id, Exercise exercise);
-    void updateExerciseByName(String name, Exercise exercise);
-    void deleteExerciseById(int id);
-    void deleteExerciseByName(String name);
+    int createExercise(Exercise exercise);
+    int updateExerciseById(int id, Exercise exercise);
+    int updateExerciseByName(String name, Exercise exercise);
+    int deleteExerciseById(int id);
+    int deleteExerciseByName(String name);
 }

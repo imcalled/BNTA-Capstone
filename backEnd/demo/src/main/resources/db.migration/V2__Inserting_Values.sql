@@ -1,7 +1,7 @@
 INSERT INTO Exercise(name, ExerciseType ) VALUES ('Treadmill', 'CARDIO');
 INSERT INTO Exercise(name, ExerciseType ) VALUES ('Rowing', 'CARDIO');
 INSERT INTO Exercise(name, ExerciseType ) VALUES ('Spinning', 'CARDIO');
-INSERT INTO Exercise(name, ExerciseType ) VALUES ('Eliptical', 'CARDIO');
+INSERT INTO Exercise(name, ExerciseType ) VALUES ('Elliptical', 'CARDIO');
 INSERT INTO Exercise(name, ExerciseType ) VALUES ('Stairclimber', 'CARDIO');
 
 INSERT INTO Exercise(name, ExerciseType ) VALUES ('Pushups', 'CALISTHENICS');

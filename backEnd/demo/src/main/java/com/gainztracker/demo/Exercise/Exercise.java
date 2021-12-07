@@ -3,20 +3,26 @@ package com.gainztracker.demo.Exercise;
 import java.util.Objects;
 
 public class Exercise {
+    private Integer id;
     private String name;
     private ExerciseType type;
 
-    public Exercise(String name, ExerciseType type) {
+    public Exercise(Integer id, String name, ExerciseType type) {
+        this.id = id;
         this.name = name;
         this.type = type;
     }
 
+    public Integer getId() {return id;}
     public String getName() {
         return name;
     }
-
     public ExerciseType getType() {
         return type;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public void setName(String name) {
@@ -30,7 +36,8 @@ public class Exercise {
     @Override
     public String toString() {
         return "Exercise{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", type=" + type +
                 '}';
     }
@@ -40,11 +47,11 @@ public class Exercise {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Exercise exercise = (Exercise) o;
-        return name.equals(exercise.name) && type == exercise.type;
+        return Objects.equals(id, exercise.id) && Objects.equals(name, exercise.name) && type == exercise.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type);
+        return Objects.hash(id, name, type);
     }
 }
