@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class ExerciseDataPoint {
-    private int exercise_Id;
+    private int exerciseID;
     private LocalDate date ;
     private int timeAchieved;
     private int distanceAchieved;
@@ -12,9 +12,9 @@ public class ExerciseDataPoint {
     private int repsAchieved;
     private int weightAchieved;
 
-    public ExerciseDataPoint(int exercise_Id, LocalDate date, int timeAchieved, int distanceAchieved, int setsAchieved, int repsAchieved, int weightAchieved) {
+    public ExerciseDataPoint(int exerciseID, LocalDate date, int timeAchieved, int distanceAchieved, int setsAchieved, int repsAchieved, int weightAchieved) {
 
-        this.exercise_Id = exercise_Id;
+        this.exerciseID = exerciseID;
         this.date = date;
         this.timeAchieved = timeAchieved;
         this.distanceAchieved =distanceAchieved;
@@ -23,12 +23,12 @@ public class ExerciseDataPoint {
         this.weightAchieved = weightAchieved;
     }
 
-    public int getExercise_Id() {
-        return exercise_Id;
+    public int getExerciseID() {
+        return exerciseID;
     }
 
-    public void setExercise_Id(int exercise_Id) {
-        this.exercise_Id = exercise_Id;
+    public void setExerciseID(int exerciseID) {
+        this.exerciseID = exerciseID;
     }
 
     public LocalDate getDate() {
@@ -82,7 +82,7 @@ public class ExerciseDataPoint {
     @Override
     public String toString() {
         return "ExerciseDataPoint{" +
-                "exercise_Id=" + exercise_Id +
+                "exerciseID=" + exerciseID +
                 ", date=" + date +
                 ", timeAchieved=" + timeAchieved +
                 ", distanceAchieved=" + distanceAchieved +
@@ -97,11 +97,11 @@ public class ExerciseDataPoint {
         if (this == o) return true;
         if (!(o instanceof ExerciseDataPoint)) return false;
         ExerciseDataPoint that = (ExerciseDataPoint) o;
-        return exercise_Id == that.exercise_Id && timeAchieved == that.timeAchieved && distanceAchieved == that.distanceAchieved && setsAchieved == that.setsAchieved && repsAchieved == that.repsAchieved && weightAchieved == that.weightAchieved && Objects.equals(date, that.date);
+        return exerciseID == that.exerciseID && timeAchieved == that.timeAchieved && distanceAchieved == that.distanceAchieved && setsAchieved == that.setsAchieved && repsAchieved == that.repsAchieved && weightAchieved == that.weightAchieved && Objects.equals(date, that.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(exercise_Id, date, timeAchieved, distanceAchieved, setsAchieved, repsAchieved, weightAchieved);
+        return Objects.hash(exerciseID, date, timeAchieved, distanceAchieved, setsAchieved, repsAchieved, weightAchieved);
     }
 }
