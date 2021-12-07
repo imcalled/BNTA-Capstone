@@ -7,15 +7,17 @@ public class ExerciseDataPoint {
     private int exercise_Id;
     private LocalDate date ;
     private int timeAchieved;
+    private int distanceAchieved;
     private int setsAchieved;
     private int repsAchieved;
     private int weightAchieved;
 
-    public ExerciseDataPoint(int exercise_Id, LocalDate date, int timeAchieved, int setsAchieved, int repsAchieved, int weightAchieved) {
+    public ExerciseDataPoint(int exercise_Id, LocalDate date, int timeAchieved, int distanceAchieved, int setsAchieved, int repsAchieved, int weightAchieved) {
 
         this.exercise_Id = exercise_Id;
         this.date = date;
         this.timeAchieved = timeAchieved;
+        this.distanceAchieved =distanceAchieved;
         this.setsAchieved = setsAchieved;
         this.repsAchieved = repsAchieved;
         this.weightAchieved = weightAchieved;
@@ -43,6 +45,14 @@ public class ExerciseDataPoint {
 
     public void setTimeAchieved(int timeAchieved) {
         this.timeAchieved = timeAchieved;
+    }
+
+    public int getDistanceAchieved() {
+        return distanceAchieved;
+    }
+
+    public void setDistanceAchieved(int distanceAchieved) {
+        this.distanceAchieved = distanceAchieved;
     }
 
     public int getSetsAchieved() {
@@ -75,6 +85,7 @@ public class ExerciseDataPoint {
                 "exercise_Id=" + exercise_Id +
                 ", date=" + date +
                 ", timeAchieved=" + timeAchieved +
+                ", distanceAchieved=" + distanceAchieved +
                 ", setsAchieved=" + setsAchieved +
                 ", repsAchieved=" + repsAchieved +
                 ", weightAchieved=" + weightAchieved +
@@ -86,11 +97,11 @@ public class ExerciseDataPoint {
         if (this == o) return true;
         if (!(o instanceof ExerciseDataPoint)) return false;
         ExerciseDataPoint that = (ExerciseDataPoint) o;
-        return exercise_Id == that.exercise_Id && timeAchieved == that.timeAchieved && setsAchieved == that.setsAchieved && repsAchieved == that.repsAchieved && weightAchieved == that.weightAchieved && Objects.equals(date, that.date);
+        return exercise_Id == that.exercise_Id && timeAchieved == that.timeAchieved && distanceAchieved == that.distanceAchieved && setsAchieved == that.setsAchieved && repsAchieved == that.repsAchieved && weightAchieved == that.weightAchieved && Objects.equals(date, that.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(exercise_Id, date, timeAchieved, setsAchieved, repsAchieved, weightAchieved);
+        return Objects.hash(exercise_Id, date, timeAchieved, distanceAchieved, setsAchieved, repsAchieved, weightAchieved);
     }
 }
