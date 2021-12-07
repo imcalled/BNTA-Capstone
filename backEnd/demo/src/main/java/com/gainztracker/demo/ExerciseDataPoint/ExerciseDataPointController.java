@@ -15,10 +15,17 @@ public class ExerciseDataPointController {
     }
 
     @PostMapping
-    public void TimeAchieved(@RequestBody ExerciseDataPoint exerciseDataPoint){
-        exerciseDataPointService.postTime();
+    public void postCardio(@RequestBody ExerciseDataPoint exerciseDataPoint){
+        exerciseDataPointService.postCardio(exerciseDataPoint);
 
-
+    }
+    @PostMapping
+    public void postCalisthenics(@RequestBody ExerciseDataPoint exerciseDataPoint){
+        exerciseDataPointService.postCalisthenics(exerciseDataPoint);
+    }
+    @PostMapping
+    public void postWeights(@RequestBody ExerciseDataPoint exerciseDataPoint){
+        exerciseDataPointService.postWeights(exerciseDataPoint);
 
     }
 
