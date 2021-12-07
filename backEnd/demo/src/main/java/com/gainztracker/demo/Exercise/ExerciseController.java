@@ -24,13 +24,13 @@ public class ExerciseController {
     }
 
     //get exercise by id
-    @GetMapping("{id}")
+    @GetMapping("/id/{id}")
     public Optional<Exercise> getExerciseById(@PathVariable("id") int id) {
         return exerciseService.getExerciseById(id);
     }
 
     //get exercise by name
-    @GetMapping("{name}")
+    @GetMapping("/name/{name}")
     public Optional<Exercise> getExerciseByName(@PathVariable("name") String name) {
         return exerciseService.getExerciseByName(name);
     }
@@ -42,27 +42,27 @@ public class ExerciseController {
     }
 
     //update existing exercise by id
-    @PutMapping("{id}")
+    @PutMapping("/id/{id}")
     public void updateExerciseById(@PathVariable("id") int id,
                                    @RequestBody Exercise exercise) {
         exerciseService.updateExerciseById(id, exercise);
     }
 
     //update existing exercise by name
-    @PutMapping("{name}")
+    @PutMapping("/name/{name}")
     public void updateExerciseByName(@PathVariable("name") String name,
                                    @RequestBody Exercise exercise) {
         exerciseService.updateExerciseByName(name, exercise);
     }
 
     //delete exercise by id
-    @DeleteMapping("{id}")
+    @DeleteMapping("/id/{id}")
     public void deleteExerciseById(@PathVariable("id") int id) {
         exerciseService.deleteExerciseById(id);
     }
 
     //delete exercise by name
-    @DeleteMapping("{name}")
+    @DeleteMapping("/name/{name}")
     public void deleteExerciseByName(@PathVariable("name") String name) {
         exerciseService.deleteExerciseByName(name);
     }

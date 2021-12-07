@@ -1,5 +1,8 @@
 package com.gainztracker.demo.ExerciseDataPoint;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ExerciseDataPointService {
 
     private ExerciseDataPointDAO exerciseDataPointDAO;

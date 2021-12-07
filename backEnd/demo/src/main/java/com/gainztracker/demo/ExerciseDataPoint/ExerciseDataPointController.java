@@ -14,22 +14,19 @@ public class ExerciseDataPointController {
         this.exerciseDataPointService = exerciseDataPointService;
     }
 
-    @PostMapping
+    @PostMapping("/cardio")
     public void postCardio(@RequestBody ExerciseDataPoint exerciseDataPoint){
         exerciseDataPointService.postCardio(exerciseDataPoint);
 
     }
-    @PostMapping
+
+    @PostMapping("/calisthenics")
     public void postCalisthenics(@RequestBody ExerciseDataPoint exerciseDataPoint){
         exerciseDataPointService.postCalisthenics(exerciseDataPoint);
     }
-    @PostMapping
+
+    @PostMapping("/weights")
     public void postWeights(@RequestBody ExerciseDataPoint exerciseDataPoint){
         exerciseDataPointService.postWeights(exerciseDataPoint);
-
     }
-
-
-
-
 }
