@@ -3,7 +3,7 @@ CREATE TYPE ExerciseType as ENUM('CARDIO', 'CALISTHENICS', 'WEIGHTS');
 CREATE TABLE Exercise(
 id BIGSERIAL PRIMARY KEY,
 name TEXT,
-ExerciseType exerciseType
+exerciseType ExerciseType
 );
 
 CREATE TABLE ExerciseTarget(

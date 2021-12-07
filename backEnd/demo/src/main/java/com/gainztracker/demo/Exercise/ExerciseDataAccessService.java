@@ -1,14 +1,15 @@
 package com.gainztracker.demo.Exercise;
 
-import org.flywaydb.core.internal.jdbc.JdbcTemplate;
-import org.flywaydb.core.internal.jdbc.RowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
-@Repository("gainztracker")
+@Repository
 public class ExerciseDataAccessService implements ExerciseDAO{
 
     private JdbcTemplate jdbcTemplate;
@@ -19,22 +20,92 @@ public class ExerciseDataAccessService implements ExerciseDAO{
 
     RowMapper rowMapper = new RowMapper() {
         @Override
-        public Object mapRow(ResultSet rs) throws SQLException {
+        public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
             Exercise exercise = new Exercise(
                     rs.getInt("id"),
                     rs.getString("name"),
                     ExerciseType.valueOf(rs.getString("exerciseType"))
             );
             return exercise;
-        };
+        }
     };
 
-//    @Override
-//    public List<Exercise> getAllExercises() {
-//        String sql = """
-//                    SELECT *
-//                    FROM Exercise;
-//                    """;
-//        List<Exercise> exercise = jdbcTemplate.query(sql, new RowMapper<Exercise>());
-//    };
+    @Override
+    public List<Exercise> getAllExercises() {
+        String sql = """
+                    SELECT *
+                    FROM Exercise
+                    """;
+        List<Exercise> exercise = jdbcTemplate.query(sql, rowMapper);
+        return exercise;
+    };
+
+    @Override
+    public Optional<Exercise> getExerciseById(int id) {
+        String sql = """
+                SELECT * FROM Exercise
+                WHERE id = ?
+                """;
+        return jdbcTemplate.query(sql, rowMapper, id)
+                .stream()
+                .findFirst();
+    };
+
+    @Override
+    public Optional<Exercise> getExerciseByName(String name) {
+        String sql = """
+                SELECT * FROM Exercise
+                WHERE name = ?
+                """;
+        return jdbcTemplate.query(sql, rowMapper, name)
+                .stream()
+                .findFirst();
+    };
+
+    @Override
+    public int createExercise(Exercise exercise) {
+        String sql = """
+                INSERT INTO Exercise(name, exerciseType)
+                VALUES(?, ?);
+                """;
+        return jdbcTemplate.update(sql, exercise.getName(), exercise.getType());
+    };
+
+    @Override
+    public int updateExerciseById(int id, Exercise exercise) {
+        String sql = """
+                UPDATE Exercise
+                SET name = ?, exerciseType = ?
+                WHERE id = ?;
+                """;
+        return jdbcTemplate.update(sql, exercise.getName(), exercise.getType(), id);
+    };
+
+    @Override
+    public int updateExerciseByName(String name, Exercise exercise) {
+        String sql = """
+                UPDATE Exercise
+                SET name = ?, exerciseType = ?
+                WHERE name = ?;
+                """;
+        return jdbcTemplate.update(sql, exercise.getName(), exercise.getType(), name);
+    };
+
+    @Override
+    public int deleteExerciseById(int id) {
+        String sql = """
+                DELETE FROM Exercise
+                WHERE id = ?;
+                """;
+        return jdbcTemplate.update(sql, id);
+    };
+
+    @Override
+    public int deleteExerciseByName(String name) {
+        String sql = """
+                DELETE FROM Exercise
+                WHERE id = ?;
+                """;
+        return jdbcTemplate.update(sql, name);
+    };
 }
