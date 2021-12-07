@@ -9,7 +9,8 @@ exerciseType ExerciseType
 CREATE TABLE ExerciseTarget(
 id BIGSERIAL PRIMARY KEY,
 exerciseID INT REFERENCES Exercise(id),
-time INTERVAL,
+time INT,
+distance INT,
 sets INT,
 reps INT,
 weight INT
@@ -18,7 +19,8 @@ weight INT
 CREATE TABLE ExerciseDataPoint(
 id BIGSERIAL PRIMARY KEY,
 exerciseID INT REFERENCES Exercise(id),
-timeAchieved INTERVAL,
+timeAchieved INT,
+distanceAchieved INT,
 setsAchieved INT,
 repsAchieved INT,
 weightAchieved INT

@@ -16,11 +16,14 @@ public class ExerciseDataPointDataAccessService implements ExerciseDataPointDAO{
     @Override
     public int postCardio(ExerciseDataPoint exerciseDataPoint) {
         String sql="""
-                INSERT INTO ExerciseDataPoint(exerciseID,timeAchieved, distanceAchieved)
+                INSERT INTO ExerciseDataPoint(exerciseID,timeAchieved)
                 VALUES
-                (?,?,?);
+                (?,?);
                 """;
-        return jdbcTemplate.update(sql, exerciseDataPoint.getTimeAchieved(), exerciseDataPoint.getDistanceAchieved());
+        return jdbcTemplate.update(
+                sql,
+                exerciseDataPoint.getExercise_Id(),
+                exerciseDataPoint.getTimeAchieved());
 
     }
 
@@ -31,7 +34,10 @@ public class ExerciseDataPointDataAccessService implements ExerciseDataPointDAO{
                 VALUES
                 (?,?,?);
                 """;
-        return jdbcTemplate.update(sql, exerciseDataPoint.getSetsAchieved(), exerciseDataPoint.getRepsAchieved());
+        return jdbcTemplate.update(sql,
+                exerciseDataPoint.getExercise_Id() ,
+                exerciseDataPoint.getSetsAchieved(),
+                exerciseDataPoint.getRepsAchieved());
 
     }
 
