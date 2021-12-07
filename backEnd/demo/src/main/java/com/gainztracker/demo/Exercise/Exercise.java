@@ -5,20 +5,20 @@ import java.util.Objects;
 public class Exercise {
     private Integer id;
     private String name;
-    private ExerciseType type;
+    private ExerciseType exerciseType;
 
-    public Exercise(Integer id, String name, ExerciseType type) {
+    public Exercise(Integer id, String name, ExerciseType exerciseType) {
         this.id = id;
         this.name = name;
-        this.type = type;
+        this.exerciseType = exerciseType;
     }
 
     public Integer getId() {return id;}
     public String getName() {
         return name;
     }
-    public ExerciseType getType() {
-        return type;
+    public ExerciseType getExerciseType() {
+        return exerciseType;
     }
 
     public void setId(Integer id) {
@@ -29,8 +29,8 @@ public class Exercise {
         this.name = name;
     }
 
-    public void setType(ExerciseType type) {
-        this.type = type;
+    public void setExerciseType(ExerciseType exerciseType) {
+        this.exerciseType = exerciseType;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Exercise {
         return "Exercise{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", type=" + type +
+                ", type=" + exerciseType +
                 '}';
     }
 
@@ -47,11 +47,11 @@ public class Exercise {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Exercise exercise = (Exercise) o;
-        return Objects.equals(id, exercise.id) && Objects.equals(name, exercise.name) && type == exercise.type;
+        return Objects.equals(id, exercise.id) && Objects.equals(name, exercise.name) && exerciseType == exercise.exerciseType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type);
+        return Objects.hash(id, name, exerciseType);
     }
 }

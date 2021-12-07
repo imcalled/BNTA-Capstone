@@ -66,29 +66,29 @@ public class ExerciseDataAccessService implements ExerciseDAO{
     public int createExercise(Exercise exercise) {
         String sql = """
                 INSERT INTO Exercise(name, exerciseType)
-                VALUES(?, ?);
+                VALUES(?, ?::ExerciseType);
                 """;
-        return jdbcTemplate.update(sql, exercise.getName(), exercise.getType());
+        return jdbcTemplate.update(sql, exercise.getName(), exercise.getExerciseType().toString());
     };
 
     @Override
     public int updateExerciseById(int id, Exercise exercise) {
         String sql = """
                 UPDATE Exercise
-                SET name = ?, exerciseType = ?
+                SET name = ?, exerciseType = ?::ExerciseType
                 WHERE id = ?;
                 """;
-        return jdbcTemplate.update(sql, exercise.getName(), exercise.getType(), id);
+        return jdbcTemplate.update(sql, exercise.getName(), exercise.getExerciseType().toString(), id);
     };
 
     @Override
     public int updateExerciseByName(String name, Exercise exercise) {
         String sql = """
                 UPDATE Exercise
-                SET name = ?, exerciseType = ?
+                SET name = ?, exerciseType = ?::ExerciseType
                 WHERE name = ?;
                 """;
-        return jdbcTemplate.update(sql, exercise.getName(), exercise.getType(), name);
+        return jdbcTemplate.update(sql, exercise.getName(), exercise.getExerciseType().toString(), name);
     };
 
     @Override
