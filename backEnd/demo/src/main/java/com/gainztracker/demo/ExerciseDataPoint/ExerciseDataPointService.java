@@ -2,6 +2,8 @@ package com.gainztracker.demo.ExerciseDataPoint;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ExerciseDataPointService {
 
@@ -25,5 +27,9 @@ public class ExerciseDataPointService {
     public void postWeights(ExerciseDataPoint exerciseDataPoint) {
         exerciseDataPointDAO.postWeights(exerciseDataPoint);
 
+    }
+
+    public List<ExerciseDataPoint> getAll(ExerciseDataPoint exerciseDataPoint) {
+        return exerciseDataPointDAO.getAll(exerciseDataPoint);
     }
 }

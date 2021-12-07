@@ -1,8 +1,11 @@
 package com.gainztracker.demo.ExerciseDataPoint;
 
+import com.gainztracker.demo.Exercise.Exercise;
 import com.gainztracker.demo.Exercise.ExerciseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/data")
@@ -12,6 +15,11 @@ public class ExerciseDataPointController {
     @Autowired
     public ExerciseDataPointController(ExerciseDataPointService exerciseDataPointService) {
         this.exerciseDataPointService = exerciseDataPointService;
+    }
+
+    @GetMapping
+    public List<ExerciseDataPoint> getData(@RequestBody ExerciseDataPoint exerciseDataPoint){
+        return exerciseDataPointService.getAll(exerciseDataPoint);
     }
 
     @PostMapping("/cardio")
