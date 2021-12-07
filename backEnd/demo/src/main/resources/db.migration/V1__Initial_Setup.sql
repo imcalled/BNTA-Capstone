@@ -12,7 +12,7 @@ exerciseID INT REFERENCES Exercise(id),
 time INTERVAL,
 sets INT,
 reps INT,
-weight, INT
+weight INT
 );
 
 CREATE TABLE ExcerciseDataPoint(
@@ -21,7 +21,7 @@ exerciseID INT REFERENCES Exercise(id),
 timeAchieved INTERVAL,
 setsAchieved INT,
 repsAchieved INT,
-weightAchieved, INT
+weightAchieved INT
 );
 
 CREATE TABLE Workouts(
