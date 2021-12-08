@@ -8,6 +8,10 @@ import java.util.List;
 public class WorkoutService {
     private WorkoutDAO workoutDAO;
 
+    public WorkoutService(WorkoutDAO workoutDAO) {
+        this.workoutDAO = workoutDAO;
+    }
+
     public List<Workout> getAllWorkouts() {
         return workoutDAO.getAllWorkouts();
     }

@@ -21,7 +21,7 @@ public class WorkoutDataAccessService implements WorkoutDAO {
     @Override
     public List<Workout> getAllWorkouts() {
         String sql = """
-                SELECT * FROM Workouts;
+                SELECT * FROM workouts;
                 """;
         return jdbcTemplate.query(sql,new WorkoutRowMapper());
     }
@@ -29,7 +29,7 @@ public class WorkoutDataAccessService implements WorkoutDAO {
     @Override
     public int createWorkout(Workout workout) {
         String sql = """
-                INSERT INTO Workouts(name)
+                INSERT INTO workouts(name)
                 VALUES(?);
                 """;
         return jdbcTemplate.update(sql,workout.getName());

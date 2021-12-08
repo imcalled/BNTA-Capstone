@@ -6,10 +6,20 @@ import java.util.List;
 import java.util.Objects;
 
 public class Workout {
+    private int id;
     private String name;
 
-    public Workout(String name) {
+    public Workout(int id, String name) {
+        this.id = id;
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -21,22 +31,23 @@ public class Workout {
     }
 
     @Override
+    public String toString() {
+        return "Workout{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Workout)) return false;
         Workout workout = (Workout) o;
-        return Objects.equals(name, workout.name);
+        return id == workout.id && Objects.equals(name, workout.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
-    }
-
-    @Override
-    public String toString() {
-        return "Workout{" +
-                "name='" + name + '\'' +
-                '}';
+        return Objects.hash(id, name);
     }
 }

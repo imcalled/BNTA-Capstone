@@ -10,7 +10,7 @@ public class WorkoutRowMapper implements RowMapper<Workout> {
 
     @Override
     public Workout mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Workout workout = new Workout(rs.getString("name"));
+        Workout workout = new Workout(rs.getInt("id"),rs.getString("name"));
         return workout;
     }
 }

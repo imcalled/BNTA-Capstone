@@ -21,17 +21,17 @@ INSERT INTO Workouts(name) VALUES ('Intermediate Workout');
 INSERT INTO Workouts(name) VALUES ('Advanced Workout');
 
 INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
-VALUES (1,1,0,1000,0,0,0)
+VALUES (1,1,0,1000,0,0,0);
 INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
-VALUES (6,1,0,0,3,3,0)
+VALUES (6,1,0,0,3,3,0);
 INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
-VALUES (7,1,0,0,2,4,0)
+VALUES (7,1,0,0,2,4,0);
 
 INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
-VALUES (1,2,0,2000,0,0,0)
+VALUES (1,2,0,2000,0,0,0);
 INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
-VALUES (6,2,0,0,5,4,0)
+VALUES (6,2,0,0,5,4,0);
 INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
-VALUES (7,2,0,0,4,6,0)
+VALUES (7,2,0,0,4,6,0);
 
 
