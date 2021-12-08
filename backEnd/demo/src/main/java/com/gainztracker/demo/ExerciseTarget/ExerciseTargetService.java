@@ -22,6 +22,8 @@ public class ExerciseTargetService {
         return exerciseTargetDAO.getExerciseTargetById(id);
     }
 
+    public List<ExerciseTarget> getExerciseTargetsOfWorkout(int id) {return exerciseTargetDAO.getExerciseTargetsOfWorkout(id);}
+
     public void createExerciseTarget(ExerciseTarget exerciseTarget) {
         exerciseTargetDAO.createExerciseTarget(exerciseTarget);
     }

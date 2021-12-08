@@ -6,12 +6,20 @@ import java.util.List;
 import java.util.Objects;
 
 public class Workout {
+    private int id;
     private String name;
-    private List<Exercise> listOfExerciseTargets;
 
-    public Workout(String name, List<Exercise> listOfExerciseTargets) {
+    public Workout(int id, String name) {
+        this.id = id;
         this.name = name;
-        this.listOfExerciseTargets = listOfExerciseTargets;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -22,19 +30,11 @@ public class Workout {
         this.name = name;
     }
 
-    public List<Exercise> getListOfExerciseTargets() {
-        return listOfExerciseTargets;
-    }
-
-    public void setListOfExerciseTargets(List<Exercise> listOfExerciseTargets) {
-        this.listOfExerciseTargets = listOfExerciseTargets;
-    }
-
     @Override
     public String toString() {
         return "Workout{" +
-                "name='" + name + '\'' +
-                ", listOfExerciseTargets=" + listOfExerciseTargets +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 '}';
     }
 
@@ -43,11 +43,11 @@ public class Workout {
         if (this == o) return true;
         if (!(o instanceof Workout)) return false;
         Workout workout = (Workout) o;
-        return Objects.equals(name, workout.name) && Objects.equals(listOfExerciseTargets, workout.listOfExerciseTargets);
+        return id == workout.id && Objects.equals(name, workout.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, listOfExerciseTargets);
+        return Objects.hash(id, name);
     }
 }
