@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/data")
@@ -19,8 +20,17 @@ public class ExerciseDataPointController {
     }
 
     @GetMapping
-    public List<ExerciseDataPoint> getData(@RequestBody ExerciseDataPoint exerciseDataPoint){
+    public List<ExerciseDataPoint> getAll(@RequestBody ExerciseDataPoint exerciseDataPoint){
         return exerciseDataPointService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public List<ExerciseDataPoint> getDataPointByExerciseID(@PathVariable("id") int id){
+        return exerciseDataPointService.getDataPointByExerciseID(id);
+    }
+    @GetMapping("/name/{name}")
+    public List<ExerciseDataPoint> getDataPointByExerciseName(@PathVariable("name") String name){
+        return exerciseDataPointService.getDataPointByExerciseName(name);
     }
 
     @PostMapping("/cardio")
@@ -38,4 +48,6 @@ public class ExerciseDataPointController {
     public void postWeights(@RequestBody int exerciseID, LocalDate date, int setsAchieved, int repsAchieved, int weightAchieved){
         exerciseDataPointService.postWeights(exerciseID, date, setsAchieved, repsAchieved, weightAchieved);
     }
+
+
 }
