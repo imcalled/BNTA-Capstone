@@ -18,6 +18,7 @@ public class ExerciseTarget {
         this.sets = sets;
         this.reps = reps;
         this.weight = weight;
+
     }
 
     public int getExercise_Id() {
