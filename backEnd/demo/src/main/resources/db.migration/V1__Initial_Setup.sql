@@ -10,7 +10,6 @@ CREATE TABLE ExerciseTarget(
 id BIGSERIAL PRIMARY KEY,
 exerciseID INT REFERENCES Exercise(id),
 workoutID INT REFERENCES Workouts(id),
-date DATE,
 time INT,
 distance INT,
 sets INT,

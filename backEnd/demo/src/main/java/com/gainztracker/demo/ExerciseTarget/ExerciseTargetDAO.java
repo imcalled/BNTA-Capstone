@@ -14,4 +14,6 @@ public interface ExerciseTargetDAO {
     int updateExerciseTargetById(int id, ExerciseTarget exerciseTarget);
 
     int deleteExerciseTargetById(int id);
+
+    List<ExerciseTarget> getExerciseTargetsOfWorkout(int id);
 }

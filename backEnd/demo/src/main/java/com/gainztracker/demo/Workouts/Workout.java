@@ -7,11 +7,9 @@ import java.util.Objects;
 
 public class Workout {
     private String name;
-    private List<Exercise> listOfExerciseTargets;
 
-    public Workout(String name, List<Exercise> listOfExerciseTargets) {
+    public Workout(String name) {
         this.name = name;
-        this.listOfExerciseTargets = listOfExerciseTargets;
     }
 
     public String getName() {
@@ -22,32 +20,23 @@ public class Workout {
         this.name = name;
     }
 
-    public List<Exercise> getListOfExerciseTargets() {
-        return listOfExerciseTargets;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Workout workout = (Workout) o;
+        return Objects.equals(name, workout.name);
     }
 
-    public void setListOfExerciseTargets(List<Exercise> listOfExerciseTargets) {
-        this.listOfExerciseTargets = listOfExerciseTargets;
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 
     @Override
     public String toString() {
         return "Workout{" +
                 "name='" + name + '\'' +
-                ", listOfExerciseTargets=" + listOfExerciseTargets +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Workout)) return false;
-        Workout workout = (Workout) o;
-        return Objects.equals(name, workout.name) && Objects.equals(listOfExerciseTargets, workout.listOfExerciseTargets);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, listOfExerciseTargets);
     }
 }

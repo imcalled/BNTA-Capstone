@@ -11,4 +11,8 @@ public class WorkoutService {
     public List<Workout> getAllWorkouts() {
         return workoutDAO.getAllWorkouts();
     }
+
+    public void createWorkout(Workout workout) {
+        workoutDAO.createWorkout(workout);
+    }
 }
