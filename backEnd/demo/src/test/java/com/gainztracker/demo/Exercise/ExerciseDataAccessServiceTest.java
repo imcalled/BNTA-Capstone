@@ -1,4 +1,4 @@
-package com.gainztracker.demo.ExerciseDataPoint;
+package com.gainztracker.demo.Exercise;
 
 import com.gainztracker.demo.Exercise.Exercise;
 import com.gainztracker.demo.Exercise.ExerciseDataAccessService;
