@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -19,7 +20,7 @@ public class ExerciseDataPointDataAccessService implements ExerciseDataPointDAO{
     }
 
     @Override
-    public List<ExerciseDataPoint> getAll(ExerciseDataPoint exerciseDataPoint){
+    public List<ExerciseDataPoint> getAll(){
         String sql= """
                 SELECT * FROM ExerciseDataPoint;
                 """;
@@ -30,17 +31,18 @@ public class ExerciseDataPointDataAccessService implements ExerciseDataPointDAO{
     }
 
     @Override
-    public int postCardio(ExerciseDataPoint exerciseDataPoint) {
+    public int postCardio(int exerciseID, LocalDate date, int timeAchieved, int distanceAchieved) {
         String sql="""
-                INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved)
+                INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved, distanceAchieved, setsAchieved, repsAchieved, weightAchieved)
                 VALUES
-                (?,?,?);
+                (?,?,?,?, 0, 0, 0);
                 """;
         return jdbcTemplate.update(
                 sql,
-                exerciseDataPoint.getExerciseID(),
-                exerciseDataPoint.getDate(),
-                exerciseDataPoint.getTimeAchieved());
+                exerciseID,
+                date,
+                timeAchieved,
+                distanceAchieved);
 
     }
 

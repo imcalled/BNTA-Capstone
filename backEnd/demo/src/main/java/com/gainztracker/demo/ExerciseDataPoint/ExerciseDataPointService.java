@@ -2,6 +2,7 @@ package com.gainztracker.demo.ExerciseDataPoint;
 
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -15,8 +16,8 @@ public class ExerciseDataPointService {
 
 
 
-    public void postCardio(ExerciseDataPoint exerciseDataPoint) {
-        exerciseDataPointDAO.postCardio(exerciseDataPoint);
+    public void postCardio(int exerciseID, LocalDate date, int timeAchieved, int distanceAchieved) {
+        exerciseDataPointDAO.postCardio(exerciseID, date, timeAchieved, distanceAchieved);
 
     }
     public void postCalisthenics(ExerciseDataPoint exerciseDataPoint) {
@@ -29,7 +30,7 @@ public class ExerciseDataPointService {
 
     }
 
-    public List<ExerciseDataPoint> getAll(ExerciseDataPoint exerciseDataPoint) {
-        return exerciseDataPointDAO.getAll(exerciseDataPoint);
+    public List<ExerciseDataPoint> getAll() {
+        return exerciseDataPointDAO.getAll();
     }
 }
