@@ -104,7 +104,7 @@ public class ExerciseDataAccessService implements ExerciseDAO{
     public int deleteExerciseByName(String name) {
         String sql = """
                 DELETE FROM Exercise
-                WHERE id = ?;
+                WHERE name = ?;
                 """;
         return jdbcTemplate.update(sql, name);
     };
