@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class ExerciseDataPointDataAccessService implements ExerciseDataPointDAO{
@@ -19,13 +20,23 @@ public class ExerciseDataPointDataAccessService implements ExerciseDataPointDAO{
     }
 
     @Override
-    public List<ExerciseDataPoint> getAll(ExerciseDataPoint exerciseDataPoint){
+    public List<ExerciseDataPoint> getAll(){
         String sql= """
                 SELECT * FROM ExerciseDataPoint;
                 """;
 
-        List<ExerciseDataPoint> x = jdbcTemplate.query(sql, new ExerciseDataPointRowMapper());
-        return x;
+        List<ExerciseDataPoint> getAll = jdbcTemplate.query(sql, new ExerciseDataPointRowMapper());
+        return getAll;
+
+    }
+
+    @Override
+    public List<ExerciseDataPoint> getDataPointByExerciseID(int id){
+        String sql= """
+                SELECT * FROM ExerciseDataPoint WHERE exerciseID = (?);
+                """;
+        return jdbcTemplate.query(sql,new ExerciseDataPointRowMapper(),id);
+
 
     }
 
@@ -65,7 +76,10 @@ public class ExerciseDataPointDataAccessService implements ExerciseDataPointDAO{
                 VALUES
                 (?,?,?,?);
                 """;
-        return jdbcTemplate.update(sql, exerciseDataPoint.getWeightAchieved(), exerciseDataPoint.getSetsAchieved(),exerciseDataPoint.getRepsAchieved());
+        return jdbcTemplate.update(sql,
+                exerciseDataPoint.getWeightAchieved(),
+                exerciseDataPoint.getSetsAchieved(),
+                exerciseDataPoint.getRepsAchieved());
 
     }
 

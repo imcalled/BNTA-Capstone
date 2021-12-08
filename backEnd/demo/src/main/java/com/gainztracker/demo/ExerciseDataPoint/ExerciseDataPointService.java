@@ -3,6 +3,7 @@ package com.gainztracker.demo.ExerciseDataPoint;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ExerciseDataPointService {
@@ -29,7 +30,11 @@ public class ExerciseDataPointService {
 
     }
 
-    public List<ExerciseDataPoint> getAll(ExerciseDataPoint exerciseDataPoint) {
-        return exerciseDataPointDAO.getAll(exerciseDataPoint);
+    public List<ExerciseDataPoint> getAll() {
+        return exerciseDataPointDAO.getAll();
+    }
+
+    public List<ExerciseDataPoint> getDataPointByExerciseID(int id) {
+        return exerciseDataPointDAO.getDataPointByExerciseID(id);
     }
 }

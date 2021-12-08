@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/data")
@@ -18,8 +19,13 @@ public class ExerciseDataPointController {
     }
 
     @GetMapping
-    public List<ExerciseDataPoint> getData(@RequestBody ExerciseDataPoint exerciseDataPoint){
-        return exerciseDataPointService.getAll(exerciseDataPoint);
+    public List<ExerciseDataPoint> getAll(@RequestBody ExerciseDataPoint exerciseDataPoint){
+        return exerciseDataPointService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public List<ExerciseDataPoint> getDataPointByExerciseID(@PathVariable("id") int id){
+        return exerciseDataPointService.getDataPointByExerciseID(id);
     }
 
     @PostMapping("/cardio")
@@ -37,4 +43,6 @@ public class ExerciseDataPointController {
     public void postWeights(@RequestBody ExerciseDataPoint exerciseDataPoint){
         exerciseDataPointService.postWeights(exerciseDataPoint);
     }
+
+
 }
