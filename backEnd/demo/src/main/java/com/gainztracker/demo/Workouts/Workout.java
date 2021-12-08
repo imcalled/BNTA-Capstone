@@ -5,11 +5,11 @@ import com.gainztracker.demo.Exercise.Exercise;
 import java.util.List;
 import java.util.Objects;
 
-public class Workouts {
+public class Workout {
     private String name;
     private List<Exercise> listOfExerciseTargets;
 
-    public Workouts(String name, List<Exercise> listOfExerciseTargets) {
+    public Workout(String name, List<Exercise> listOfExerciseTargets) {
         this.name = name;
         this.listOfExerciseTargets = listOfExerciseTargets;
     }
@@ -32,7 +32,7 @@ public class Workouts {
 
     @Override
     public String toString() {
-        return "Workouts{" +
+        return "Workout{" +
                 "name='" + name + '\'' +
                 ", listOfExerciseTargets=" + listOfExerciseTargets +
                 '}';
@@ -41,9 +41,9 @@ public class Workouts {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Workouts)) return false;
-        Workouts workouts = (Workouts) o;
-        return Objects.equals(name, workouts.name) && Objects.equals(listOfExerciseTargets, workouts.listOfExerciseTargets);
+        if (!(o instanceof Workout)) return false;
+        Workout workout = (Workout) o;
+        return Objects.equals(name, workout.name) && Objects.equals(listOfExerciseTargets, workout.listOfExerciseTargets);
     }
 
     @Override

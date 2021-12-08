@@ -39,6 +39,17 @@ public class ExerciseDataPointDataAccessService implements ExerciseDataPointDAO{
 
 
     }
+    @Override
+    public List<ExerciseDataPoint> getDataPointByExerciseName(String name){
+        String sql= """
+                SELECT * FROM ExerciseDataPoint INNER JOIN Exercise ON
+                ExerciseDataPoint.exerciseID = Exercise.id WHERE Exercise.name = (?);
+                 
+                """;
+        return jdbcTemplate.query(sql,new ExerciseDataPointRowMapper(),name);
+
+
+    }
 
     @Override
     public int postCardio(ExerciseDataPoint exerciseDataPoint) {

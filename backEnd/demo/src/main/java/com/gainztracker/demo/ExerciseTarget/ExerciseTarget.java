@@ -13,6 +13,7 @@ public class ExerciseTarget {
     public ExerciseTarget(int exercise_Id, int time, int distance, int sets, int reps, int weight) {
 
         this.exercise_Id = exercise_Id;
+
         this.time = time;
         this.distance = distance;
         this.sets = sets;

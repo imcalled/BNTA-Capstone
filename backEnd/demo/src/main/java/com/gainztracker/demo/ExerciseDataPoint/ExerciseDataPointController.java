@@ -27,6 +27,10 @@ public class ExerciseDataPointController {
     public List<ExerciseDataPoint> getDataPointByExerciseID(@PathVariable("id") int id){
         return exerciseDataPointService.getDataPointByExerciseID(id);
     }
+    @GetMapping("/name/{name}")
+    public List<ExerciseDataPoint> getDataPointByExerciseName(@PathVariable("name") String name){
+        return exerciseDataPointService.getDataPointByExerciseName(name);
+    }
 
     @PostMapping("/cardio")
     public void postCardio(@RequestBody ExerciseDataPoint exerciseDataPoint){

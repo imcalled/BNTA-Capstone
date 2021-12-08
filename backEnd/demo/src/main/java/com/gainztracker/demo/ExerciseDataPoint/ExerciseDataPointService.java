@@ -37,4 +37,8 @@ public class ExerciseDataPointService {
     public List<ExerciseDataPoint> getDataPointByExerciseID(int id) {
         return exerciseDataPointDAO.getDataPointByExerciseID(id);
     }
+
+    public List<ExerciseDataPoint> getDataPointByExerciseName(String name) {
+        return exerciseDataPointDAO.getDataPointByExerciseName(name);
+    }
 }

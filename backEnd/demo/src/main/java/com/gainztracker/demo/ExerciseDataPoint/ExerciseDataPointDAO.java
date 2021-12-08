@@ -9,4 +9,6 @@ public interface ExerciseDataPointDAO {
     int postWeights(ExerciseDataPoint exerciseDataPoint);
     List<ExerciseDataPoint> getAll();
     List<ExerciseDataPoint>getDataPointByExerciseID(int id);
+
+    List<ExerciseDataPoint> getDataPointByExerciseName(String name);
 }
