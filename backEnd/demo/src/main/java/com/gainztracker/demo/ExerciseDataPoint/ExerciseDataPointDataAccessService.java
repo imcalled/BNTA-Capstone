@@ -47,27 +47,35 @@ public class ExerciseDataPointDataAccessService implements ExerciseDataPointDAO{
     }
 
     @Override
-    public int postCalisthenics(ExerciseDataPoint exerciseDataPoint) {
+    public int postCalisthenics(int exerciseID, LocalDate date, int setsAchieved, int repsAchieved) {
         String sql="""
-                INSERT INTO ExerciseDataPoint(exerciseID,setsAchieved, repsAchieved)
+                INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved, distanceAchieved, setsAchieved, repsAchieved, weightAchieved)
                 VALUES
-                (?,?,?);
+                (?,?,0,0,?,?,0);
                 """;
-        return jdbcTemplate.update(sql,
-                exerciseDataPoint.getExerciseID() ,
-                exerciseDataPoint.getSetsAchieved(),
-                exerciseDataPoint.getRepsAchieved());
+        return jdbcTemplate.update(
+                sql,
+                exerciseID ,
+                date,
+                setsAchieved,
+                repsAchieved);
 
     }
 
     @Override
-    public int postWeights(ExerciseDataPoint exerciseDataPoint) {
+    public int postWeights(int exerciseID, LocalDate date, int setsAchieved, int repsAchieved, int weightAchieved) {
         String sql="""
-                INSERT INTO ExerciseDataPoint(exerciseID,weightAchieved, setsAchieved, repsAchieved)
+                INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved, distanceAchieved, setsAchieved, repsAchieved, weightAchieved)
                 VALUES
-                (?,?,?,?);
+                (?,?,0,0,?,?,?);
                 """;
-        return jdbcTemplate.update(sql, exerciseDataPoint.getWeightAchieved(), exerciseDataPoint.getSetsAchieved(),exerciseDataPoint.getRepsAchieved());
+        return jdbcTemplate.update(
+                sql,
+                exerciseID,
+                date,
+                setsAchieved,
+                repsAchieved,
+                weightAchieved);
 
     }
 

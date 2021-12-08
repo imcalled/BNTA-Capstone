@@ -20,13 +20,13 @@ public class ExerciseDataPointService {
         exerciseDataPointDAO.postCardio(exerciseID, date, timeAchieved, distanceAchieved);
 
     }
-    public void postCalisthenics(ExerciseDataPoint exerciseDataPoint) {
-        exerciseDataPointDAO.postCalisthenics(exerciseDataPoint);
+    public void postCalisthenics(int exerciseID, LocalDate date, int setsAchieved, int repsAchieved) {
+        exerciseDataPointDAO.postCalisthenics(exerciseID, date, setsAchieved, repsAchieved);
 
 
     }
-    public void postWeights(ExerciseDataPoint exerciseDataPoint) {
-        exerciseDataPointDAO.postWeights(exerciseDataPoint);
+    public void postWeights(int exerciseID, LocalDate date, int setsAchieved, int repsAchieved, int weightAchieved) {
+        exerciseDataPointDAO.postWeights(exerciseID, date, setsAchieved, repsAchieved, weightAchieved);
 
     }
 

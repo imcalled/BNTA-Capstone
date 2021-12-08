@@ -30,12 +30,12 @@ public class ExerciseDataPointController {
     }
 
     @PostMapping("/calisthenics")
-    public void postCalisthenics(@RequestBody ExerciseDataPoint exerciseDataPoint){
-        exerciseDataPointService.postCalisthenics(exerciseDataPoint);
+    public void postCalisthenics(@RequestBody int exerciseID, LocalDate date, int setsAchieved, int repsAchieved){
+        exerciseDataPointService.postCalisthenics(exerciseID, date, setsAchieved, repsAchieved);
     }
 
     @PostMapping("/weights")
-    public void postWeights(@RequestBody ExerciseDataPoint exerciseDataPoint){
-        exerciseDataPointService.postWeights(exerciseDataPoint);
+    public void postWeights(@RequestBody int exerciseID, LocalDate date, int setsAchieved, int repsAchieved, int weightAchieved){
+        exerciseDataPointService.postWeights(exerciseID, date, setsAchieved, repsAchieved, weightAchieved);
     }
 }
