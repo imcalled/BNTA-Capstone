@@ -29,6 +29,12 @@ public class ExerciseTargetController {
         return exerciseTargetService.getExerciseTargetById(id);
     }
 
+    //get all exercise targets of one workout
+    @GetMapping("/workout/id/{id}")
+    public List<ExerciseTarget> getExerciseTargetsOfWorkout(@PathVariable("id") int id){
+        return exerciseTargetService.getExerciseTargetsOfWorkout(id);
+    }
+
     // TODO: 07/12/2021 Allow to get target by exercise name
 //    //get exercise target by exercise name
 //    @GetMapping("/name/{name}")

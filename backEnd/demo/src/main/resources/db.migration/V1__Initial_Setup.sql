@@ -6,16 +6,24 @@ name TEXT,
 exerciseType ExerciseType
 );
 
+CREATE TABLE Workouts(
+id BIGSERIAL PRIMARY KEY,
+name TEXT
+);
+
 CREATE TABLE ExerciseTarget(
 id BIGSERIAL PRIMARY KEY,
 exerciseID INT REFERENCES Exercise(id),
-date DATE,
+workoutID INT REFERENCES Workouts(id),
 time INT,
 distance INT,
 sets INT,
 reps INT,
 weight INT
 );
+
+
+
 
 CREATE TABLE ExerciseDataPoint(
 id BIGSERIAL PRIMARY KEY,
@@ -28,8 +36,3 @@ repsAchieved INT,
 weightAchieved INT
 );
 
-CREATE TABLE Workouts(
-id BIGSERIAL PRIMARY KEY,
-name TEXT,
-listOfExerciseTargets INT REFERENCES ExerciseTarget(id)
-);

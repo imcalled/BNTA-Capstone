@@ -1,5 +1,6 @@
 package com.gainztracker.demo.ExerciseTarget;
 
+import com.gainztracker.demo.Workouts.Workout;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -45,6 +46,17 @@ public class ExerciseTargetDataAccessService implements ExerciseTargetDAO{
                 WHERE id = ?
                 """;
         return jdbcTemplate.query(sql, rowMapper, id).stream().findFirst();
+    };
+
+    @Override
+    public List<ExerciseTarget> getExerciseTargetsOfWorkout(int id){
+        String sql = """
+                SELECT * FROM ExerciseTarget 
+                INNER JOIN Workouts 
+                ON ExerciseTarget.workoutID = Workouts.id
+                WHERE ExerciseTarget.workoutID = (?);
+                """;
+        return jdbcTemplate.query(sql,rowMapper,id);
     };
 
     @Override

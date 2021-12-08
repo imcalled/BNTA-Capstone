@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ExerciseDataPointService {
@@ -32,5 +33,14 @@ public class ExerciseDataPointService {
 
     public List<ExerciseDataPoint> getAll() {
         return exerciseDataPointDAO.getAll();
+
+    }
+
+    public List<ExerciseDataPoint> getDataPointByExerciseID(int id) {
+        return exerciseDataPointDAO.getDataPointByExerciseID(id);
+    }
+
+    public List<ExerciseDataPoint> getDataPointByExerciseName(String name) {
+        return exerciseDataPointDAO.getDataPointByExerciseName(name);
     }
 }
