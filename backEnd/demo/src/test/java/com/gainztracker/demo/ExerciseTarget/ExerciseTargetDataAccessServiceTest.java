@@ -69,4 +69,35 @@ public class ExerciseTargetDataAccessServiceTest {
 //        //then
 //        assertThat(expected).isEqualTo(1);
 //    }
-}
+
+    @Test
+    @DisplayName("Test to see if updateExerciseTargetById() works")
+    void updateExerciseTargetById() {
+        //given
+        ExerciseTarget exerciseTarget = new ExerciseTarget(1, 100, 100, 0, 0, 0);
+        int actual = underTest.updateExerciseTargetById(1, exerciseTarget);
+
+        //when
+        Optional<ExerciseTarget> actualDB = underTest.getExerciseTargetById(1);
+        Optional<ExerciseTarget> expectedDB = Optional.of(exerciseTarget);
+
+        //then
+        assertThat(actual).isEqualTo(1);
+        assertThat(actualDB).isEqualTo(expectedDB);
+
+    }
+        @Test
+        @DisplayName("Test deleteExerciseTargetById()")
+        void deleteExerciseTargetById() {
+            //given
+            int actual = underTest.deleteExerciseTargetById(1);
+
+            //when
+//            Optional<ExerciseTarget> actualDB = underTest.deleteExerciseTargetById(1);
+
+            //then
+            assertThat(actual).isEqualTo(1);
+//            assertThat(actualDB).isEqualTo(Optional.empty());
+        }
+    }
+
