@@ -1,8 +1,16 @@
+import React, { useState } from "react";
+import WorkoutsList from "../components/WorkoutsList";
+
 const WorkoutsPage = () => {
     return(
+
         <>
-        This is the workouts page
+
+            <WorkoutsList />
+
         </>
+
+
     )
 }
 
