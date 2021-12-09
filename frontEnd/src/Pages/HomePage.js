@@ -15,7 +15,12 @@ const HomePage = () => {
     navigate("/ProteinTrackerPage");
   };
 
-  return <>This is the homepage</>;
+  return <>
+  This is the homepage
+  <button onClick={goWorkoutsPage}>My Workouts</button>
+  <button onClick={goMyStatsPage}>My Stats</button>
+  <button onClick={goProteinTrackerPage}>Protein Tracker</button>
+  </>;
 };
 
 export default HomePage;
