@@ -5,6 +5,7 @@ import HomePage from "./Pages/HomePage"
 import MyStatsPage from "./Pages/MyStatsPage"
 import ProteinTrackerPage from "./Pages/ProteinTrackerPage"
 import WorkoutsPage from "./Pages/WorkoutsPage"
+import Navbar from "./Components/Navbar"
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   return (
   <BrowserRouter>
     <div>
-      <h1> GainzTracker</h1>
+      <Navbar />
       <Routes>
         <Route path = "/" element={<HomePage/>} />
         <Route path = "/MyStatsPage" element={<MyStatsPage/>} />
