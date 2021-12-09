@@ -4,16 +4,10 @@
   align-items: center;
 }
 
-.container__button_secondary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .button__primary {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  font-size: medium;
+    font-size: medium;
   border: none;
   color: white;
   display: inline-block;
@@ -24,8 +18,8 @@
 }
 
 .icon {
-  display: inline-block;
+  display:inline-block;
   height: 2em;
   width: auto;
-  padding: 1em;
+  padding:1em;
 }
