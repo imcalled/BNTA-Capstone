@@ -4,22 +4,31 @@ import java.util.Objects;
 
 public class ExerciseTarget {
     private int exercise_Id;
+    private int workout_Id;
     private int time;
     private int distance;
     private int sets;
     private int reps;
     private int weight;
 
-    public ExerciseTarget(int exercise_Id, int time, int distance, int sets, int reps, int weight) {
+    public ExerciseTarget(int exercise_Id, int workout_Id, int time, int distance, int sets, int reps, int weight) {
 
         this.exercise_Id = exercise_Id;
-
+        this.workout_Id = workout_Id;
         this.time = time;
         this.distance = distance;
         this.sets = sets;
         this.reps = reps;
         this.weight = weight;
 
+    }
+
+    public int getWorkout_Id() {
+        return workout_Id;
+    }
+
+    public void setWorkout_Id(int workout_Id) {
+        this.workout_Id = workout_Id;
     }
 
     public int getExercise_Id() {
@@ -74,6 +83,7 @@ public class ExerciseTarget {
     public String toString() {
         return "ExerciseTarget{" +
                 "exercise_Id=" + exercise_Id +
+                ", workout_Id=" + workout_Id +
                 ", time=" + time +
                 ", distance=" + distance +
                 ", sets=" + sets +
@@ -85,13 +95,13 @@ public class ExerciseTarget {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof ExerciseTarget)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         ExerciseTarget that = (ExerciseTarget) o;
-        return exercise_Id == that.exercise_Id && time == that.time && distance == that.distance && sets == that.sets && reps == that.reps && weight == that.weight;
+        return exercise_Id == that.exercise_Id && workout_Id == that.workout_Id && time == that.time && distance == that.distance && sets == that.sets && reps == that.reps && weight == that.weight;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(exercise_Id, time, distance, sets, reps, weight);
+        return Objects.hash(exercise_Id, workout_Id, time, distance, sets, reps, weight);
     }
 }

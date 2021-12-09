@@ -64,7 +64,7 @@ public class ExerciseTargetDataAccessServiceTest {
     @DisplayName("Test to see if createExerciseTarget() works")
     void createExerciseTarget() {
         //given
-        ExerciseTarget exerciseTarget = new ExerciseTarget(19, 100, 100, 0, 0, 0);
+        ExerciseTarget exerciseTarget = new ExerciseTarget(19, 1, 100, 100, 0, 0, 0);
         int expected = underTest.createExerciseTarget(exerciseTarget);
 
         //when

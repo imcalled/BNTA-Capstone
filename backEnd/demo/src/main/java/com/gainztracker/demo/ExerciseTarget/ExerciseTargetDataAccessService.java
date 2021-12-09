@@ -23,7 +23,9 @@ public class ExerciseTargetDataAccessService implements ExerciseTargetDAO{
         @Override
         public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
             ExerciseTarget exerciseTarget = new ExerciseTarget(
-                    rs.getInt("exerciseID"),rs.getInt("time"),
+                    rs.getInt("exerciseID"),
+                    rs.getInt("workoutID"),
+                    rs.getInt("time"),
                     rs.getInt("distance"),rs.getInt("sets"),
                     rs.getInt("reps"),rs.getInt("weight"));
             return exerciseTarget;
@@ -62,9 +64,9 @@ public class ExerciseTargetDataAccessService implements ExerciseTargetDAO{
     @Override
     public int createExerciseTarget(ExerciseTarget exerciseTarget){
       String sql = """
-              INSERT INTO ExerciseTarget(exerciseID,time,distance,sets,reps,weight) VALUES(?,?,?,?,?,?)
+              INSERT INTO ExerciseTarget(exerciseID, workoutID, time,distance,sets,reps,weight) VALUES(?,?,?,?,?,?,?)
               """;
-      return jdbcTemplate.update(sql,exerciseTarget.getExercise_Id(),exerciseTarget.getTime()
+      return jdbcTemplate.update(sql,exerciseTarget.getExercise_Id(),exerciseTarget.getWorkout_Id(), exerciseTarget.getTime()
               ,exerciseTarget.getDistance(),exerciseTarget.getSets()
               ,exerciseTarget.getReps(),exerciseTarget.getWeight());
     };
