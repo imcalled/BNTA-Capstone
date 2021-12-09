@@ -34,4 +34,12 @@ VALUES (6,2,0,0,5,4,0);
 INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
 VALUES (7,2,0,0,4,6,0);
 
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (1,3,0,5000,0,0,0);
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (11,3,0,0,5,5,60);
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (12,3,0,0,5,5,45);
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (13,3,0,0,5,5,70);
 
