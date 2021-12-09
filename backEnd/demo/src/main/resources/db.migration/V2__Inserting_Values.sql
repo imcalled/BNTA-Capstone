@@ -16,3 +16,30 @@ INSERT INTO Exercise(name, ExerciseType ) VALUES ('Deadlifts', 'WEIGHTS');
 INSERT INTO Exercise(name, ExerciseType ) VALUES ('Overhead Press', 'WEIGHTS');
 INSERT INTO Exercise(name, ExerciseType ) VALUES ('Clean and Press', 'WEIGHTS');
 
+INSERT INTO Workouts(name) VALUES ('Basic Workout');
+INSERT INTO Workouts(name) VALUES ('Intermediate Workout');
+INSERT INTO Workouts(name) VALUES ('Advanced Workout');
+
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (1,1,0,1000,0,0,0);
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (6,1,0,0,3,3,0);
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (7,1,0,0,2,4,0);
+
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (1,2,0,2000,0,0,0);
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (6,2,0,0,5,4,0);
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (7,2,0,0,4,6,0);
+
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (1,3,0,5000,0,0,0);
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (11,3,0,0,5,5,60);
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (12,3,0,0,5,5,45);
+INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
+VALUES (13,3,0,0,5,5,70);
+

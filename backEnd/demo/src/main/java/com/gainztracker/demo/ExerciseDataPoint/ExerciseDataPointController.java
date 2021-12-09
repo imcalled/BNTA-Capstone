@@ -5,6 +5,7 @@ import com.gainztracker.demo.Exercise.ExerciseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +20,7 @@ public class ExerciseDataPointController {
     }
 
     @GetMapping
-    public List<ExerciseDataPoint> getAll(@RequestBody ExerciseDataPoint exerciseDataPoint){
+    public List<ExerciseDataPoint> getAll(){
         return exerciseDataPointService.getAll();
     }
 
@@ -33,19 +34,19 @@ public class ExerciseDataPointController {
     }
 
     @PostMapping("/cardio")
-    public void postCardio(@RequestBody ExerciseDataPoint exerciseDataPoint){
-        exerciseDataPointService.postCardio(exerciseDataPoint);
+    public void postCardio(@RequestBody int exerciseID, LocalDate date, int timeAchieved, int distanceAchieved){
+        exerciseDataPointService.postCardio(exerciseID, date, timeAchieved, distanceAchieved);
 
     }
 
     @PostMapping("/calisthenics")
-    public void postCalisthenics(@RequestBody ExerciseDataPoint exerciseDataPoint){
-        exerciseDataPointService.postCalisthenics(exerciseDataPoint);
+    public void postCalisthenics(@RequestBody int exerciseID, LocalDate date, int setsAchieved, int repsAchieved){
+        exerciseDataPointService.postCalisthenics(exerciseID, date, setsAchieved, repsAchieved);
     }
 
     @PostMapping("/weights")
-    public void postWeights(@RequestBody ExerciseDataPoint exerciseDataPoint){
-        exerciseDataPointService.postWeights(exerciseDataPoint);
+    public void postWeights(@RequestBody int exerciseID, LocalDate date, int setsAchieved, int repsAchieved, int weightAchieved){
+        exerciseDataPointService.postWeights(exerciseID, date, setsAchieved, repsAchieved, weightAchieved);
     }
 
 

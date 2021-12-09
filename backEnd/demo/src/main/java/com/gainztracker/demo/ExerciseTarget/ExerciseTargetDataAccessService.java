@@ -1,5 +1,6 @@
 package com.gainztracker.demo.ExerciseTarget;
 
+import com.gainztracker.demo.Workouts.Workout;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -22,7 +23,9 @@ public class ExerciseTargetDataAccessService implements ExerciseTargetDAO{
         @Override
         public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
             ExerciseTarget exerciseTarget = new ExerciseTarget(
-                    rs.getInt("exerciseID"),rs.getInt("time"),
+                    rs.getInt("exerciseID"),
+                    rs.getInt("workoutID"),
+                    rs.getInt("time"),
                     rs.getInt("distance"),rs.getInt("sets"),
                     rs.getInt("reps"),rs.getInt("weight"));
             return exerciseTarget;
@@ -48,11 +51,22 @@ public class ExerciseTargetDataAccessService implements ExerciseTargetDAO{
     };
 
     @Override
+    public List<ExerciseTarget> getExerciseTargetsOfWorkout(int id){
+        String sql = """
+                SELECT * FROM ExerciseTarget 
+                INNER JOIN Workouts 
+                ON ExerciseTarget.workoutID = Workouts.id
+                WHERE ExerciseTarget.workoutID = (?);
+                """;
+        return jdbcTemplate.query(sql,rowMapper,id);
+    };
+
+    @Override
     public int createExerciseTarget(ExerciseTarget exerciseTarget){
       String sql = """
-              INSERT INTO ExerciseTarget(exerciseID,time,distance,sets,reps,weight)int  VALUES(?,?,?,?,?,?)
+              INSERT INTO ExerciseTarget(exerciseID, workoutID, time,distance,sets,reps,weight) VALUES(?,?,?,?,?,?,?)
               """;
-      return jdbcTemplate.update(sql,exerciseTarget.getExercise_Id(),exerciseTarget.getTime()
+      return jdbcTemplate.update(sql,exerciseTarget.getExercise_Id(),exerciseTarget.getWorkout_Id(), exerciseTarget.getTime()
               ,exerciseTarget.getDistance(),exerciseTarget.getSets()
               ,exerciseTarget.getReps(),exerciseTarget.getWeight());
     };

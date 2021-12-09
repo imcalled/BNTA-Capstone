@@ -1,9 +1,7 @@
 package com.gainztracker.demo.Workouts;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,4 +20,7 @@ public class WorkoutController {
     public List<Workout> getAllWorkouts(){
         return workoutService.getAllWorkouts();
     }
+
+    @PostMapping
+    public void createWorkout(@RequestBody Workout workout) {workoutService.createWorkout(workout);}
 }
