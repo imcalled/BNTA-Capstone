@@ -10,12 +10,8 @@ public interface ExerciseDataPointDAO {
     int postWeights(int exerciseID, LocalDate date, int setsAchieved, int repsAchieved, int weightAchieved);
     List<ExerciseDataPoint> getAll();
 
-//     int postCardio(ExerciseDataPoint exerciseDataPoint);
-//     int postCalisthenics(ExerciseDataPoint exerciseDataPoint);
-//     int postWeights(ExerciseDataPoint exerciseDataPoint);
-//     List<ExerciseDataPoint> getAll();
-     List<ExerciseDataPoint>getDataPointByExerciseID(int id);
+    List<ExerciseDataPoint>getDataPointByExerciseID(int id);
+    List<ExerciseDataPoint> getDataPointByExerciseName(String name);
 
-     List<ExerciseDataPoint> getDataPointByExerciseName(String name);
 
 }

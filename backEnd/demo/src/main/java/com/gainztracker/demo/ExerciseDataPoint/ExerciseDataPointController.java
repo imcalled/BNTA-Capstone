@@ -20,7 +20,7 @@ public class ExerciseDataPointController {
     }
 
     @GetMapping
-    public List<ExerciseDataPoint> getAll(@RequestBody ExerciseDataPoint exerciseDataPoint){
+    public List<ExerciseDataPoint> getAll(){
         return exerciseDataPointService.getAll();
     }
 
