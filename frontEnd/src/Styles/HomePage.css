@@ -1,0 +1,31 @@
+.container__button_primary {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container__button_secondary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__primary {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: medium;
+  border: none;
+  color: white;
+  display: inline-block;
+  background-color: black;
+  border-radius: 35px;
+  height: 15em;
+  width: 23em;
+}
+
+.icon {
+  display: inline-block;
+  height: 2em;
+  width: auto;
+  padding: 1em;
+}
