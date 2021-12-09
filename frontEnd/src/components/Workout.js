@@ -1,31 +1,20 @@
 import React from 'react';
 import './Workout.css';
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-const Workout = () => {
+const Workout = ({exerciseTargets}) => {
+    
     return (
-        <div className="all-buttons">
-            <div className="button-1">
-                <button className="beginner-button"> Preset Workout </button>
-            </div>
-
-            <div className="button-2">
-                <button className="intermediate-button"> Intermediate Workout </button>
-            </div>
-
-            <div className="button-3">
-                <button className="advanced-button"> Advanced Workout </button>
-            </div>
-
-            <div className="button-4">
-                <button className="add-workout-button"> Add Workout </button>
-            </div>
-
-
-        </div>
+        <>
+        <p>Hello I am here</p>
+        <p>{exerciseTargets}</p>
+        {exerciseTargets.map(exerciseTarget => <div>{exerciseTarget.exercise_Id}</div>)}
+        {exerciseTargets.map(exerciseTarget => <div>{exerciseTarget.workout_Id}</div>)}
+        </>
     )
 
-
-
 }
+
 
 export default Workout;

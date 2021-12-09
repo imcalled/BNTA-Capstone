@@ -1,14 +1,29 @@
 import React from 'react';
 import Workout from './Workout';
+import { useNavigate } from "react-router-dom";
+import WorkoutButton from './WorkoutButton';
+import { Link } from "react-router-dom";
 
-const WorkoutsList= () => {
+const WorkoutsList= ({workouts}) => {
+    let navigate = useNavigate()
+
+    const goWorkout = (id) =>{
+        navigate("/WorkoutPage")
+    }
+
+    const workoutComponents = workouts.map(workout => {
+        return(
+            <WorkoutButton workout={workout} goWorkout={goWorkout}/>
+        )
+    })
+
     return (
         <>
             <h1>
             My workouts
             </h1>
 
-            <Workout />
+            {workoutComponents}
 
             <section className="Workout-List">
 
@@ -16,5 +31,5 @@ const WorkoutsList= () => {
         </>
     )
 }
-
 export default WorkoutsList;
+

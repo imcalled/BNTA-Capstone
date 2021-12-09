@@ -5,7 +5,7 @@ import HomePage from "./Pages/HomePage"
 import MyStatsPage from "./Pages/MyStatsPage"
 import ProteinTrackerPage from "./Pages/ProteinTrackerPage"
 import WorkoutsPage from "./Pages/WorkoutsPage"
-
+import WorkoutPage from './Pages/WorkoutPage';
 
 function App() {
   
@@ -18,6 +18,7 @@ function App() {
         <Route path = "/MyStatsPage" element={<MyStatsPage/>} />
         <Route path = "/ProteinTrackerPage" element={<ProteinTrackerPage/>} />
         <Route path = "/WorkoutsPage" element={<WorkoutsPage/>} />
+        <Route path = "/WorkoutPage/:id" element={<WorkoutPage/>} />
       </Routes>
     </div>
     </BrowserRouter>
