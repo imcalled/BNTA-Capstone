@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.InstanceOfAssertFactories.optional;
 
 @ExtendWith(SpringExtension.class)
 @DataJdbcTest
@@ -35,38 +36,49 @@ public class ExerciseTargetDataAccessServiceTest {
         jdbcTemplate.execute(
                 " INSERT INTO ExerciseTarget(exerciseID, time, distance, sets, reps, weight) VALUES ('1','100', '100', '0', '0', '0'); ");
     }
-    @Test
-    @DisplayName("Test to see if getAllExerciseTargets function works")
-    void getAllExerciseTargets() {
-        // given
-        List<ExerciseTarget> expected = List.of(new ExerciseTarget(1, 100, 100, 0, 0, 0));
 
-        // when
-        List<ExerciseTarget> actual = underTest.getAllExerciseTargets();
-
-        // then
-        assertThat(actual).isEqualTo(expected);
-    }
     @Test
     @DisplayName("Test to see if getExerciseTargetById works")
     void getExerciseTargetById() {
         //given
-        Optional<ExerciseTarget> expected = Optional.of(new ExerciseTarget(1, 100, 100, 0, 0, 0));
+        Optional<ExerciseTarget> expected = Optional.of(new ExerciseTarget(1, 1,0, 1000, 0, 0, 0));
 
         //when
         Optional<ExerciseTarget> actual = underTest.getExerciseTargetById(1);
 
+
         //then
         assertThat(actual).isEqualTo(expected);
     }
-//    To Kun to do
-//    @Test
-//    @DisplayName("Test to see if createExerciseTarget() works")
-//    void createExerciseTarget() {
-//        //given
-//        int expected = underTest.createExerciseTarget(new ExerciseTarget(19, 100, 100, 0, 0, 0));
-//
-//        //then
-//        assertThat(expected).isEqualTo(1);
-//    }
-}
+
+    @Test
+    @DisplayName("Test to see if updateExerciseTargetById() works")
+    void updateExerciseTargetById() {
+        //given
+        ExerciseTarget exerciseTarget = new ExerciseTarget(1,1,100, 100, 0, 0, 0);
+        int actual = underTest.updateExerciseTargetById(1, exerciseTarget);
+
+        //when
+        Optional<ExerciseTarget> actualDB = underTest.getExerciseTargetById(1);
+        Optional<ExerciseTarget> expectedDB = Optional.of(exerciseTarget);
+
+        //then
+        assertThat(actual).isEqualTo(1);
+        assertThat(actualDB).isEqualTo(expectedDB);
+
+    }
+        @Test
+        @DisplayName("Test deleteExerciseTargetById()")
+        void deleteExerciseTargetById() {
+            //given
+            int actual = underTest.deleteExerciseTargetById(1);
+
+            //when
+//            Optional<ExerciseTarget> actualDB = underTest.deleteExerciseTargetById(1);
+
+            //then
+            assertThat(actual).isEqualTo(1);
+//            assertThat(actualDB).isEqualTo(Optional.empty());
+        }
+    }
+
