@@ -62,7 +62,7 @@ public class ExerciseTargetDataAccessService implements ExerciseTargetDAO{
     @Override
     public int createExerciseTarget(ExerciseTarget exerciseTarget){
       String sql = """
-              INSERT INTO ExerciseTarget(exerciseID,time,distance,sets,reps,weight)int  VALUES(?,?,?,?,?,?)
+              INSERT INTO ExerciseTarget(exerciseID,time,distance,sets,reps,weight) VALUES(?,?,?,?,?,?)
               """;
       return jdbcTemplate.update(sql,exerciseTarget.getExercise_Id(),exerciseTarget.getTime()
               ,exerciseTarget.getDistance(),exerciseTarget.getSets()

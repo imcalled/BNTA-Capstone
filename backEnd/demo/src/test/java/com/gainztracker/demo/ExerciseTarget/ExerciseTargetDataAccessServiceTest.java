@@ -59,16 +59,22 @@ public class ExerciseTargetDataAccessServiceTest {
         //then
         assertThat(actual).isEqualTo(expected);
     }
-//    To Kun to do
-//    @Test
-//    @DisplayName("Test to see if createExerciseTarget() works")
-//    void createExerciseTarget() {
-//        //given
-//        int expected = underTest.createExerciseTarget(new ExerciseTarget(19, 100, 100, 0, 0, 0));
-//
-//        //then
-//        assertThat(expected).isEqualTo(1);
-//    }
+
+    @Test
+    @DisplayName("Test to see if createExerciseTarget() works")
+    void createExerciseTarget() {
+        //given
+        ExerciseTarget exerciseTarget = new ExerciseTarget(19, 100, 100, 0, 0, 0);
+        int expected = underTest.createExerciseTarget(exerciseTarget);
+
+        //when
+        Optional<ExerciseTarget> actualDB = underTest.getExerciseTargetById(19);
+        Optional<ExerciseTarget> expectedDB = Optional.of(exerciseTarget);
+
+        //then
+        assertThat(expected).isEqualTo(1);
+        assertThat(expectedDB).isEqualTo(actualDB);
+    }
 
     @Test
     @DisplayName("Test to see if updateExerciseTargetById() works")
