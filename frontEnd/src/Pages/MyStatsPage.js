@@ -1,8 +1,40 @@
-const MyStatsPage = () => {
+import {useState} from 'react';
+const MyStatsPage = ({exercise}) => {
+
+    const [valuesToGraph, setValuesToGraph]=useState([]);
+    const [DropSelect, setDropSelect]=useState(null);
+
+    const updateDrop=(event) => {
+        setDropSelect(event.target.value);
+
+    }
+
+    const onFormSubmit = (event)=>{
+
+        const getExerciseDataPointsByExerciseID = () => {
+            fetch(`http://localhost:8080/api/v1/data/${DropSelect}`)
+                .then(response => response.json())
+                .then(data => setValuesToGraph(data));
+        }
+
+
+    }
+
+
     return(
-        <>
-        This is the my stats page
-        </>
+        <div>
+        <form onSubmit={onFormSubmit}>
+        <select onChange={updateDrop}>
+            {exercise.map(exercise => (
+
+            <option value={exercise.id} label={exercise.name}/>)
+            )}
+           
+            </select>
+           
+        </form>
+        
+        </div>
     )
 }
 
