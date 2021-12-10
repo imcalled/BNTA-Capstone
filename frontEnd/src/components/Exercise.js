@@ -1,9 +1,8 @@
-const Exercise = ({exercise}) => {
+const Exercise = ({exercise, dropSelect}) => {
     // console.log(exercise);
     return(
     <>
-        <option value="${exercise.id}">{exercise.name}</option>
-        {/* <p>{exercise.name}</p> */}
+        <option value={exercise.id}>{exercise.name}</option>
     </>
     )
 }
