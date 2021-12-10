@@ -39,7 +39,7 @@ public class ExerciseTargetDataAccessServiceTest {
     @DisplayName("Test to see if getAllExerciseTargets function works")
     void getAllExerciseTargets() {
         // given
-        List<ExerciseTarget> expected = List.of(new ExerciseTarget(1, 100, 100, 0, 0, 0));
+        List<ExerciseTarget> expected = List.of(new ExerciseTarget(1, 100, 100, 0, 0, 0,0));
 
         // when
         List<ExerciseTarget> actual = underTest.getAllExerciseTargets();
@@ -51,7 +51,7 @@ public class ExerciseTargetDataAccessServiceTest {
     @DisplayName("Test to see if getExerciseTargetById works")
     void getExerciseTargetById() {
         //given
-        Optional<ExerciseTarget> expected = Optional.of(new ExerciseTarget(1, 100, 100, 0, 0, 0));
+        Optional<ExerciseTarget> expected = Optional.of(new ExerciseTarget(1, 100, 100, 0, 0, 0,0));
 
         //when
         Optional<ExerciseTarget> actual = underTest.getExerciseTargetById(1);
@@ -80,7 +80,7 @@ public class ExerciseTargetDataAccessServiceTest {
     @DisplayName("Test to see if updateExerciseTargetById() works")
     void updateExerciseTargetById() {
         //given
-        ExerciseTarget exerciseTarget = new ExerciseTarget(1, 100, 100, 0, 0, 0);
+        ExerciseTarget exerciseTarget = new ExerciseTarget(1, 100, 100, 0, 0, 0,0);
         int actual = underTest.updateExerciseTargetById(1, exerciseTarget);
 
         //when
