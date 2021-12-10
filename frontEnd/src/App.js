@@ -5,13 +5,18 @@ import HomePage from "./Pages/HomePage"
 import MyStatsPage from "./Pages/MyStatsPage"
 import ProteinTrackerPage from "./Pages/ProteinTrackerPage"
 import WorkoutsPage from "./Pages/WorkoutsPage"
+import Navbar from "./Components/Navbar"
 import WorkoutPage from './Pages/WorkoutPage';
+
 
 function App() {
   
   return (
   <BrowserRouter>
     <div>
+      <Navbar />
+
+
       <Routes>
         <Route path = "/" element={<HomePage/>} />
         <Route path = "/MyStatsPage" element={<MyStatsPage/>} />

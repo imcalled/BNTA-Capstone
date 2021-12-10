@@ -13,4 +13,6 @@ public interface ExerciseDAO {
     int updateExerciseByName(String name, Exercise exercise);
     int deleteExerciseById(int id);
     int deleteExerciseByName(String name);
+
+    List<Exercise> getExercisesByWorkoutId(int id);
 }
