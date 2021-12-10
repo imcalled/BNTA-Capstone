@@ -19,9 +19,7 @@ const WorkoutsPage = () => {
     return(
 
         <>
-
-            <WorkoutsList workouts = {workouts} />
-
+          <WorkoutsList workouts = {workouts} />
         </>
 
 

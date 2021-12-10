@@ -12,7 +12,6 @@ function App() {
   return (
   <BrowserRouter>
     <div>
-      <h1> HomePage</h1>
       <Routes>
         <Route path = "/" element={<HomePage/>} />
         <Route path = "/MyStatsPage" element={<MyStatsPage/>} />

@@ -44,3 +44,8 @@
   height: 15em;
   width: 19em;
 }
+
+.preset-beginner-title {
+  background-color: lightgray;
+  padding: 0.6rem;
+}

@@ -3,17 +3,26 @@ import './Workout.css';
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Workout = ({exerciseTargets}) => {
+const Workout = ({exerciseTargets, exercises}) => {
+
+    const exerciseName = (exerciseTargets, exercises) => {
+        if(exerciseTargets.exercise_Id === exercises.id) {
+            return exercises.map(exercise => <div> Id {exercise.name}</div>)
+        }
+    }
     
     return (
         <>
-        <p>Hello I am here</p>
-        <p>{exerciseTargets}</p>
-        {exerciseTargets.map(exerciseTarget => <div>{exerciseTarget.exercise_Id}</div>)}
-        {exerciseTargets.map(exerciseTarget => <div>{exerciseTarget.workout_Id}</div>)}
+        <div> {exerciseName} </div>
+
+        {exerciseTargets.map(exerciseTarget => <div> {exerciseName} </div>)}
+        {exerciseTargets.map(exerciseTarget => <div> Sets {exerciseTarget.sets}</div>)}
+        {exerciseTargets.map(exerciseTarget => <div> Reps {exerciseTarget.reps}</div>)}
+        {exerciseTargets.map(exerciseTarget => <div> Time {exerciseTarget.time}</div>)}
+        {exerciseTargets.map(exerciseTarget => <div> Distance {exerciseTarget.distance}</div>)}
+        {exerciseTargets.map(exerciseTarget => <div> Weight {exerciseTarget.weight}</div>)}
         </>
     )
-
 }
 
 
