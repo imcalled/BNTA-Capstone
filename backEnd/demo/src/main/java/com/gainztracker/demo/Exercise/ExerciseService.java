@@ -47,4 +47,6 @@ public class ExerciseService {
     public void deleteExerciseByName(String name) {
         exerciseDAO.deleteExerciseByName(name);
     }
+
+    public List<Exercise> getExercisesByWorkoutId(int id) { return exerciseDAO.getExercisesByWorkoutId(id); }
 }

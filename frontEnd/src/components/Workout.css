@@ -1,0 +1,51 @@
+.all-buttons{
+  display: grid;
+  grid-template-columns: 30% 30% 30% 30%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1150px;
+}
+
+.beginner-button {
+    padding: 2rem;
+    background-color: black;
+    color: white;
+    border-radius: 35px;
+    height: 15em;
+    width: 19em;
+}
+
+.intermediate-button {
+  padding: 2rem;
+  background-color: black;
+  color: white;
+  border-radius: 35px;
+  height: 15em;
+  width: 19em;
+}
+
+.advanced-button{
+  padding: 2rem;
+  background-color: black;
+  color: white;
+  border-radius: 35px;
+  height: 15em;
+  width: 19em;
+}
+
+.add-workout-button{
+  padding: 2rem;
+  background-color: black;
+  color: white;
+  border-radius: 35px;
+  height: 15em;
+  width: 19em;
+}
+
+.preset-beginner-title {
+  background-color: lightgray;
+  padding: 0.6rem;
+}
