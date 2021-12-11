@@ -33,11 +33,12 @@ public class ExerciseDataAccessService implements ExerciseDAO{
     @Override
     public List<Exercise>getExercisesByWorkoutId(int id) {
         String sql = """
-                SELECT * FROM Workouts INNER JOIN
-                 ExerciseTarget ON 
-                 exerciseTarget.id = workout.id INNER JOIN 
-                 Exercise ON 
-                 exerciseTarget.exerciseID = exercise.id; 
+                SELECT exercise.name AS "exerciseName", exerciseTarget.time AS "targetTime",
+                exerciseTarget.distance as "targetDistance", 
+                exerciseTarget.sets AS "targetSets", exerciseTarget.reps AS "targetReps", 
+                exerciseTarget.weight AS "targetWeight" FROM exercise 
+                INNER JOIN exerciseTarget ON exercise.id = exerciseTarget.exerciseid 
+                INNER JOIN workouts ON exerciseTarget.exerciseid = workouts.id;
                 """;
         List<Exercise> exercises = jdbcTemplate.query(sql,rowMapper);
         return exercises;

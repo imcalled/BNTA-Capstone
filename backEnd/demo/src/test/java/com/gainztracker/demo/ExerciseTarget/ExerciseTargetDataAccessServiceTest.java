@@ -41,12 +41,12 @@ public class ExerciseTargetDataAccessServiceTest {
     @DisplayName("Test to see if getAllExerciseTargets function works")
     void getAllExerciseTargets() {
         // given
-        List<ExerciseTarget> expected = List.of(new ExerciseTarget(1, 100, 100, 0, 0, 0,0));
+        List<ExerciseTarget> expected = List.of(new ExerciseTarget(1, 100, 100, 0, 0, 0, 0));
 
         // when
         List<ExerciseTarget> actual = underTest.getAllExerciseTargets();
 
-
+    }
     @Test
     @DisplayName("Test to see if getExerciseTargetById works")
     void getExerciseTargetById() {
