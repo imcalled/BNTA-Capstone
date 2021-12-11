@@ -1,5 +1,6 @@
 package com.gainztracker.demo.Exercise;
 
+import com.gainztracker.demo.ExerciseTarget.ExerciseTarget;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -30,17 +31,35 @@ public class ExerciseDataAccessService implements ExerciseDAO{
         }
     };
 
+//    RowMapper ExercisesWithWorkoutIdRowMapper = new RowMapper() {
+//        @Override
+//        public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+//            ExerciseTarget exerciseTarget = new ExerciseTarget(
+//                    rs.getInt("exerciseName"),
+//                    rs.getInt("targetTime"),
+//                    rs.getInt("targetDistance"),
+//                    rs.getInt("targetSets"),
+//                    rs.getInt("targetReps"),
+//                    rs.getInt("targetWeight")
+//            );
+//            return exerciseTarget;
+//        }
+//    };
+
     @Override
     public List<Exercise>getExercisesByWorkoutId(int id) {
         String sql = """
-                SELECT exercise.name AS "exerciseName", exerciseTarget.time AS "targetTime",
-                exerciseTarget.distance as "targetDistance", 
-                exerciseTarget.sets AS "targetSets", exerciseTarget.reps AS "targetReps", 
-                exerciseTarget.weight AS "targetWeight" FROM exercise 
-                INNER JOIN exerciseTarget ON exercise.id = exerciseTarget.exerciseid 
-                INNER JOIN workouts ON exerciseTarget.exerciseid = workouts.id;
+                SELECT Exercise.name AS "exerciseName",
+                ExerciseTarget.time AS "targetTime",
+                ExerciseTarget.distance AS "targetDistance", 
+                ExerciseTarget.sets AS "targetSets",
+                ExerciseTarget.reps AS "targetReps", 
+                ExerciseTarget.weight AS "targetWeight"
+                FROM exercise 
+                INNER JOIN ExerciseTarget ON Exercise.id = ExerciseTarget.exerciseID 
+                WHERE ExerciseTarget.workoutID = ?
                 """;
-        List<Exercise> exercises = jdbcTemplate.query(sql,rowMapper);
+        List<Exercise> exercises = jdbcTemplate.query(sql,ExercisesWithWorkoutIdRowMapper, id);
         return exercises;
     }
 

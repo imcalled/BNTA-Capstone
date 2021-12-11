@@ -35,5 +35,5 @@ public class WorkoutDataAccessService implements WorkoutDAO {
         return jdbcTemplate.update(sql,workout.getName());
     }
 
-    
+
 }
