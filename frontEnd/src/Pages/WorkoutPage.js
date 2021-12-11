@@ -1,8 +1,8 @@
-import Workout from "../components/Workout"
+import Workout from "../Components/Workout"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
-const WorkoutPage = (props) => {
+const WorkoutPage = () => {
 
     const {id} = useParams();
     const [exerciseTargets,setExerciseTargets] = useState([]);
@@ -16,13 +16,13 @@ const WorkoutPage = (props) => {
 
     useEffect(getExerciseTargetsOfWorkout, []);
 
-    const getExercisesById = () => {
-        fetch(`http://localhost:8080/api/v1/exercises`)
+    const getExercisesByWorkoutId = () => {
+        fetch(`http://localhost:8080/api/v1/exercises/workout/id/${id}`)
         .then(response => response.json())
         .then(data => setExercises(data))
     }
 
-    useEffect(getExercisesById, []);
+    useEffect(getExercisesByWorkoutId, []);
 
     return(
         <>

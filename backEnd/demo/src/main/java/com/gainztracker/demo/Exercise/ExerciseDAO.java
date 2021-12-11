@@ -1,5 +1,7 @@
 package com.gainztracker.demo.Exercise;
 
+import com.gainztracker.demo.DataTransferObject.ExerciseDTO;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -14,5 +16,5 @@ public interface ExerciseDAO {
     int deleteExerciseById(int id);
     int deleteExerciseByName(String name);
 
-    List<Exercise> getExercisesByWorkoutId(int id);
+    List<ExerciseDTO> getExercisesByWorkoutId(int id);
 }

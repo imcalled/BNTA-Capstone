@@ -1,6 +1,6 @@
 import React from 'react';
 import './Workout.css';
-import Exercise from './Exercise';
+import ExerciseCard from './ExerciseCard';
 import ExerciseTarget from './ExerciseTarget';
 
 const Workout = ({exerciseTargets, exercises}) => {
@@ -14,14 +14,13 @@ const Workout = ({exerciseTargets, exercises}) => {
     //     exerciseTarget.exercise_Id;
     // });
 
-    const mapExercise = () => exerciseTargets.map(exerciseTarget => {
-        exercises.filter(exercise => {
-            exercise.includes(exerciseTarget.id)
-            return (
-                <Exercise exercise={exercise} />
-            )
-        })
-    })
+    const exerciseElements = exercises.map(exercise => {
+        return(
+            <ExerciseCard exercise = {exercise} />
+        )
+    }
+      
+    )
         
     // const mapExercise = exercises.map(exercise => {
 
@@ -55,7 +54,7 @@ const Workout = ({exerciseTargets, exercises}) => {
     
     return (
         <>
-        {mapExercise}
+        {exerciseElements}
 
         {/* {exerciseName(exerciseTargets, exercises)} 
         {exercises.map(exercise => {if(exercise.id === exerciseName(exerciseTargets)) return <div> {exercise.name} </div>})}

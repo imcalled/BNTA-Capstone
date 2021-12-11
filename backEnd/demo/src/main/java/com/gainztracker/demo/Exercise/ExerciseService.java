@@ -1,5 +1,6 @@
 package com.gainztracker.demo.Exercise;
 
+import com.gainztracker.demo.DataTransferObject.ExerciseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,5 +49,5 @@ public class ExerciseService {
         exerciseDAO.deleteExerciseByName(name);
     }
 
-    public List<Exercise> getExercisesByWorkoutId(int id) { return exerciseDAO.getExercisesByWorkoutId(id); }
+    public List<ExerciseDTO> getExercisesByWorkoutId(int id) { return exerciseDAO.getExercisesByWorkoutId(id); }
 }

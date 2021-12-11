@@ -1,5 +1,6 @@
 package com.gainztracker.demo.Exercise;
 
+import com.gainztracker.demo.DataTransferObject.ExerciseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +32,7 @@ public class ExerciseController {
 
     //get exercise of workout
     @GetMapping("/workout/id/{id}")
-    public List<Exercise> getExercisesByWorkoutId(@PathVariable("id") int id) {
+    public List<ExerciseDTO> getExercisesByWorkoutId(@PathVariable("id") int id) {
         return exerciseService.getExercisesByWorkoutId(id);
     }
 
