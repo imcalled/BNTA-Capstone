@@ -1,4 +1,4 @@
-const Exercise = ({exercise, dropSelect}) => {
+const Exercise = ({exercise}) => {
     // console.log(exercise);
     return(
     <>

@@ -7,18 +7,17 @@ const MyStatsContainer =()=>{
 
     const[allExercises, setAllExercises] = useState([]);
     const [valuesToGraph, setValuesToGraph]=useState(null);
-    const [DropSelect, setDropSelect]=useState(null);
+    const [dropSelect, setDropSelect]=useState(null);
 
     const getValuesToGraph=()=>{
-        if(DropSelect){
-        fetch(`http://localhost:8080/api/v1/data/${DropSelect}`)
+        if(dropSelect){
+        fetch(`http://localhost:8080/api/v1/data/${dropSelect}`)
         .then(response => response.json())
         .then(data => setValuesToGraph(data));
         }
     }
 
-    useEffect(getValuesToGraph, [DropSelect]);
-
+    useEffect(getValuesToGraph, [dropSelect]);
 
     const updateDrop=(event) => {
         setDropSelect(event.target.value);
@@ -40,8 +39,8 @@ const MyStatsContainer =()=>{
 
         <p>My Stats Page</p>
 
-        <ExerciseDropdownSearch allExercises = {allExercises} dropSelect={DropSelect} updateDrop={updateDrop}/>
-        <Graph valuesToGraph={DropSelect}/>
+        <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
+        <Graph valuesToGraph={valuesToGraph}/>
 
         </>
         :
