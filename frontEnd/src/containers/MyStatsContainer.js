@@ -6,7 +6,7 @@ import Graph from '../components/Graph';
 const MyStatsContainer =()=>{
 
     const[allExercises, setAllExercises] = useState([]);
-    const [valuesToGraph, setValuesToGraph]=useState(null);
+    const [valuesToGraph, setValuesToGraph]=useState([]);
     const [DropSelect, setDropSelect]=useState(null);
 
     const getValuesToGraph=()=>{
@@ -14,7 +14,6 @@ const MyStatsContainer =()=>{
         fetch(`http://localhost:8080/api/v1/data/${DropSelect}`)
         .then(response => response.json())
         .then(data => setValuesToGraph(data));
-        console.log(valuesToGraph)
         }
     }
 
