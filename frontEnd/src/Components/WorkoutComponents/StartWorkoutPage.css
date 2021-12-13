@@ -1,13 +1,8 @@
 .beginner-current-exercise{
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
-    width: 10%;
-    border: solid 2px black;
-    box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+    width: 20%;
     text-align: center;
-    border-radius: 20px;
 
 }
 
@@ -15,4 +10,47 @@
     font-size: 24px;
 }
 
+.timer-container{
+    text-align: center;
+    display: flex;
+    width: 15%;
+    border: solid 2px black;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
+  
+  .display-time {
+    font-size: 3rem;
+    padding: 2rem;
+  }
+  
+  .timer-button {
+    padding: .6rem 1.5rem;
+    margin: .4rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .8rem;
+  }
+  
+  .timer-button-primary-active {
+    background-color: #ba3f38;
+    border: 1px solid #152684;
+    color: white;
+  }
+  
+  .timer-button-primary-inactive {
+    background-color: #0D865D;
+    border: 1px solid #152684;
+    color: white;
+  }
 
+
+  .start-workout-page-container {
+      display: flex;
+      justify-content: space-evenly;
+  }

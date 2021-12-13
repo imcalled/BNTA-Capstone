@@ -2,6 +2,9 @@ import '../Components/WorkoutComponents/StartWorkoutPage.css';
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import CurrentExercise from "../Components/WorkoutComponents/CurrentExercise";
+import ExerciseCard from '../Components/ExerciseCard';
+import RecordForm from '../Components/WorkoutComponents/RecordForm';
+import Timer from '../Components/WorkoutComponents/Timer';
 
 const StartWorkoutPage = () => {
 
@@ -9,6 +12,8 @@ const StartWorkoutPage = () => {
     const [exercises,setExercises] = useState([]);
     const [currentExercise, setCurrentExercise] = useState([]);
     const [nextExercise, setNextExercise] = useState(0);
+    const {initialMinute} = 0
+    const {initialSeconds} = 0
 
     let exerciseCount = 0;
 
@@ -38,11 +43,24 @@ const StartWorkoutPage = () => {
                 <h1>Preset Beginner</h1>
             </div>
 
-            <h1>Current Exercise</h1>
+            <div className="start-workout-page-container">
+                
 
-            <div>
-                <CurrentExercise currentExercise={exercises} />
+                <div className="beginner-current-exercise">
+                    <h1>Current Exercise</h1>
+                    <ExerciseCard exercise={exercises} />
+                </div>
+
+                <div>
+                    <RecordForm />
+                </div>
+
+                <div>
+                    <Timer/>
+                </div>
+
             </div>
+
 
             <button onClick={counter}>Next Workout</button>
 
