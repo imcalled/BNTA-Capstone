@@ -1,5 +1,5 @@
 import ExerciseDropdownSearch from "./ExerciseDropdownSearch";
-import Exercise from "./Exercise";
+import Exercise from "./ExerciseCard";
 
 const ExerciseList = ({allExercises, dropSelect}) => {
     const ExerciseComponent = allExercises.map(exercise => {

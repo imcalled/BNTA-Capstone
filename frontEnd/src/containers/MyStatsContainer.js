@@ -14,6 +14,7 @@ const MyStatsContainer =()=>{
         fetch(`http://localhost:8080/api/v1/data/${DropSelect}`)
         .then(response => response.json())
         .then(data => setValuesToGraph(data));
+        console.log(valuesToGraph)
         }
     }
 
@@ -41,7 +42,7 @@ const MyStatsContainer =()=>{
         <p>My Stats Page</p>
 
         <ExerciseDropdownSearch allExercises = {allExercises} dropSelect={DropSelect} updateDrop={updateDrop}/>
-        <Graph valuesToGraph={DropSelect}/>
+        <Graph valuesToGraph={valuesToGraph}/>
 
         </>
         :
@@ -50,45 +51,3 @@ const MyStatsContainer =()=>{
 }
 
 export default MyStatsContainer;
-// ////////////////////////////////////////////////////////////////////// 
-// import {useState} from 'react';
-
-// const MyStatsPage = ({exercise}) => {
-
-//     const [valuesToGraph, setValuesToGraph]=useState([]);
-//     const [DropSelect, setDropSelect]=useState(null);
-
-//     const updateDrop=(event) => {
-//         setDropSelect(event.target.value);
-//     }
-//         // useEffect(()=>{
-//         //     getExerciseDataPointsByExerciseID();
-//         // },[]);
-            
-//     console.log(valuesToGraph);
-    
-//     return(
-//         <div>
-//         <form onSubmit={onFormSubmit}>
-//         <select onChange={updateDrop}>
-//             {exercise.map(exercise => (
-//             <option value={exercise.id} label={exercise.name}/>)
-//             )}
-//             <button value="Show" type="submit"></button>
-           
-//             </select>
-           
-//         </form>
-        
-//         </div>
-//     )
-// }
-
-// export default MyStatsPage;
-    
-
-
-
-
-
-// }

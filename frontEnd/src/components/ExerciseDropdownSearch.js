@@ -3,6 +3,9 @@ import ExerciseList from './ExerciseList';
 
 const ExerciseDropdownSearch = ({allExercises, dropSelect, updateDrop}) => {
 
+    const exerciseOptions = allExercises.map(exercise => {
+        return <option value={exercise.id}>{exercise.name}</option>
+    });
 
 
 // console.log(allExercises.map(exercise => exercise.name));
@@ -12,7 +15,8 @@ const ExerciseDropdownSearch = ({allExercises, dropSelect, updateDrop}) => {
 
         <form>
         <select onChange={updateDrop}>
-        <ExerciseList allExercises={allExercises} dropSelect ={dropSelect}/>
+            <option label="Select an exercise!"/>
+        {exerciseOptions}
         </select>
 
         </form>
