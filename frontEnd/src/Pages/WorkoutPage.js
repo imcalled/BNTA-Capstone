@@ -30,7 +30,7 @@ const WorkoutPage = () => {
             <h1>Preset Beginner</h1>
         </div>
 
-        <div>
+        <div className="preset-beginner-exercises">
             <Workout exerciseTargets = {exerciseTargets} exercises = {exercises}/>
         </div>
 
