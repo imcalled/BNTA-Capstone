@@ -9,6 +9,8 @@ const WorkoutPage = () => {
     const {id} = useParams();
     const [exercises,setExercises] = useState([])
 
+
+
     const getExercisesByWorkoutId = () => {
         fetch(`http://localhost:8080/api/v1/exercises/workout/id/${id}`)
         .then(response => response.json())
@@ -37,6 +39,8 @@ const WorkoutPage = () => {
             <StartWorkoutButton workoutId={id} goWorkout={goWorkout}/>
         </div>
 
+        
+        {/* {exerciseTargets.map(exerciseTarget => <div>{exerciseTarget.exercise_Id}</div>)} */}
         </>
     )
 

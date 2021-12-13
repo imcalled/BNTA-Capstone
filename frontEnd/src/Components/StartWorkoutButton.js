@@ -7,7 +7,6 @@ const StartWorkoutButton = ({workoutId, goWorkout}) => {
     
     const [exerciseTargets,setExerciseTargets] = useState([])
 
-    
     const getExerciseTargets = () =>{
 
     }
@@ -15,8 +14,10 @@ const StartWorkoutButton = ({workoutId, goWorkout}) => {
         <>
         <Link to={{ pathname: `/StartWorkoutPage/${workoutId}` }}>
         {/* <div className="all-buttons"> */}
-            
-            <button onClick = {()=>goWorkout(workoutId)}>Go to this workout</button>
+            {/* currentExercise === exercises.length ? */}
+            <button onClick = {()=>goWorkout(workoutId)}>Start Workout</button>
+            {/* : */}
+
 
             {/* <div className="button-1">
                 <button onClick = {getExerciseTargets(id)} className="beginner-button"> Beginner Workout </button>
