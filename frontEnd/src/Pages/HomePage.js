@@ -8,7 +8,7 @@ const HomePage = () => {
   let navigate = useNavigate();
 
   const goWorkoutsPage = () => {
-    navigate("/WorkoutsPage");
+    navigate("/MyWorkoutsPage");
   };
 
   const goMyStatsPage = () => {

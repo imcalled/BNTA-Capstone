@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import WorkoutsList from "../Components/WorkoutsList";
 
-const WorkoutsPage = () => {
+const MyWorkoutsPage = () => {
   const [workouts, setWorkouts] = useState([]);
   // const [exerciseTargets, setExerciseTargets] = useState([]);
 
@@ -24,4 +24,4 @@ const WorkoutsPage = () => {
     )
 }
 
-export default WorkoutsPage;
+export default MyWorkoutsPage;

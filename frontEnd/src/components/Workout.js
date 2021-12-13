@@ -3,7 +3,7 @@ import './Workout.css';
 import ExerciseCard from './ExerciseCard';
 import ExerciseTarget from './ExerciseTarget';
 
-const Workout = ({exerciseTargets, exercises}) => {
+const Workout = ({exercises}) => {
 
 
     //from exerciseTarget get exerciseId, then link to exerciseName in exercises
