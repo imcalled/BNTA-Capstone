@@ -6,8 +6,6 @@ const NewWorkoutContainer = () => {
 
     const[allExercises, setAllExercises] = useState([]);
 
-    
-
     const getAllExercises = () => {
         fetch("http://localhost:8080/api/v1/exercises")
             .then(response => response.json())
