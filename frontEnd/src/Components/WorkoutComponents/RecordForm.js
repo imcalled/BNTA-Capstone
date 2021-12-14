@@ -40,7 +40,7 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
         const newExerciseDataPoint = {
             "exerciseID": exercise.exercise_Id,
             "name": exercise.name,
-            "date": exercise.date, 
+            "date": date, 
             "timeAchieved": time,
             "distanceAchieved": distance,
             "setsAchieved": sets,
