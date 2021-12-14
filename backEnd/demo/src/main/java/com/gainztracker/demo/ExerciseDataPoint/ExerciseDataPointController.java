@@ -2,6 +2,7 @@ package com.gainztracker.demo.ExerciseDataPoint;
 
 import com.gainztracker.demo.Exercise.Exercise;
 import com.gainztracker.demo.Exercise.ExerciseController;
+import com.gainztracker.demo.ExerciseTarget.ExerciseTarget;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,5 +50,7 @@ public class ExerciseDataPointController {
         exerciseDataPointService.postWeights(exerciseID, date, setsAchieved, repsAchieved, weightAchieved);
     }
 
+    @PostMapping("/record")
+    public void postDatapoint(@RequestBody ExerciseDataPoint exerciseDataPoint){exerciseDataPointService.postDataPoint(exerciseDataPoint);}
 
 }
