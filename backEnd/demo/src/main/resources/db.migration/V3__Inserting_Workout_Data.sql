@@ -34,3 +34,14 @@ INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,sets
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (2,'2022-01-11',12,2800,0,0,0);
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (2,'2022-01-20',3.5,1000,0,0,0);
 
+/* INSERTING PUSHUPS DATA  */
+
+INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (6,'2022-01-13',0,0,3,10,0);
+INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (6,'2022-01-15',0,0,4,8,0);
+INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (6,'2022-01-17',0,0,5,10,0);
+INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (6,'2022-01-23',0,0,6,10,0);
+INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (6,'2022-01-25',0,0,5,15,0);
+INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (6,'2022-02-08',0,0,2,25,0);
+INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (6,'2022-02-09',0,0,3,20,0);
+INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (6,'2022-02-11',0,0,4,18,0);
+INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (6,'2022-03-20',0,0,5,25,0);
