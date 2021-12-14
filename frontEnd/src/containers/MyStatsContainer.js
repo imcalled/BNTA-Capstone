@@ -6,8 +6,8 @@ import Graph from '../components/Graph';
 const MyStatsContainer =()=>{
 
     const[allExercises, setAllExercises] = useState([]);
-    const [valuesToGraph, setValuesToGraph]=useState(null);
-    const [DropSelect, setDropSelect]=useState(null);
+    const[valuesToGraph, setValuesToGraph]=useState(null);
+    const[DropSelect, setDropSelect]=useState(null);
 
     const getValuesToGraph=()=>{
         if(DropSelect){
