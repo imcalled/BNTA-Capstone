@@ -4,7 +4,6 @@ const ExerciseDropdownSearch = ({allExercises, dropSelect, updateDrop}) => {
         return <option key = {exercise.id} value={exercise.id}>{exercise.name}</option>
     });
 
-
 // console.log(allExercises.map(exercise => exercise.name));
 
     return(
@@ -15,11 +14,11 @@ const ExerciseDropdownSearch = ({allExercises, dropSelect, updateDrop}) => {
             <option label="Select an exercise"/>
             {exerciseOptions}
         </select>
-
         </form>
 
 
         </div>
     )
 }
+
 export default ExerciseDropdownSearch;

@@ -4,20 +4,28 @@ import Graph from '../components/Graph';
 
 
 const MyStatsContainer =()=>{
-
-    const[allExercises, setAllExercises] = useState([]);
-    const[valuesToGraph, setValuesToGraph]=useState(null);
-    const[DropSelect, setDropSelect]=useState(null);
+    const [allExercises, setAllExercises] = useState([]);
+    const [valuesToGraph, setValuesToGraph]=useState([]);
+    const [DropSelect, setDropSelect]=useState(null);
+    const [exerciseType,setExerciseType]=useState();
 
     const getValuesToGraph=()=>{
         if(DropSelect){
         fetch(`http://localhost:8080/api/v1/data/${DropSelect}`)
         .then(response => response.json())
         .then(data => setValuesToGraph(data));
-        console.log(valuesToGraph)
         }
     }
 
+    const getExerciseType= () =>{
+        if(DropSelect){
+            fetch(`http://localhost:8080/api/v1/exercises/id/${DropSelect}`)
+            .then(response=>response.json())
+            .then(exercise=>exercise.exerciseType)
+            .then(data=>setExerciseType(data))
+        }
+    }
+    useEffect(getExerciseType, [DropSelect]);
     useEffect(getValuesToGraph, [DropSelect]);
 
 
@@ -42,7 +50,7 @@ const MyStatsContainer =()=>{
         <p>My Stats Page</p>
 
         <ExerciseDropdownSearch allExercises = {allExercises} dropSelect={DropSelect} updateDrop={updateDrop}/>
-        <Graph valuesToGraph={valuesToGraph}/>
+        <Graph valuesToGraph={valuesToGraph} exerciseType={exerciseType}/>
 
         </>
         :
