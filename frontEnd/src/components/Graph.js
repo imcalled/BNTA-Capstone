@@ -1,9 +1,9 @@
-import {Line} from 'react-chartjs-2'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import {Line} from 'react-chartjs-2';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import {CategoryScale} from 'chart.js';
-import Chart from 'chart.js/auto'
-Chart.register(CategoryScale)
+import Chart from 'chart.js/auto';
+Chart.register(CategoryScale);
 
 const Graph=({valuesToGraph, exerciseType})=>{
 
@@ -27,7 +27,7 @@ const Graph=({valuesToGraph, exerciseType})=>{
       yAxisData= chartData.valuesWeight
     }
     else if (exerciseType==="CALISTHENICS"){
-      yAxisData=chartData.valuesSets*chartData.valuesReps
+      yAxisData = chartData.valuesSets.map(function(n, i) { return n * chartData.valuesReps[i]; });
     }
     else if(exerciseType==="CARDIO"){
       yAxisData = chartData.valuesDistance.map(function(n, i) { return n / chartData.valuesTime[i]; });
