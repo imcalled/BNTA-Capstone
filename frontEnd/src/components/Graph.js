@@ -38,7 +38,8 @@ const Graph=({valuesToGraph, exerciseType})=>{
         label: valuesToGraph.date,
         data: yAxisData,
         fill: true,
-        borderColor: ''
+        borderColor: 'rgb(75, 192, 192)',
+        tension:0.2
       }]
     }
 
