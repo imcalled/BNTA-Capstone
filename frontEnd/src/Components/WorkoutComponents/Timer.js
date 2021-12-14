@@ -31,24 +31,28 @@ const Timer = () => {
 
 
     return (
-        <div className="timer-container">
 
-            <div className="display-time">
-                {seconds}s
+        <>
+        <h1 className="rest-timer-title">Rest Timer</h1>
+            <div className="timer-container">
+
+                <div className="display-time">
+                    {seconds}s
+                </div>
+
+                <div className="row">
+
+                    <button className={`timer-button timer-button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
+                        {isActive ? 'Pause' : 'Start'}
+                    </button>
+
+                    <button className="timer-button" onClick={reset}>
+                        Reset
+                    </button>
+
+                </div>
             </div>
-
-            <div className="row">
-
-                <button className={`timer-button timer-button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
-                    {isActive ? 'Pause' : 'Start'}
-                </button>
-
-                <button className="timer-button" onClick={reset}>
-                    Reset
-                </button>
-
-            </div>
-        </div>
+        </>
     );
 };
 

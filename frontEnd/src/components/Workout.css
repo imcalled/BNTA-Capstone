@@ -70,9 +70,8 @@
 
 .cardio-workout {
   display: flex;
+  height: 220px;
   justify-content: space-evenly;
-  gap:1rem;
-  margin-bottom: 5rem;
   border: solid 2px black;
   border-radius: 50px;
   box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
@@ -102,12 +101,12 @@
 .cardio-workout-targets {
   display: flex;
   flex-direction: row;
-  gap: 5rem;
+  gap: 1rem;
 }
 
 .cardio-image {
-  height:10%;
-  width: 10%;
+  height:50%;
+  width: 25%;
 }
 
 .calisthenics-image {

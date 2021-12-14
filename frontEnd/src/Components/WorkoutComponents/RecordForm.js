@@ -28,7 +28,7 @@ const RecordForm = () => {
 
     return (
         <>
-            <h1>Record</h1>
+            <h1 className="record-form-title">Record</h1>
 
             <form>
                 <div>

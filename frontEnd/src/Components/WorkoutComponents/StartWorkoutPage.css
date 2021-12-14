@@ -13,7 +13,7 @@
 .timer-container{
     text-align: center;
     display: flex;
-    width: 15%;
+    width: 200px;
     border: solid 2px black;
     border-radius: 50px;
     box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
@@ -54,3 +54,13 @@
       display: flex;
       justify-content: space-evenly;
   }
+
+  .record-form-title {
+      display: flex;
+      justify-content: center;
+  }
+
+  .rest-timer-title {
+    display: flex;
+    justify-content: center;
+}
