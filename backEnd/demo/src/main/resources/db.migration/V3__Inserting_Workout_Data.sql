@@ -1,5 +1,6 @@
 
 /* INSERTING TREADMILL DATA  */
+
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (1,'2021-12-12',10,1000,0,0,0);
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (1,'2021-12-13',30,5000,0,0,0);
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (1,'2021-12-16',30,6000,0,0,0);
@@ -12,6 +13,7 @@ INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,sets
 
 
 /* INSERTING ROWING DATA  */
+
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (2,'2021-12-13',7,2000,0,0,0);
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (2,'2021-12-15',14,3500,0,0,0);
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (2,'2021-12-17',20,5000,0,0,0);
