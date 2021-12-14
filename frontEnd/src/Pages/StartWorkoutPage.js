@@ -5,6 +5,7 @@ import CurrentExercise from "../Components/WorkoutComponents/CurrentExercise";
 import ExerciseCard from '../Components/ExerciseCard';
 import RecordForm from '../Components/WorkoutComponents/RecordForm';
 import Timer from '../Components/WorkoutComponents/Timer';
+import '../Components/WorkoutComponents/StartWorkoutPage.css'
 
 const StartWorkoutPage = () => {
 
@@ -73,7 +74,7 @@ const StartWorkoutPage = () => {
             </div>
 
 
-            <button onClick={counter}>Next Workout</button>
+            <button className = "next-workout-button" onClick={counter}>Next Workout</button>
 
         </>
     )
