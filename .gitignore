@@ -192,3 +192,4 @@ frontEnd/node_modules/react-scripts/node_modules/@babel/core/node_modules/.bin/s
 frontEnd/node_modules/css-has-pseudo/node_modules/.bin/cssesc
 frontEnd/node_modules/.package-lock.json
 frontEnd/node_modules/.cache/.eslintcache
+*.json
