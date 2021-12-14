@@ -4,10 +4,10 @@ import Graph from '../components/Graph';
 
 
 const MyStatsContainer =()=>{
-    const[allExercises, setAllExercises] = useState([]);
+    const [allExercises, setAllExercises] = useState([]);
     const [valuesToGraph, setValuesToGraph]=useState([]);
     const [DropSelect, setDropSelect]=useState(null);
-    const [exerciseType,setExerciseType]=useState(null);
+    const [exerciseType,setExerciseType]=useState();
 
     const getValuesToGraph=()=>{
         if(DropSelect){
@@ -21,13 +21,13 @@ const MyStatsContainer =()=>{
         if(DropSelect){
             fetch(`http://localhost:8080/api/v1/exercises/id/${DropSelect}`)
             .then(response=>response.json())
-            .then(data=>data.map(exercise=>exercise.type))
+            .then(exercise=>exercise.exerciseType)
             .then(data=>setExerciseType(data))
         }
     }
-
-    useEffect(getValuesToGraph, [DropSelect]);
     useEffect(getExerciseType, [DropSelect]);
+    useEffect(getValuesToGraph, [DropSelect]);
+
 
     const updateDrop=(event) => {
         setDropSelect(event.target.value);
