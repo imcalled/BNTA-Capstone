@@ -33,8 +33,19 @@ const StartWorkoutPage = () => {
         }
         console.log(nextExercise)
     };
+    // construct a new object from exercisedp
 
-
+    const onAddExerciseDataPoint = (newExerciseDataPoint) => {
+        // const new object = create object that matches backend, map the object 
+    fetch("http://localhost:8080/api/v1/data/record", {
+        method: "POST",
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(newExerciseDataPoint)
+    })
+    .then(data => console.log(data))
+}
 
 
     return(
@@ -52,7 +63,7 @@ const StartWorkoutPage = () => {
                 </div>
 
                 <div>
-                    <RecordForm />
+                    <RecordForm exercise={exercises} onAddExerciseDataPoint = {onAddExerciseDataPoint}/>
                 </div>
 
                 <div>
