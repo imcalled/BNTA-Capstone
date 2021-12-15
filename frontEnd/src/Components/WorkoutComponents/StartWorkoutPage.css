@@ -169,3 +169,11 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.slider{
+  width:60%;
+}
+.slider-container{
+  display: flex;
+  justify-content:center;
+}
