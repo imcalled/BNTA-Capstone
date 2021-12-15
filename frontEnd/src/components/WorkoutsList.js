@@ -15,6 +15,7 @@ const WorkoutsList= ({workouts}) => {
     const workoutComponents = workouts.map(workout => {
         return(
             <WorkoutButton workout={workout} goWorkout={goWorkout}/>
+            
         )
     })
 
@@ -23,6 +24,8 @@ const WorkoutsList= ({workouts}) => {
             <div className="container__button_primary">
             {workoutComponents}
 
+            <Link to={{ pathname:"/NewWorkoutPage"}}><button className="advanced-button">Create Custom Workout</button></Link>
+            
             <section className="Workout-List">
 
             </section>
