@@ -7,6 +7,7 @@ import MyWorkoutsPage from "./Pages/MyWorkoutsPage"
 import Navbar from "./components/Navbar"
 import WorkoutPage from './Pages/WorkoutPage';
 import StartWorkoutPage from './Pages/StartWorkoutPage';
+import NewWorkoutContainer from './containers/NewWorkoutContainer'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path = "/MyStatsPage" element={<MyStatsContainer/>} />
         <Route path = "/ProteinTrackerPage" element={<ProteinTrackerPage/>} />
         <Route path = "/MyWorkoutsPage" element={<MyWorkoutsPage/>} />
+        <Route path= "/NewWorkoutPage" element={<NewWorkoutContainer/>} />
         <Route path = "/WorkoutPage/:id" element={<WorkoutPage/>} />
         <Route path = "/StartWorkoutPage/:id" element={<StartWorkoutPage/>} />
       </Routes>

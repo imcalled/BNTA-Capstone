@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import WorkoutsList from "../components/WorkoutsList"
+import { Link } from "react-router-dom";
 
 const MyWorkoutsPage = () => {
   const [workouts, setWorkouts] = useState([]);
@@ -18,6 +19,9 @@ const MyWorkoutsPage = () => {
 
         <>
           <WorkoutsList workouts = {workouts} />
+          
+
+          
         </>
 
 
