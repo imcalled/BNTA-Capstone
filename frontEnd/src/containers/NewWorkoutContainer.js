@@ -13,7 +13,7 @@ const NewWorkoutContainer = () => {
     const[exerciseTarget, setExerciseTarget] = useState(null);
     const[newExerciseTargetList, setNewExerciseTargetList] = useState([]);
     const[workoutName, setWorkoutName] = useState([]);
-    const[workoutId, setWorkoutId] = useState("");
+    // const[workoutId, setWorkoutId] = useState("");
     const[visibleSaveButton, setVisibleSaveButton] = useState(false);
 
     const getSelectedExercise =()=>{
@@ -91,26 +91,19 @@ const NewWorkoutContainer = () => {
     // }
 
     const getWorkoutId = () => {
-        fetch("http://localhost:8080/api/v1/workout")
-        .then(response => response.json())
-        .then(data => data.filter(workout => {
-            // console.log("workout: ", workout);
-            return (
-                workout.name == workoutName
-            )
-        }))
-        .then(workout => {
-            console.log(workout);
-            return (
-                setWorkoutId(workout.id)
-            )
-        })
-        .then(console.log(workoutId))
+        return fetch("http://localhost:8080/api/v1/workout")
+                .then(response => response.json())
+                .then(data => data.filter(workout => {
+                    console.log("workout: ", workout);
+                    return (
+                        workout.name == workoutName
+                    )
+                }))
+                .then(workout => {return(workout[0].id)})
     }
 
     const saveWorkout = () => {
-        
-        //workoutId, post name, get workoutId
+        //create new workout object, post it, get workoutId
         const newWorkout = {
             "name": workoutName
         }
@@ -122,38 +115,40 @@ const NewWorkoutContainer = () => {
             },
             body: JSON.stringify(newWorkout)
         })
-        .then(() => getWorkoutId()); 
+        .then(() => getWorkoutId())
+        //anonymous function, take nothing and call the function
+        .then((workoutId) => {
+            console.log("workoutId: ", workoutId);
+            postExerciseTargets(workoutId)});
         
         //exerciseTarget object to match with database
+        // postExerciseTargets();
+    }
 
+    const postExerciseTargets = (workoutId) => {
         newExerciseTargetList.map(exerciseTarget => {
 
-            console.log("old exerciseTarget: ", exerciseTarget);
-            console.log("workoutId:", workoutId);
+        const newExerciseTarget = { 
+            "exercise_Id": exerciseTarget.exercise_Id,
+            "workout_Id": workoutId,
+            "time": exerciseTarget.targetTime,
+            "distance": exerciseTarget.targetDistance,
+            "sets": exerciseTarget.targetSets,
+            "reps": exerciseTarget.targetReps,
+            "weight": exerciseTarget.targetWeight
+        }
 
-            const newExerciseTarget = { 
-                "exercise_Id": exerciseTarget.exercise_Id,
-                "workout_Id": workoutId,
-                "time": exerciseTarget.targetTime,
-                "distance": exerciseTarget.targetDistance,
-                "sets": exerciseTarget.targetSets,
-                "reps": exerciseTarget.targetReps,
-                "weight": exerciseTarget.targetWeight
-            }
-
-            console.log("newtarget: ", newExerciseTarget);
-
-            fetch("http://localhost:8080/api/v1/exerciseTargets", {
-                method: "POST",
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(newExerciseTarget)
-            })
-            .then(data => console.log(data))  
+        fetch("http://localhost:8080/api/v1/exerciseTargets", {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(newExerciseTarget)
         })
-        getAllExerciseTargets(); 
-    }
+        .then(data => console.log(data))  
+    })
+    getAllExerciseTargets();
+}
 
     const saveButton = newExerciseTargetList.length > 0 ? <button onClick={saveWorkout}>Save</button> : null
 
