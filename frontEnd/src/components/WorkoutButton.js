@@ -16,7 +16,7 @@ const WorkoutButton = ({workout, goWorkout}) => {
         <Link to={{ pathname: `/WorkoutPage/${workout.id}` }}>
         {/* <div className="all-buttons"> */}
             
-            <button onClick = {()=>goWorkout(workout.id)}>Go to this workout</button>
+            <button class = "workout-routine-button" onClick = {()=>goWorkout(workout.id)}>{workout.name}</button>
 
             {/* <div className="button-1">
                 <button onClick = {getExerciseTargets(id)} className="beginner-button"> Beginner Workout </button>

@@ -100,10 +100,10 @@
   box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
   width: 40%;
   margin-left: 30%;
-  margin-top: 10%;
+  margin-top: 3%;
 }
 
-.weight-data-container{
+.weights-data-container{
   display: flex;
   width: 15%;
   justify-content: space-around;
@@ -111,19 +111,19 @@
 
 }
 
-.weight-data-name{
+.weights-data-name{
   display: flex;
   justify-content: space-around;
   align-self: start;
   
 }
 
-.weight-data-targets{
+.weights-data-targets{
   display: flex;
   padding-top: 10%;
   align-self: center;
 }
-.weight-data {
+.weights-data {
   display: flex;
   justify-content: space-around;
   border: solid 2px black;
@@ -131,7 +131,7 @@
   box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
   width: 40%;
   margin-left: 30%;
-  margin-top: 10%;
+  margin-top: 3%;
 }
 
 .calisthenics-data-container{
@@ -162,5 +162,10 @@
   box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
   width: 40%;
   margin-left: 30%;
-  margin-top: 10%;
+  margin-top: 3%;
+}
+
+.review-form-name{
+  display: flex;
+  justify-content: space-evenly;
 }

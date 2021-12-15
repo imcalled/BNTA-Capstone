@@ -28,7 +28,7 @@ const WorkoutPage = () => {
     return(
         <>
         <div className="preset-beginner-title">
-            <h1>Preset Beginner</h1>
+            <h1>Workout Routine:</h1>
         </div>
 
         <div className="preset-beginner-exercises">

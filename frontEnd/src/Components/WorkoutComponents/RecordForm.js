@@ -80,10 +80,10 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                                             <input type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
                                         </label>
                                         <label>Sets Achieved:
-                                            <input type="text" onChange={handleSetsChange}/>
+                                            <input type="text" placeholder = "enter sets completed" onChange={handleSetsChange}/>
                                         </label>
                                         <label>Reps Achieved:
-                                            <input type="text" onChange={handleRepsChange}/>
+                                            <input type="text" placeholder = "enter reps completed" onChange={handleRepsChange}/>
                                         </label>
                                         <input type="submit" value="Add"/>
                                     </form>
@@ -106,13 +106,13 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                                             <input type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
                                     </label>
                                     <label>Sets Achieved:
-                                        <input type="text" onChange={handleSetsChange}/>
+                                        <input type="text" placeholder = "enter sets completed" onChange={handleSetsChange}/>
                                     </label>
                                     <label>Reps Achievced:
-                                        <input type="text" onChange={handleRepsChange}/>
+                                        <input type="text" placeholder = "enter reps completed" onChange={handleRepsChange}/>
                                     </label>
                                     <label>Weights Achievced:
-                                        <input type="text" onChange={handleWeightsChange}/>
+                                        <input type="text" placeholder = "enter weights completed" onChange={handleWeightsChange}/>
                                     </label>
                                     <input type="submit" value="Add"/>
                                 </form>
@@ -134,10 +134,10 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                                             <input type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
                                         </label>
                                         <label>Time Achieved:
-                                            <input type="text" onChange={handleTimeChange}/>
+                                            <input type="text" placeholder = "enter duration" onChange={handleTimeChange}/>
                                         </label>
                                         <label>Distance Achieved:
-                                            <input type="text" onChange={handleDistanceChange}/>
+                                            <input type="text" placeholder = "enter distance achieved" onChange={handleDistanceChange}/>
                                         </label>
                                         <input type="submit" value="Add"/>
                                     </form>
@@ -155,6 +155,7 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
 
     return (
         <>
+        <h1 class="review-form-name">Review Form</h1>
         {displayForm({exercise})}
         </>
     )
