@@ -12,6 +12,8 @@ const NewWorkoutContainer = () => {
     const[DropSelect, setDropSelect]=useState(null);
     const[exerciseTarget, setExerciseTarget] = useState(null);
     const[newExerciseTargetList, setNewExerciseTargetList] = useState([]);
+    const[workoutName, setWorkoutName] = useState([]);
+    const[workoutId, setWorkoutId] = useState("");
     const[visibleSaveButton, setVisibleSaveButton] = useState(false);
 
     const getSelectedExercise =()=>{
@@ -74,9 +76,86 @@ const NewWorkoutContainer = () => {
         setNewExerciseTargetList(card);
     }
 
-    // const saveButton = newExerciseTargetList.length > 0 ? <button onClick={saveWorkout}>Save</button> : null
+    const handleWorkoutName = (event) => {
+        setWorkoutName(event.target.value);
+    }
 
+    // const workoutNameForm = () => {
+    //     return (
+    //         <form>
+    //             <label>Workout Name:
+    //                 <input type="text" onChange={handleWorkoutName}/>
+    //             </label>
+    //         </form>
+    //     )
+    // }
 
+    const getWorkoutId = () => {
+        fetch("http://localhost:8080/api/v1/workout")
+        .then(response => response.json())
+        .then(data => data.filter(workout => {
+            // console.log("workout: ", workout);
+            return (
+                workout.name == workoutName
+            )
+        }))
+        .then(workout => {
+            console.log(workout);
+            return (
+                setWorkoutId(workout.id)
+            )
+        })
+        .then(console.log(workoutId))
+    }
+
+    const saveWorkout = () => {
+        
+        //workoutId, post name, get workoutId
+        const newWorkout = {
+            "name": workoutName
+        }
+
+        fetch("http://localhost:8080/api/v1/workout", {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(newWorkout)
+        })
+        .then(() => getWorkoutId()); 
+        
+        //exerciseTarget object to match with database
+
+        newExerciseTargetList.map(exerciseTarget => {
+
+            console.log("old exerciseTarget: ", exerciseTarget);
+            console.log("workoutId:", workoutId);
+
+            const newExerciseTarget = { 
+                "exercise_Id": exerciseTarget.exercise_Id,
+                "workout_Id": workoutId,
+                "time": exerciseTarget.targetTime,
+                "distance": exerciseTarget.targetDistance,
+                "sets": exerciseTarget.targetSets,
+                "reps": exerciseTarget.targetReps,
+                "weight": exerciseTarget.targetWeight
+            }
+
+            console.log("newtarget: ", newExerciseTarget);
+
+            fetch("http://localhost:8080/api/v1/exerciseTargets", {
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(newExerciseTarget)
+            })
+            .then(data => console.log(data))  
+        })
+        getAllExerciseTargets(); 
+    }
+
+    const saveButton = newExerciseTargetList.length > 0 ? <button onClick={saveWorkout}>Save</button> : null
 
     return (
         allExercises.length > 0
@@ -84,11 +163,18 @@ const NewWorkoutContainer = () => {
         <>
         <p>NavBar</p> 
         <p>New Workout Page</p>
-
+            <form>
+                <label>Workout Name:
+                    <input type="text" onChange={handleWorkoutName}/>
+                </label>
+            </form>
+        {/* {workoutNameForm} */}
         <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
         <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
         <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
-        {/* {saveButton} */}
+        {saveButton}
+        {/* <saveButton /> */}
+        {/* <button onClick={saveWorkout}>Save</button> */}
         
         </>
         :

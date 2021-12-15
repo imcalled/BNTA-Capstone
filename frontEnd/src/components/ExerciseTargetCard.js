@@ -14,7 +14,7 @@ const ExerciseTargetCard = ({exercise, deleteCard}) => {
     }
     
     const displayCard = () => {
-        console.log("card: ", exercise);
+        // console.log("card: ", exercise);
         if(exercise) {
                 switch(exercise.exerciseType) {
                 case "CALISTHENICS":
@@ -53,7 +53,7 @@ const ExerciseTargetCard = ({exercise, deleteCard}) => {
                     </div>
                     )
                 case "CARDIO":
-                    console.log("cardio")
+                    // console.log("cardio")
                     return(
                     <>
                         <div className="cardio-workout">
