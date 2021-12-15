@@ -3,20 +3,21 @@ import './Workout.css';
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const WorkoutButton = ({workout, goWorkout}) => {
+const StartWorkoutButton = ({workoutId, goWorkout}) => {
     
     const [exerciseTargets,setExerciseTargets] = useState([])
 
-    
     const getExerciseTargets = () =>{
 
     }
     return (
         <>
-        <Link to={{ pathname: `/WorkoutPage/${workout.id}` }}>
+        <Link to={{ pathname: `/StartWorkoutPage/${workoutId}` }}>
         {/* <div className="all-buttons"> */}
-            
-            <button class = "workout-routine-button" onClick = {()=>goWorkout(workout.id)}>{workout.name}</button>
+            {/* currentExercise === exercises.length ? */}
+            <button onClick = {()=>goWorkout(workoutId)}>Start Workout</button>
+            {/* : */}
+
 
             {/* <div className="button-1">
                 <button onClick = {getExerciseTargets(id)} className="beginner-button"> Beginner Workout </button>
@@ -31,4 +32,4 @@ const WorkoutButton = ({workout, goWorkout}) => {
 
 }
 
-export default WorkoutButton;
+export default StartWorkoutButton;

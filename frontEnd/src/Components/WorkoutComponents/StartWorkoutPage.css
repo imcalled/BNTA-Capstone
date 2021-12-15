@@ -1,0 +1,171 @@
+.beginner-current-exercise{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    text-align: center;
+
+}
+
+.beginner-current-exercise-name {
+    font-size: 24px;
+}
+
+.timer-container{
+    text-align: center;
+    display: flex;
+    width: 200px;
+    border: solid 2px black;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
+  
+  .display-time {
+    font-size: 3rem;
+    padding: 2rem;
+  }
+  
+  .timer-button {
+    padding: .6rem 1.5rem;
+    margin: .4rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .8rem;
+  }
+  
+  .timer-button-primary-active {
+    background-color: #ba3f38;
+    border: 1px solid #152684;
+    color: white;
+  }
+  
+  .timer-button-primary-inactive {
+    background-color: #0D865D;
+    border: 1px solid #152684;
+    color: white;
+  }
+
+
+  .start-workout-page-container {
+      display: flex;
+      justify-content: space-around;
+      margin-left: 8%;
+      margin-right: 8%;
+  }
+
+  .record-form-title {
+      display: flex;
+      justify-content: center;
+  }
+
+  .rest-timer-title {
+    display: flex;
+    justify-content: center;
+}
+
+.next-workout-button{
+  display: flex;
+  align-self: flex-end;
+}
+
+.cardio-data-container{
+  display: flex;
+  width: 15%;
+  justify-content: space-around;
+  flex-direction: column;
+
+}
+
+.cardio-data-name{
+  display: flex;
+  justify-content: space-around;
+  align-self: start;
+  
+}
+
+.cardio-data-targets{
+  display: flex;
+  padding-top: 10%;
+  align-self: center;
+}
+.cardio-data {
+  display: flex;
+  justify-content: space-around;
+  border: solid 2px black;
+  border-radius: 50px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 3%;
+}
+
+.weights-data-container{
+  display: flex;
+  width: 15%;
+  justify-content: space-around;
+  flex-direction: column;
+
+}
+
+.weights-data-name{
+  display: flex;
+  justify-content: space-around;
+  align-self: start;
+  
+}
+
+.weights-data-targets{
+  display: flex;
+  padding-top: 10%;
+  align-self: center;
+}
+.weights-data {
+  display: flex;
+  justify-content: space-around;
+  border: solid 2px black;
+  border-radius: 50px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 3%;
+}
+
+.calisthenics-data-container{
+  display: flex;
+  width: 15%;
+  justify-content: space-around;
+  flex-direction: column;
+
+}
+
+.calisthenics-data-name{
+  display: flex;
+  justify-content: space-around;
+  align-self: start;
+  
+}
+
+.calisthenics-data-targets{
+  display: flex;
+  padding-top: 10%;
+  align-self: center;
+}
+.calisthenics-data {
+  display: flex;
+  justify-content: space-around;
+  border: solid 2px black;
+  border-radius: 50px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 3%;
+}
+
+.review-form-name{
+  display: flex;
+  justify-content: space-evenly;
+}

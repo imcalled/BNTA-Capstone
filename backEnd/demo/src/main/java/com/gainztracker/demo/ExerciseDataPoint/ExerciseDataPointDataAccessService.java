@@ -1,15 +1,10 @@
 package com.gainztracker.demo.ExerciseDataPoint;
 
-import com.gainztracker.demo.Exercise.Exercise;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class ExerciseDataPointDataAccessService implements ExerciseDataPointDAO{
@@ -66,6 +61,23 @@ public class ExerciseDataPointDataAccessService implements ExerciseDataPointDAO{
                 timeAchieved,
                 distanceAchieved);
 
+    }
+    @Override
+    public int postDataPoint(ExerciseDataPoint exerciseDataPoint) {
+        String sql="""
+                INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved, distanceAchieved, setsAchieved, repsAchieved, weightAchieved)
+                VALUES
+                (?,?,?,?,?,?,?);
+                """;
+        return jdbcTemplate.update(
+                sql,
+                exerciseDataPoint.getExerciseID(),
+                exerciseDataPoint.getDate(),
+                exerciseDataPoint.getTimeAchieved(),
+                exerciseDataPoint.getDistanceAchieved(),
+                exerciseDataPoint.getSetsAchieved(),
+                exerciseDataPoint.getRepsAchieved(),
+                exerciseDataPoint.getWeightAchieved());
     }
 
     @Override

@@ -36,6 +36,7 @@ public class ExerciseDataAccessService implements ExerciseDAO{
         @Override
         public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
             ExerciseDTO exerciseDTO = new ExerciseDTO(
+                    rs.getInt("exerciseID"),
                     rs.getString("exerciseName"),
                     rs.getInt("targetTime"),
                     rs.getInt("targetDistance"),
@@ -51,7 +52,9 @@ public class ExerciseDataAccessService implements ExerciseDAO{
     @Override
     public List<ExerciseDTO>getExercisesByWorkoutId(int id) {
         String sql = """
-                SELECT Exercise.name AS "exerciseName",
+                SELECT 
+                Exercise.id AS "exerciseID",
+                Exercise.name AS "exerciseName",
                 ExerciseTarget.time AS "targetTime",
                 ExerciseTarget.distance AS "targetDistance", 
                 ExerciseTarget.sets AS "targetSets",
