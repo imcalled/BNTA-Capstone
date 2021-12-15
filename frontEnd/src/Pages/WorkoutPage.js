@@ -1,7 +1,7 @@
-import Workout from "../Components/Workout"
+import Workout from "../components/Workout"
 import { useState, useEffect } from "react";
 import { Navigate, useParams } from "react-router";
-import StartWorkoutButton from "../Components/StartWorkoutButton";
+import StartWorkoutButton from "../components/StartWorkoutButton";
 import { useNavigate } from "react-router-dom";
 
 const WorkoutPage = () => {

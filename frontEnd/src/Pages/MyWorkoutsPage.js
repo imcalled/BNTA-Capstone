@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import WorkoutsList from "../Components/WorkoutsList";
+import WorkoutsList from "../components/WorkoutsList"
 
 const MyWorkoutsPage = () => {
   const [workouts, setWorkouts] = useState([]);

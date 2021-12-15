@@ -1,20 +1,19 @@
-import '../Components/WorkoutComponents/StartWorkoutPage.css';
+import '../components/WorkoutComponents/StartWorkoutPage.css';
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import CurrentExercise from "../Components/WorkoutComponents/CurrentExercise";
-import ExerciseCard from '../Components/ExerciseCard';
-import RecordForm from '../Components/WorkoutComponents/RecordForm';
-import Timer from '../Components/WorkoutComponents/Timer';
-import '../Components/WorkoutComponents/StartWorkoutPage.css'
+import ExerciseCard from '../components/ExerciseCard';
+import RecordForm from '../components/WorkoutComponents/RecordForm';
+import Timer from '../components/WorkoutComponents/Timer';
+import '../components/WorkoutComponents/StartWorkoutPage.css'
 
 const StartWorkoutPage = () => {
 
     const {id} = useParams();
     const [exercises,setExercises] = useState([]);
-    const [currentExercise, setCurrentExercise] = useState([]);
+    // const [currentExercise, setCurrentExercise] = useState([]);
     const [nextExercise, setNextExercise] = useState(0);
-    const {initialMinute} = 0
-    const {initialSeconds} = 0
+    // const {initialMinute} = 0
+    // const {initialSeconds} = 0
 
     let exerciseCount = 0;
 
