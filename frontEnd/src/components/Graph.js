@@ -39,7 +39,7 @@ const Graph=({valuesToGraph, exerciseType})=>{
       yAxisData = chartData.valuesDistance.map(function (n, i) {
         return n / chartData.valuesTime[i];
       });
-      unit = "m/s";
+      unit = "meters/min";
       yAxisLabel = "Pace"
     }
 
