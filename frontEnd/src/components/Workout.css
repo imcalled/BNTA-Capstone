@@ -9,7 +9,17 @@
   width: 1150px;
 }
 
-.beginner-button {
+  
+  .beginner-button {
+      padding: 2rem;
+      background-color: black;
+      color: white;
+      border-radius: 35px;
+      height: 15em;
+      width: 19em;
+  }
+  
+  .intermediate-button {
     padding: 2rem;
     background-color: black;
     color: white;
