@@ -15,12 +15,14 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
+    <div>
       {/* <ThemeProvider theme={theme}>
     CssBaseline kickstart an elegant, consistent, and simple baseline to build upon.
         <CssBaseline />
         <App />
     </ThemeProvider>, */}
     <App />
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

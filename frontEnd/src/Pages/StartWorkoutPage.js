@@ -7,7 +7,6 @@ import Timer from '../components/WorkoutComponents/Timer';
 import '../components/WorkoutComponents/StartWorkoutPage.css'
 
 const StartWorkoutPage = () => {
-
     const {id} = useParams();
     const [exercises,setExercises] = useState([]);
     // const [currentExercise, setCurrentExercise] = useState([]);
@@ -21,7 +20,6 @@ const StartWorkoutPage = () => {
         fetch(`http://localhost:8080/api/v1/exercises/workout/id/${id}`)
         .then(response => response.json())
         .then(data => setExercises(data[nextExercise]))
-
     }
 
     useEffect(getExercisesByWorkoutId, [nextExercise]);

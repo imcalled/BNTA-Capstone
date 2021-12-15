@@ -1,36 +1,38 @@
-.container__navbar{
-    background-color:lightgrey;
-    height: 5em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.container__navbar {
+  background-color: rgb(26, 26, 26);
+  height: 5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.container__navbar_buttons{
-    padding:1.5em;
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
+.container__navbar_buttons {
+  padding: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
 }
 
-.navbar__button{
-        background-color: none; /* Green */
-        color: black;
-        height:2em;
-        width:8em;
-        border-radius: 10px;
-        border-color: lightgrey;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;     
+.navbar__button {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 600;
+  background-color: transparent; /* Green */
+  color: white;
+  height: 2em;
+  width: 8em;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
-.navbar__title{
-    font-family:fantasy;
-    padding-left: 1em;
-    color:rgb(175, 77, 77);
-    font-size: xx-large;
-    display: flex;
-    flex-direction: left;
+.navbar__title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 1em;
+  color: orangered;
+  font-size: xx-large;
+  display: flex;
+  flex-direction: left;
 }

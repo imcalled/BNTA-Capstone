@@ -7,13 +7,14 @@ import MyWorkoutsPage from "./Pages/MyWorkoutsPage"
 import Navbar from "./components/Navbar"
 import WorkoutPage from './Pages/WorkoutPage';
 import StartWorkoutPage from './Pages/StartWorkoutPage';
+import './Styles/HomePage.css'
 
 
 function App() {
   
   return (
   <BrowserRouter>
-    <div>
+    <div className="pageColor">
       <Navbar />
 
 
