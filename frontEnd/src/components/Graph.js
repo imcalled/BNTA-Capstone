@@ -1,9 +1,9 @@
-import {Line} from 'react-chartjs-2'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import {Line} from 'react-chartjs-2';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import {CategoryScale} from 'chart.js';
-import Chart from 'chart.js/auto'
-Chart.register(CategoryScale)
+import Chart from 'chart.js/auto';
+Chart.register(CategoryScale);
 
 const Graph=({valuesToGraph, exerciseType})=>{
 
