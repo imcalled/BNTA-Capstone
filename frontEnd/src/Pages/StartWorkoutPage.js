@@ -16,7 +16,6 @@ const StartWorkoutPage = () => {
     // const {initialMinute} = 0
     // const {initialSeconds} = 0
 
-    let exerciseCount = 0;
 
     const getAllExercisesByWorkoutId = () => {
         fetch(`http://localhost:8080/api/v1/exercises/workout/id/${id}`)
@@ -33,6 +32,8 @@ const StartWorkoutPage = () => {
     }
 
     useEffect(getExerciseByWorkoutId, [nextExercise]);
+
+
 
     const counter = () => {
 
@@ -64,6 +65,7 @@ const StartWorkoutPage = () => {
                 <div className="slider">
                 <Slider
         defaultValue={1}
+        value={nextExercise+1}
         step={1}
         marks
         min={1}
