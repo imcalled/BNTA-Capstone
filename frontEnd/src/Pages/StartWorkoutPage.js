@@ -13,6 +13,8 @@ const StartWorkoutPage = () => {
     const [exercise, setExercise] = useState([]);
     // const [currentExercise, setCurrentExercise] = useState([]);
     const [nextExercise, setNextExercise] = useState(0);
+    const [seconds, setSeconds] = useState(0);
+    const [isActive, setIsActive] = useState(false);
     // const {initialMinute} = 0
     // const {initialSeconds} = 0
 
@@ -31,17 +33,34 @@ const StartWorkoutPage = () => {
         .then(data => setExercise(data[nextExercise]))
     }
 
+    const resetTimer = () => {
+        setSeconds(0);
+        setIsActive(false);
+
+    }
+
     useEffect(getExerciseByWorkoutId, [nextExercise]);
 
 
+    // const reset = () => {
+    //     setSeconds(0);
+    //     setIsActive(false);
+    // }
 
     const counter = () => {
+
 
         if(nextExercise < exercisesOfWorkout.length-1) {
             setNextExercise(nextExercise + 1);
         }
         console.log(nextExercise)
+        setSeconds(0);
+        setIsActive(true);
+        
+   
     };
+    
+    useEffect(resetTimer,[counter])
     // construct a new object from exercisedp
 
     const onAddExerciseDataPoint = (newExerciseDataPoint) => {
@@ -54,6 +73,8 @@ const StartWorkoutPage = () => {
         body: JSON.stringify(newExerciseDataPoint)
     })
     .then(data => console.log(data))
+
+    
 }
 
 
@@ -88,17 +109,18 @@ const StartWorkoutPage = () => {
                 </div>
 
                 <div>
-                    <Timer/>
+                    <Timer seconds={seconds} isActive={isActive}/>
                 </div>
 
             </div>
 
 
-            <button className = "next-workout-button" onClick={counter}>Next Workout</button>
+            <button className = "next-workout-button" onClick={counter}>Next Exercise</button>
 
         </>
     )
 
 }
+
 
 export default StartWorkoutPage;
