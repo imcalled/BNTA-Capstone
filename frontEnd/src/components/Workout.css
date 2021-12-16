@@ -427,6 +427,10 @@ font-size: 13px;}
     width: 15rem;
   }
 
+  .edit-workout-button{
+    padding: 0.5rem;
+  }
+
   .weights-workout {
     height: 15rem;
     width: 15rem;
@@ -463,6 +467,11 @@ font-size: 13px;}
   .cardio-workout {
     height: 10rem;
     width: 10rem;
+  }
+
+  .edit-workout-button{
+    padding: 0.3rem;
+    font-size: 10px;
   }
 
   .calisthenics-workout {
