@@ -60,14 +60,26 @@
   padding: 0.6rem;
 }
 
-.calisthenics-workout{
+.preset-beginner-exercises {
+  margin-top: 2rem;
   display: flex;
   justify-content: space-evenly;
+  background-color: #1A1A1A;
+}
+
+.calisthenics-workout{
   gap:1rem;
   margin-bottom: 5rem;
   border: solid 2px black;
   border-radius: 50px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2);
+  height: 26rem;
+  width: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1562D;
 }
 
 .calisthenics-workout-name {
@@ -79,21 +91,33 @@
 }
 
 .cardio-workout {
-  display: flex;
-  justify-content: space-evenly;
+  gap:1rem;
+  margin-bottom: 5rem;
   border: solid 2px black;
   border-radius: 50px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
-  margin-bottom: 5rem;
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2);
+  height: 26rem;
+  width: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1562D;
 }
 
 .weights-workout {
-  display: flex;
-  justify-content: space-evenly;
+  gap:1rem;
+  margin-bottom: 5rem;
   border: solid 2px black;
   border-radius: 50px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
-  margin-bottom: 5rem;
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2);
+  height: 26rem;
+  width: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1562D;
 }
 
 .weights-workout-container{
@@ -131,22 +155,21 @@
 }
 
 .cardio-image {
-  /* height:10%;
-  width: 8%; */
-  height: 150px;
-  width: 150px;
+  height: 18rem;
+  width: 18rem;
+  border-radius: 5rem;
 }
 
 .weight-image{
-  height: 150px;
-  width: 150px;
-  border-radius: 45px;
+  height: 18rem;
+  width: 18rem;
+  border-radius: 9rem;
 }
 
 .calisthenics-image {
-  height: 150px;
-  width: 150px;
-  border-radius: 60px;
+  height: 18rem;
+  width: 18rem;
+  border-radius: 9rem;
 }
 
 .calisthenics-workout-container {
@@ -179,6 +202,24 @@
 }
 
 
+
+.start-workout-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 14rem;
+}
+
+.start-workout-button {
+  padding: 1rem;
+  background-color: green;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+body {
+  background-color: #1A1A1A;
+}
+
 .start-workout-button{
   padding: 2rem;
   background-color: black;
@@ -186,4 +227,5 @@
   border-radius: 35px;
   height: 15em;
   width: 19em;
+
 }

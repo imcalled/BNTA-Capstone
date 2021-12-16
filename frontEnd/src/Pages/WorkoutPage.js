@@ -36,7 +36,7 @@ const WorkoutPage = () => {
             <Workout exercises = {exercises}/>
         </div>
 
-        <div>
+        <div className="start-workout-wrapper">
             <StartWorkoutButton workoutId={id} goWorkout={goWorkout}/>
         </div>
 

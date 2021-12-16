@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import ExerciseDropdownSearch from "../components/ExerciseDropdownSearch";
-import ExerciseCardList from "../components/ExerciseCardList";
-import ExerciseCard from "../components/ExerciseTargetCard";
-import ExerciseTargetForm from "../components/ExerciseTargetForm";
+// import ExerciseTargetForm from "../components/ExerciseTargetForm";
 import NewExerciseTargetList from "../components/NewExerciseTargetList";
 import { Link } from "react-router-dom";
 const NewWorkoutContainer = () => {
@@ -165,7 +163,7 @@ const NewWorkoutContainer = () => {
             </form>
         {/* {workoutNameForm} */}
         <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
-        <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
+        {/* <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/> */}
         <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
         {saveButton}
         {/* <saveButton /> */}

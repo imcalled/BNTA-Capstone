@@ -6,17 +6,29 @@
 
 }
 
+.beginner-current-exercise-title {
+  color: white;
+}
+
 .beginner-current-exercise-name {
     font-size: 24px;
+    color: white;
+}
+
+.rest-timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .timer-container{
     text-align: center;
     display: flex;
-    width: 200px;
+    width: 20rem;
+    height: 20rem;
     border: solid 2px black;
-    border-radius: 50px;
-    box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+    border-radius: 10rem;
+    box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -26,6 +38,7 @@
   .display-time {
     font-size: 3rem;
     padding: 2rem;
+    color: white;
   }
   
   .timer-button {
@@ -65,6 +78,7 @@
   .rest-timer-title {
     display: flex;
     justify-content: center;
+    color: white;
 }
 
 .next-workout-button{
@@ -86,9 +100,8 @@
 
 .cardio-data-name{
   display: flex;
-  justify-content: space-around;
-  align-self: start;
-  
+  justify-content: center;
+  font-size: 40px;
 }
 
 .cardio-data-targets{
@@ -98,13 +111,14 @@
 }
 .cardio-data {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   border: solid 2px black;
   border-radius: 50px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
-  width: 40%;
-  margin-left: 30%;
-  margin-top: 3%;
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2);
+  width: 26rem;
+  height: 26rem;
+  background-color: #F1562D;
 }
 
 .weights-data-container{
@@ -117,8 +131,8 @@
 
 .weights-data-name{
   display: flex;
-  justify-content: space-around;
-  align-self: start;
+  justify-content: center;
+  font-size: 2rem;
   
 }
 
@@ -129,13 +143,14 @@
 }
 .weights-data {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   border: solid 2px black;
   border-radius: 50px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
-  width: 40%;
-  margin-left: 30%;
-  margin-top: 3%;
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2);
+  width: 26rem;
+  height: 26rem;
+  background-color: #F1562D;
 }
 
 .calisthenics-data-container{
@@ -148,30 +163,35 @@
 
 .calisthenics-data-name{
   display: flex;
-  justify-content: space-around;
-  align-self: start;
-  
+  justify-content: center;
+  font-size: 40px;
 }
 
 .calisthenics-data-targets{
   display: flex;
-  padding-top: 10%;
   align-self: center;
 }
 .calisthenics-data {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   border: solid 2px black;
   border-radius: 50px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
-  width: 40%;
-  margin-left: 30%;
-  margin-top: 3%;
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2);
+  width: 26rem;
+  height: 26rem;
+  background-color: #F1562D;
 }
 
 .review-form-name{
   display: flex;
   justify-content: space-evenly;
+  color: white;
+}
+
+.record-form-wrapper {
+  font-size: 20px;
+
 }
 
 .slider{
@@ -180,5 +200,57 @@
 .slider-container{
   display: flex;
   justify-content:center;
+}
+
+.modal-wrapper{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  z-index: 1000;
+}
+
+.modal-container{
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: black 0px 5px 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  transition: width 0.5s ease 0.5s, 
+              height 0.5s ease;
+}
+
+.modal-title {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-close {
+  height: 20px;
+}
+
+.finish-workout-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 14rem;
+}
+
+.finish-workout-button {
+  padding: 1rem;
+  background-color: green;
+  border-radius: 10px;
+  font-size: 13px;
 }
 

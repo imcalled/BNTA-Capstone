@@ -6,17 +6,18 @@ import RecordForm from '../components/WorkoutComponents/RecordForm';
 import Timer from '../components/WorkoutComponents/Timer';
 import '../components/WorkoutComponents/StartWorkoutPage.css';
 import Slider from '@mui/material/Slider';
+import FinishedWorkoutModal from '../components/WorkoutComponents/FinishedWorkoutModal';
 
 const StartWorkoutPage = () => {
     const {id} = useParams();
     const [exercisesOfWorkout, setExercisesOfWorkout] = useState([]);
     const [exercise, setExercise] = useState([]);
-    // const [currentExercise, setCurrentExercise] = useState([]);
     const [nextExercise, setNextExercise] = useState(0);
+    const [finishWorkout, setFinishWorkout] = useState("Next Exercise");
+    const [modal, setModal] = useState(false);
     const [seconds, setSeconds] = useState(0);
     const [isActive, setIsActive] = useState(false);
-    // const {initialMinute} = 0
-    // const {initialSeconds} = 0
+
 
 
     const getAllExercisesByWorkoutId = () => {
@@ -53,11 +54,18 @@ const StartWorkoutPage = () => {
         if(nextExercise < exercisesOfWorkout.length-1) {
             setNextExercise(nextExercise + 1);
         }
+
+        if(nextExercise === exercisesOfWorkout.length - 2) {
+            changeText("Finish Workout")
+        }
+        if(nextExercise === exercisesOfWorkout.length - 1) {
+            setModal(true)
+        }
+
         console.log(nextExercise)
         setSeconds(0);
         setIsActive(true);
         
-   
     };
     
     useEffect(resetTimer,[counter])
@@ -76,6 +84,12 @@ const StartWorkoutPage = () => {
 
     
 }
+
+    const nextButton = <button className="finish-workout-button"onClick={counter}>{finishWorkout}</button> 
+
+    const changeText = (text) => {
+        setFinishWorkout(text)
+    }
 
 
     return(
@@ -97,26 +111,37 @@ const StartWorkoutPage = () => {
       </div>
             </div>
 
-            <div className="start-workout-page-container">
+                <div className="start-workout-page-container">
 
-                <div className="beginner-current-exercise">
-                    <h1>Current Exercise</h1>
-                    <ExerciseCard exercise={exercise} />
-                </div>
 
-                <div>
-                    <RecordForm exercise={exercise} onAddExerciseDataPoint = {onAddExerciseDataPoint}/>
-                </div>
+                    <div className="beginner-current-exercise">
+                        <h1 className="beginner-current-exercise-title">Current Exercise</h1>
+                        <ExerciseCard exercise={exercise} />
+                    </div>
 
-                <div>
-                    <Timer seconds={seconds} isActive={isActive}/>
-                </div>
+//                 <div>
+//                     <Timer seconds={seconds} isActive={isActive}/>
+//                 </div>
+
+
+                    <div>
+                        <RecordForm exercise={exercise} onAddExerciseDataPoint = {onAddExerciseDataPoint}/>
+                    </div>    
+
+                    <div className="rest-timer-wrapper">
+                        <h1 className="rest-timer-title">Rest Timer</h1>
+                        <Timer/>
+                    </div>
 
             </div>
 
-
             <button className = "next-workout-button" onClick={counter}>Next Exercise</button>
 
+            <div className="finish-workout-button-wrapper">
+                {nextButton}
+                {modal && <FinishedWorkoutModal close={setModal}/>}
+            </div>
+        
         </>
     )
 

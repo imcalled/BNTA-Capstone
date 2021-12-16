@@ -75,7 +75,7 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                                 <p className="calisthenics-data-name">{exercise.name}</p>
 
                                 <div className="calisthenics-data-targets">
-                                    <form onSubmit={handleSubmitTarget}>
+                                    <form className="record-form-wrapper"onSubmit={handleSubmitTarget}>
                                         <label>Date:
                                             <input type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
                                         </label>
@@ -101,7 +101,7 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                         <p className="weights-data-name">{exercise.name}</p>
 
                         <div className="weights-data-targets">
-                                <form onSubmit={handleSubmitTarget}>
+                                <form className="record-form-wrapper"onSubmit={handleSubmitTarget}>
                                     <label>Date:
                                             <input type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
                                     </label>
@@ -129,7 +129,7 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                                 <p className="cardio-data-name">{exercise.name}</p>
 
                                 <div className="cardio-data-targets">
-                                    <form onSubmit={handleSubmitTarget}>
+                                    <form className="record-form-wrapper" onSubmit={handleSubmitTarget}>
                                         <label>Date:
                                             <input type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
                                         </label>
@@ -155,8 +155,10 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
 
     return (
         <>
-        <h1 class="review-form-name">Review Form</h1>
-        {displayForm({exercise})}
+        <h1 className="review-form-name">Review Form</h1>
+        <div className="review-form-data">
+            {displayForm({exercise})}
+        </div>
         </>
     )
 
