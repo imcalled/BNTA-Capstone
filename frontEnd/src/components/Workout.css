@@ -60,14 +60,23 @@
   padding: 0.6rem;
 }
 
-.calisthenics-workout{
+.preset-beginner-exercises {
   display: flex;
   justify-content: space-evenly;
+}
+
+.calisthenics-workout{
   gap:1rem;
   margin-bottom: 5rem;
   border: solid 2px black;
   border-radius: 50px;
   box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+  height: 26rem;
+  width: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .calisthenics-workout-name {
@@ -79,21 +88,31 @@
 }
 
 .cardio-workout {
-  display: flex;
-  justify-content: space-evenly;
+  gap:1rem;
+  margin-bottom: 5rem;
   border: solid 2px black;
   border-radius: 50px;
   box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
-  margin-bottom: 5rem;
+  height: 26rem;
+  width: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .weights-workout {
-  display: flex;
-  justify-content: space-evenly;
+  gap:1rem;
+  margin-bottom: 5rem;
   border: solid 2px black;
   border-radius: 50px;
   box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
-  margin-bottom: 5rem;
+  height: 26rem;
+  width: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .weights-workout-container{
@@ -131,22 +150,21 @@
 }
 
 .cardio-image {
-  /* height:10%;
-  width: 8%; */
-  height: 150px;
-  width: 150px;
+  height: 18rem;
+  width: 18rem;
+  border-radius: 5rem;
 }
 
 .weight-image{
-  height: 150px;
-  width: 150px;
-  border-radius: 45px;
+  height: 18rem;
+  width: 18rem;
+  border-radius: 9rem;
 }
 
 .calisthenics-image {
-  height: 150px;
-  width: 150px;
-  border-radius: 60px;
+  height: 18rem;
+  width: 18rem;
+  border-radius: 9rem;
 }
 
 .calisthenics-workout-container {

@@ -6,17 +6,16 @@ import RecordForm from '../components/WorkoutComponents/RecordForm';
 import Timer from '../components/WorkoutComponents/Timer';
 import '../components/WorkoutComponents/StartWorkoutPage.css';
 import Slider from '@mui/material/Slider';
+import FinishedWorkoutModal from '../components/WorkoutComponents/FinishedWorkoutModal';
 
 const StartWorkoutPage = () => {
     const {id} = useParams();
     const [exercisesOfWorkout, setExercisesOfWorkout] = useState([]);
     const [exercise, setExercise] = useState([]);
-    // const [currentExercise, setCurrentExercise] = useState([]);
     const [nextExercise, setNextExercise] = useState(0);
-    // const {initialMinute} = 0
-    // const {initialSeconds} = 0
+    const [finishWorkout, setFinishWorkout] = useState("Next Exercise");
+    const [modal, setModal] = useState(false);
 
-    let exerciseCount = 0;
 
     const getAllExercisesByWorkoutId = () => {
         fetch(`http://localhost:8080/api/v1/exercises/workout/id/${id}`)
@@ -39,7 +38,12 @@ const StartWorkoutPage = () => {
         if(nextExercise < exercisesOfWorkout.length-1) {
             setNextExercise(nextExercise + 1);
         }
-        console.log(nextExercise)
+        if(nextExercise === exercisesOfWorkout.length - 2) {
+            changeText("Finish Workout")
+        }
+        if(nextExercise === exercisesOfWorkout.length - 1) {
+            setModal(true)
+        }
     };
     // construct a new object from exercisedp
 
@@ -55,6 +59,12 @@ const StartWorkoutPage = () => {
     .then(data => console.log(data))
 }
 
+    const nextButton = <button className="finish-workout-button"onClick={counter}>{finishWorkout}</button> 
+
+    const changeText = (text) => {
+        setFinishWorkout(text)
+    }
+
 
     return(
         <>
@@ -63,37 +73,42 @@ const StartWorkoutPage = () => {
                 <div className="slider-container">
                 <div className="slider">
                 <Slider
-        defaultValue={1}
-        step={1}
-        marks
-        min={1}
-        max={exercisesOfWorkout.length}
-        valueLabelDisplay="auto"
-      />
-      </div>
-      </div>
+                defaultValue={1}
+                step={1}
+                marks
+                min={1}
+                max={exercisesOfWorkout.length}
+                valueLabelDisplay="auto"
+                />
             </div>
 
-            <div className="start-workout-page-container">
-
-                <div className="beginner-current-exercise">
-                    <h1>Current Exercise</h1>
-                    <ExerciseCard exercise={exercise} />
+            </div>
                 </div>
 
-                <div>
-                    <RecordForm exercise={exercise} onAddExerciseDataPoint = {onAddExerciseDataPoint}/>
-                </div>
+                <div className="start-workout-page-container">
 
-                <div>
-                    <Timer/>
-                </div>
+                    <div className="beginner-current-exercise">
+                        <h1>Current Exercise</h1>
+                        <ExerciseCard exercise={exercise} />
+                    </div>
 
+                    <div>
+                        <RecordForm exercise={exercise} onAddExerciseDataPoint = {onAddExerciseDataPoint}/>
+                    </div>
+
+                    
+
+                    <div className="rest-timer-wrapper">
+                        <h1 className="rest-timer-title">Rest Timer</h1>
+                        <Timer/>
+                    </div>
             </div>
 
-
-            <button className = "next-workout-button" onClick={counter}>Next Workout</button>
-
+            <div className="finish-workout-button-wrapper">
+                {nextButton}
+                {modal && <FinishedWorkoutModal close={setModal}/>}
+            </div>
+        
         </>
     )
 
