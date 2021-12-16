@@ -130,7 +130,6 @@ const StartWorkoutPage = () => {
 
             </div>
 
-            <button className = "next-workout-button" onClick={counter}>Next Exercise</button>
 
             <div className="finish-workout-button-wrapper">
                 {nextButton}

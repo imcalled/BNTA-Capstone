@@ -219,13 +219,3 @@
 body {
   background-color: #1A1A1A;
 }
-
-.start-workout-button{
-  padding: 2rem;
-  background-color: black;
-  color: white;
-  border-radius: 35px;
-  height: 15em;
-  width: 19em;
-
-}
