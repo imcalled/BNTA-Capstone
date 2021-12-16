@@ -4,6 +4,7 @@ import ExerciseDropdownSearch from "../components/ExerciseDropdownSearch";
 import NewExerciseTargetList from "../components/NewExerciseTargetList";
 import { Link } from "react-router-dom";
 import ExerciseTargetForm from "../components/ExerciseTargetForm";
+import "../Styles/NewWorkoutContainer.css"
 
 const NewWorkoutContainer = () => {
     
@@ -142,8 +143,12 @@ const NewWorkoutContainer = () => {
             </form>
         {/* {workoutNameForm} */}
         <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
+        <div className="container__exercise_selected">
         <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
+        </div>
+        <div className="container__exercises_added">
         <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
+        </div>
         {saveButton}
         {/* <saveButton /> */}
         {/* <button onClick={saveWorkout}>Save</button> */}

@@ -129,7 +129,7 @@ const ExerciseTargetForm = ({exercise, onAddExerciseTarget}) => {
                     // console.log("cardio")
                     return(
                     <>
-                        <div className="cardio-workout">
+                        <div className="cardio-workout exercise-to-add">
                             <img className="cardio-image" src={cardio}/>    
 
                             <div className="cardio-workout-container">
