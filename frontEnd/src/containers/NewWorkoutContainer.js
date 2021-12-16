@@ -153,13 +153,16 @@ const NewWorkoutContainer = () => {
         allExercises.length > 0
         ?
         <>
+        <div className ="add-exercises-container">
             <form>
-                <label>Workout Name:
-                    <input className={empty ? "invalid" : "workoutName"} type="text" onChange={handleWorkoutName}/>
-                </label>
-            </form>
-        {/* {workoutNameForm} */}
-        <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
+                    <label>Workout Name:
+                        <input className={empty ? "invalid" : "workoutName"} type="text" onChange={handleWorkoutName}/>
+                    </label>
+                </form>
+            {/* {workoutNameForm} */}
+            <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
+        </div>
+
         <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
         <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
         {saveButton}

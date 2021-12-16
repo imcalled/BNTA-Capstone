@@ -47,11 +47,14 @@ const MyStatsContainer =()=>{
       <>
         <h1 className="pageTitle">My Stats Page</h1>
         
-          <ExerciseDropdownSearch
+        <div className="select-exercises-container">
+        <ExerciseDropdownSearch
             allExercises={allExercises}
             dropSelect={DropSelect}
             updateDrop={updateDrop}
           />
+        </div>
+
           <div className="container__graph">
           <Graph valuesToGraph={valuesToGraph} exerciseType={exerciseType} />
         </div>

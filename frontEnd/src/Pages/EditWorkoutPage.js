@@ -194,14 +194,17 @@ const EditWorkoutPage = () => {
         ?
         <>
         <h1>Edit workout</h1>
-            <form>
-                <label>Workout Name:
-                    <input className={empty ? "invalid" : "workoutName"} type="text" value={workoutName} onChange={handleWorkoutName}/>
-                </label>
-            </form>
-        {/* {workoutNameForm} */}
-        <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
+
+        <div className="add-exercises-container">
+                <form>
+                    <label>Workout Name:
+                        <input className={empty ? "invalid" : "workoutName"} type="text" value={workoutName} onChange={handleWorkoutName}/>
+                    </label>
+                </form>
+                <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
+        </div>
         <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
+
         <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
         {saveButton}
         {modal && <SaveWorkoutModal close={setModal}/>}
