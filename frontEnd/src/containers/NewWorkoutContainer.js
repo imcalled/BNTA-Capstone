@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import ExerciseDropdownSearch from "../components/ExerciseDropdownSearch";
-// import ExerciseTargetForm from "../components/ExerciseTargetForm";
-import NewExerciseTargetList from "../components/NewExerciseTargetList";
-import { Link } from "react-router-dom";
 import ExerciseTargetForm from "../components/ExerciseTargetForm";
+import NewExerciseTargetList from "../components/NewExerciseTargetList";
+import SaveWorkoutModal from "../components/EditWorkoutComponents/SaveWorkoutModal"
+import EditWorkoutCSS from "../components/EditWorkoutComponents/EditWorkoutCSS.css"
+import { Link } from "react-router-dom";
 import "../Styles/NewWorkoutContainer.css"
 
 const NewWorkoutContainer = () => {
@@ -13,9 +14,10 @@ const NewWorkoutContainer = () => {
     const[DropSelect, setDropSelect]=useState(null);
     const[exerciseTarget, setExerciseTarget] = useState(null);
     const[newExerciseTargetList, setNewExerciseTargetList] = useState([]);
-    const[workoutName, setWorkoutName] = useState([]);
-    // const[workoutId, setWorkoutId] = useState("");
-    const[visibleSaveButton, setVisibleSaveButton] = useState(false);
+    const[workoutName, setWorkoutName] = useState("");
+    const[empty, setEmpty] = useState(false);
+    const[modal, setModal] = useState(false);
+    const[workoutId, setWorkoutId] = useState("");
 
     const getSelectedExercise =()=>{
         if(DropSelect){
@@ -66,6 +68,7 @@ const NewWorkoutContainer = () => {
     }
 
     const handleWorkoutName = (event) => {
+        setEmpty(false);
         setWorkoutName(event.target.value);
     }
 
@@ -83,27 +86,42 @@ const NewWorkoutContainer = () => {
 
     const saveWorkout = () => {
         //create new workout object, post it, get workoutId
-        const newWorkout = {
-            "name": workoutName
+
+        if(workoutName === "") {
+            setEmpty(true);
+            alert("Enter a workout name");
+            window.scrollTo({
+                top: 0, 
+                behavior: 'smooth'
+                /* you can also use 'auto' behaviour
+                   in place of 'smooth' */
+              });
         }
 
-        fetch("http://localhost:8080/api/v1/workout", {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(newWorkout)
-        })
-        .then(() => getWorkoutId())
-        //anonymous function, take nothing and call the function
-        .then((workoutId) => {
-            console.log("workoutId: ", workoutId);
-            postExerciseTargets(workoutId)})
-        
-        //exerciseTarget object to match with database
-        // postExerciseTargets();
-        .then(() => console.log("workout saved!"));
+        else {
+            const newWorkout = {
+                "name": workoutName
+            }
+
+            fetch("http://localhost:8080/api/v1/workout", {
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(newWorkout)
+            })
+            .then(() => getWorkoutId())
+            //anonymous function, take nothing and call the function
+            .then((id) => {setWorkoutId(workoutId); return id})
+            .then((id) => {postExerciseTargets(id)})
+            .then(setModal(true))
+            // .then(successPopup());
+        }
     }
+
+    // const successPopup = () => {
+    //     {modal && <SaveWorkoutModal close={setModal}/>}
+    // }
 
     const postExerciseTargets = (workoutId) => {
         newExerciseTargetList.map(exerciseTarget => {
@@ -138,7 +156,7 @@ const NewWorkoutContainer = () => {
         <>
             <form>
                 <label>Workout Name:
-                    <input type="text" onChange={handleWorkoutName}/>
+                    <input className={empty ? "invalid" : "workoutName"} type="text" onChange={handleWorkoutName}/>
                 </label>
             </form>
         {/* {workoutNameForm} */}
@@ -150,6 +168,7 @@ const NewWorkoutContainer = () => {
         <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
         </div>
         {saveButton}
+        {modal && <SaveWorkoutModal close={setModal} id={workoutId}/>}
         {/* <saveButton /> */}
         {/* <button onClick={saveWorkout}>Save</button> */}
         

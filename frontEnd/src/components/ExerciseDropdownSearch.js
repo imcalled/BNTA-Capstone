@@ -12,6 +12,7 @@ const ExerciseDropdownSearch = ({allExercises, dropSelect, updateDrop}) => {
         <div class="ExerciseDropDownSearch">
 
         <form>
+        <label>Add exercise: </label>
         <select className="dropdown" onChange={updateDrop}>
             <option label="Select an exercise"/>
             {exerciseOptions}

@@ -61,6 +61,8 @@ const ExerciseTargetForm = ({exercise, onAddExerciseTarget}) => {
         setTime("");
         setDistance("");
         // }
+
+        event.target.reset();
     
     }
 

@@ -1,6 +1,6 @@
 .container__button_primary {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: center;
   color: orange;
 }
@@ -18,10 +18,18 @@
   border: none;
   color: white;
   display: inline-block;
-  background-color: orangered;
+  /* background-color: orangered; */
+  background-color: #fd6215;
   border-radius: 35px;
   height: 15em;
   width: 23em;
+
+  transition: all .5s ease;
+  text-transform: uppercase;
+}
+.button__primary:hover {
+    color: white;
+    background-color: #fda071;
 }
 
 .icon {
@@ -29,6 +37,12 @@
   height: 2em;
   width: auto;
   padding:1em;
+  transition: all .5s ease;
+}
+
+.icon:hover {
+  color: black;
+  background-color: #fda071;
 }
 
 .pageColor {
@@ -41,4 +55,20 @@
 .pageTitle {
   font-size:3.5em;
   padding-left: 0.5em;
+}
+
+.socialMedia{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
 }

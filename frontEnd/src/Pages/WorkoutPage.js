@@ -5,7 +5,7 @@ import StartWorkoutButton from "../components/StartWorkoutButton";
 import { useNavigate } from "react-router-dom";
 import "../components/Workout.css"
 import EditWorkoutButton from "../components/EditWorkoutButton";
-import "../Styles/MyWorkoutsPage.css"
+import "../Styles/MyWorkoutsPage.css";
 
 const WorkoutPage = () => {
 

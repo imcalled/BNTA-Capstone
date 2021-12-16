@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from "react-router-dom";
 
 const FinishedWorkoutModal = ({close}) => {
@@ -18,7 +17,7 @@ const FinishedWorkoutModal = ({close}) => {
                 </div>
                 <div>
                     <p>
-                        woot! now go drink a protein shake 
+                        woot! now go drink a protein shake 🥤
                     </p>
                 </div>
             </div>

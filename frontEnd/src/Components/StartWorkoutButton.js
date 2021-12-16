@@ -5,12 +5,7 @@ import { Link } from "react-router-dom";
 import playIcon from "../Icons/play-512.png"
 
 const StartWorkoutButton = ({workoutId, goWorkout}) => {
-    
-    const [exerciseTargets,setExerciseTargets] = useState([])
 
-    const getExerciseTargets = () =>{
-
-    }
     return (
         <>
         <Link to={{ pathname: `/StartWorkoutPage/${workoutId}` }}>
@@ -28,8 +23,6 @@ const StartWorkoutButton = ({workoutId, goWorkout}) => {
         </>
         
     )
-
-
 
 }
 

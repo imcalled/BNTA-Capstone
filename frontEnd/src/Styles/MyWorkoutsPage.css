@@ -18,7 +18,8 @@
     border: none;
     color: white;
     display: inline-block;
-    background-color: orangered;
+    /* background-color: orangered; */
+    background-color: #fd6215;
     border-radius: 35px;
     height: 15em;
     width: 23em;
@@ -37,6 +38,13 @@
     height: 15em;
     width: 23em;
      margin-top: 2em;
+
+    transition: all .5s ease;
+    text-transform: uppercase;
+}
+  .button__primary:hover {
+      color: white;
+      background-color: #fda071;
   }
 
   .pageTitle {
