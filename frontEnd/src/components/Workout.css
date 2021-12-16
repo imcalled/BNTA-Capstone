@@ -81,6 +81,7 @@
   justify-content: center;
   align-items: center;
   background-color: #F1562D;
+  margin: 1em;
 }
 
 .calisthenics-workout-name {
@@ -104,6 +105,7 @@
   justify-content: center;
   align-items: center;
   background-color: #F1562D;
+  margin: 1em;
 }
 
 .weights-workout {
@@ -119,6 +121,7 @@
   justify-content: center;
   align-items: center;
   background-color: #F1562D;
+  margin: 1em;
 }
 
 .weights-workout-container{
@@ -132,6 +135,8 @@
   font-size: 24px;
   display: flex;
   justify-content: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .cardio-workout-name {
@@ -207,14 +212,48 @@
 .start-workout-wrapper {
   display: flex;
   justify-content: flex-end;
-  margin-right: 14rem;
+  margin-right: 8rem;
 }
 
 .start-workout-button {
-  padding: 1rem;
-  background-color: green;
-  border-radius: 10px;
-  font-size: 13px;
+  background-color: #0CA789; /* Green */
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 6px;
+  text-align: center;
+  margin-left: 2em;
+}
+
+.start-workout-icon{
+  height: 1.2em;
+  width:auto;
+  display:inline-block;
+  padding-right:0.8em;
+}
+
+.edit-workout-button {
+  background-color: #808080; /* Green */
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.edit-workout-icon{
+  height: 1.2em;
+  width:auto;
+  display:inline-block;
+  padding-right:0.8em;
 }
 
 body {
