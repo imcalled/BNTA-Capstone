@@ -3,6 +3,7 @@ import WorkoutsList from "../components/WorkoutsList"
 import "../Styles/MyWorkoutsPage.css"
 import { Link } from "react-router-dom";
 
+
 const MyWorkoutsPage = () => {
   const [workouts, setWorkouts] = useState([]);
   // const [exerciseTargets, setExerciseTargets] = useState([]);

@@ -1,6 +1,6 @@
 .container__button_primary {
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
     align-items: center;
     color: orange;
   }
@@ -21,4 +21,10 @@
   .pageTitle {
     font-size:3.5em;
     padding-left: 0.5em;
+  }
+
+  .weights-image2{
+    height: 18rem;
+    width: 18rem;
+    border-radius: 9rem;
   }

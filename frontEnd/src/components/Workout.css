@@ -134,6 +134,13 @@
   justify-content: center;
 }
 
+.weight-issue{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+
 .cardio-workout-name {
   font-size: 24px;
   display: flex;
@@ -220,3 +227,25 @@
 body {
   background-color: #1A1A1A;
 }
+
+.add-exercise-button-container{
+  display:flex;
+  justify-content: center;
+}
+.add-exercise-button{
+
+  height:2.5em;
+background-color: green;
+border-radius: 10px;
+font-size: 13px;}
+
+.delete-exercise-button-container{
+  display:flex;
+  justify-content: center;
+}
+.delete-exercise-button{
+
+  height:2.5em;
+background-color: red;
+border-radius: 10px;
+font-size: 13px;}
