@@ -1,7 +1,7 @@
 import React from 'react';
 import cardio from '../Icons/cardio.png';
 import calisthenic from '../Icons/back-lever.png';
-import weight from '../Icons/dumbbell.png';
+import weights from '../Icons/weights.png';
 
 const ExerciseCard = ({exercise}) => {
     switch(exercise.exerciseType)
@@ -16,8 +16,8 @@ const ExerciseCard = ({exercise}) => {
                         <p className="calisthenics-workout-name">{exercise.name}</p>
 
                     <div className="calisthenics-workout-targets">
-                        <p>Sets: {exercise.targetReps}</p>
-                        <p>Reps: {exercise.targetSets}</p>
+                        <p id="calisthenics-workout-sets">Sets: {exercise.targetSets}</p>
+                        <p id="calisthenics-workout-sets">Reps: {exercise.targetReps}</p>
                     </div>
                 </div>
             </div>
@@ -26,13 +26,13 @@ const ExerciseCard = ({exercise}) => {
         case "WEIGHTS":
             return(
             <div className="weights-workout">
-                <img className = 'weight-image' src = "https://www.vippng.com/png/detail/55-554509_dumbbells-clipart-svg-gym-weight-icon-png.png" />
+                <img className = 'weight-image' src = {weights} />
                 <div className="weights-workout-container">
                     <p className="weights-workout-name">{exercise.name}</p>
-                    <div className="cardio-workout-targets">
+                    <div className="weights-workout-targets">
                         <p id = "weights-workout-sets">Sets: {exercise.targetSets}</p>
                         <p id = "weights-workout-reps"> Reps: {exercise.targetReps}</p>
-                        <p id = "weights-workout-weights">Weight: {exercise.targetWeight}kg</p>
+                        <p id = "weights-workout-weights">Weights: {exercise.targetWeight}</p>
                  </div>
                 </div>
             </div>
@@ -47,8 +47,8 @@ const ExerciseCard = ({exercise}) => {
                         <p className="cardio-workout-name">{exercise.name}</p>
 
                         <div className="cardio-workout-targets">
-                            <p id="cardio-workout-distance">Distance: {exercise.targetDistance}m</p>
-                            <p id="cardio-workout-time">Time: {exercise.targetTime}mins</p>
+                            <p id="cardio-workout-distance">Distance: {exercise.targetDistance}</p>
+                            <p id="cardio-workout-time">Time: {exercise.targetTime}</p>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,6 @@ const ExerciseCard = ({exercise}) => {
 
     return (
         <>
-            <h1 className="beginner-current-exercise-title">Current Exercise</h1>
             {ExerciseCard}
 
 

@@ -3,6 +3,7 @@ package com.gainztracker.demo.Workouts;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class WorkoutService {
@@ -18,5 +19,9 @@ public class WorkoutService {
 
     public void createWorkout(Workout workout) {
         workoutDAO.createWorkout(workout);
+    }
+
+    public Optional<Workout> getWorkoutById(int id) {
+        return workoutDAO.getWorkoutById(id);
     }
 }

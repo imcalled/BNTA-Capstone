@@ -1,0 +1,12 @@
+.container__exercise_selected{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__exercises_added{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

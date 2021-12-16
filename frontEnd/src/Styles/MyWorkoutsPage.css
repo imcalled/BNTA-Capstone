@@ -4,6 +4,12 @@
     align-items: center;
     color: orange;
   }
+
+.container__generic{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
   
   .button__primary {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -17,6 +23,21 @@
     border-radius: 35px;
     height: 15em;
     width: 23em;
+    margin-top: 2em;
+  }
+
+  .button__primary_alt {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+      font-size: medium;
+    border: none;
+    color: white;
+    display: inline-block;
+    background-color: rgb(105, 105, 105);
+    border-radius: 35px;
+    height: 15em;
+    width: 23em;
+     margin-top: 2em;
 
     transition: all .5s ease;
     text-transform: uppercase;

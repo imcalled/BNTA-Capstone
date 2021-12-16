@@ -5,6 +5,7 @@ import NewExerciseTargetList from "../components/NewExerciseTargetList";
 import SaveWorkoutModal from "../components/EditWorkoutComponents/SaveWorkoutModal"
 import EditWorkoutCSS from "../components/EditWorkoutComponents/EditWorkoutCSS.css"
 import { Link } from "react-router-dom";
+import "../Styles/NewWorkoutContainer.css"
 
 const NewWorkoutContainer = () => {
     
@@ -155,16 +156,18 @@ const NewWorkoutContainer = () => {
         <>
         <div className ="add-exercises-container">
             <form>
-                    <label>Workout Name:
-                        <input className={empty ? "invalid" : "workoutName"} type="text" onChange={handleWorkoutName}/>
-                    </label>
-                </form>
-            {/* {workoutNameForm} */}
-            <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
-        </div>
-
+                <label>Workout Name:
+                    <input className={empty ? "invalid" : "workoutName"} type="text" onChange={handleWorkoutName}/>
+                </label>
+            </form>
+        {/* {workoutNameForm} */}
+        <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
+        <div className="container__exercise_selected">
         <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
+        </div>
+        <div className="container__exercises_added">
         <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
+        </div>
         {saveButton}
         {modal && <SaveWorkoutModal close={setModal} id={workoutId}/>}
         {/* <saveButton /> */}
