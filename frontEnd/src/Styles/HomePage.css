@@ -3,9 +3,11 @@
   flex-wrap: wrap;
   align-items: center;
   color: orange;
+  justify-content: center;
+  gap: 1em;
 }
 
-.container__generic{
+.container__generic {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -14,7 +16,7 @@
 .button__primary {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-    font-size: medium;
+  font-size: medium;
   border: none;
   color: white;
   display: inline-block;
@@ -25,20 +27,20 @@
   width: 23em;
   cursor: pointer;
 
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   text-transform: uppercase;
 }
 .button__primary:hover {
-    color: white;
-    background-color: #fda071;
+  color: white;
+  background-color: #fda071;
 }
 
 .icon {
-  display:inline-block;
+  display: inline-block;
   height: 2em;
   width: auto;
-  padding:1em;
-  transition: all .5s ease;
+  padding: 1em;
+  transition: all 0.5s ease;
 }
 
 .icon:hover {
@@ -47,29 +49,34 @@
 }
 
 .pageColor {
-  height:100%;
+  height: 100%;
   align-content: stretch;
   color: white;
-  background-color: rgb(26,26,26);
+  background-color: rgb(26, 26, 26);
 }
 
 .pageTitle {
-  font-size:3.5em;
+  font-size: 3.5em;
   padding-left: 0.5em;
 }
 
-.socialMedia{
+.socialMedia {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background: rgba( 255, 255, 255, 0.25 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
+
+  background: rgba(26,26,26, 1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-  position:absolute;
-  left:0;
-  bottom:0;
-  right:0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  margin-bottom: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }

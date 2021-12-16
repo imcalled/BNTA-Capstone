@@ -21,3 +21,4 @@
 /frontEnd/npm-debug.log*
 /frontEnd/yarn-debug.log*
 /frontEnd/yarn-error.log*
+frontEnd/node_modules/.cache/.eslintcache
