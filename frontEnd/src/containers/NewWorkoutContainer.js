@@ -147,49 +147,37 @@ const NewWorkoutContainer = () => {
       }).then((data) => console.log(data));
     });
     getAllExerciseTargets();
-  };
+}
 
-  const saveButton =
-    newExerciseTargetList.length > 0 ? (
-      <button onClick={saveWorkout}>Save</button>
-    ) : null;
+    const saveButton = newExerciseTargetList.length > 0 ? <button onClick={saveWorkout}>Save</button> : null
 
-  return allExercises.length > 0 ? (
-    <>
-      <div className="add-exercises-container">
-        <form>
-          <label>
-            Workout Name:
-            <input
-              className={empty ? "invalid" : "workoutName"}
-              type="text"
-              onChange={handleWorkoutName}
-            />
-          </label>
-        </form>
-        <ExerciseDropdownSearch
-          allExercises={allExercises}
-          updateDrop={updateDrop}
-        />
-      </div>
-
-      <div className="containerexercise_selected">
-        <ExerciseTargetForm
-          exercise={selectedExercise}
-          onAddExerciseTarget={onAddExerciseTarget}
-        />
-      </div>
-      <div className="containerexercises_added">
-        <NewExerciseTargetList
-          newExerciseTargetList={newExerciseTargetList}
-          deleteCard={deleteCard}
-        />
-      </div>
-      {saveButton}
-      {modal && <SaveWorkoutModal close={setModal} id={workoutId} />}
-    </>
-  ) : (
-    <p>Loading...</p>
-  );
-};
+    return (
+        allExercises.length > 0
+        ?
+        <>
+        <div className ="add-exercises-container">
+            <form>
+                <label>Workout Name:
+                    <input className={empty ? "invalid" : "workoutName"} type="text" onChange={handleWorkoutName}/>
+                </label>
+            </form>
+        {/* {workoutNameForm} */}
+        <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
+        </div>
+        
+        <div className="container__exercise_selected">
+        <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
+        </div>
+        <div className="container__exercises_added">
+        <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
+        </div>
+        {saveButton}
+        {modal && <SaveWorkoutModal close={setModal} id={workoutId}/>}
+        {/* <saveButton /> */}
+        {/* <button onClick={saveWorkout}>Save</button> */}
+        </>
+        :
+        <p>Loading...</p>
+    )
+}
 export default NewWorkoutContainer;
