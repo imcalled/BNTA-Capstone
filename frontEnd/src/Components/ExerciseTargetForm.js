@@ -1,8 +1,9 @@
 import cardio from '../Icons/cardio.png';
 import calisthenic from '../Icons/back-lever.png';
-import weights from '../Icons/dumbbell.png';
+import Weights from '../Icons/weights.png';
 import { useState, useEffect } from 'react/cjs/react.development';
 import './Workout.css'
+
 
 const ExerciseTargetForm = ({exercise, onAddExerciseTarget}) => {
 
@@ -76,7 +77,7 @@ const ExerciseTargetForm = ({exercise, onAddExerciseTarget}) => {
                     // console.log("calisthenics");
                     return (
                     <>
-                        <div className="calisthenics-workout">
+                        <div className="calisthenics-workout exercise-to-add">
                             <img className="calisthenics-image" src={calisthenic} />
                             
                             <div className="calisthenics-workout-container">
@@ -102,8 +103,8 @@ const ExerciseTargetForm = ({exercise, onAddExerciseTarget}) => {
                 case "WEIGHTS":
                     // console.log("weights");
                     return(
-                    <div className="weights-workout">
-                        <img className="weights-image2" src="https://www.vippng.com/png/detail/55-554509_dumbbells-clipart-svg-gym-weight-icon-png.png" />
+                    <div className="weights-workout exercise-to-add">
+                        <img className="calisthenics-image" src={Weights}/>
 
                     <div className="calisthenics-workout-container">
                         <p className="weights-workout-name">{exercise.name}</p>
