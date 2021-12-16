@@ -1,5 +1,3 @@
-import React from 'react'
-
 const FinishedWorkoutModal = ({close}) => {
     return (
         <div className="modal-wrapper">
@@ -10,7 +8,7 @@ const FinishedWorkoutModal = ({close}) => {
                 </div>
                 <div>
                     <p>
-                        woot! now go drink a protein shake 
+                        woot! now go drink a protein shake 🥤
                     </p>
                 </div>
             </div>
