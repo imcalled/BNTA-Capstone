@@ -4,7 +4,7 @@ import { Navigate, useParams } from "react-router";
 import StartWorkoutButton from "../components/StartWorkoutButton";
 import { useNavigate } from "react-router-dom";
 import "../components/Workout.css"
-import EditWorkoutButton from "../components/EditWorkoutButton";
+import EditWorkoutButton from "../components/EditWorkoutComponents/EditWorkoutButton";
 import "../Styles/MyWorkoutsPage.css";
 
 const WorkoutPage = () => {

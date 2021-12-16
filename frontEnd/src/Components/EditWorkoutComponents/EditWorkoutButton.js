@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import editIcon from "../Icons/edit.png";
-import './Workout.css';
+import editIcon from "../../Icons/edit.png"
+import '../Workout.css';
 
 const EditWorkoutButton = ({workoutId, editWorkout}) => {
 
