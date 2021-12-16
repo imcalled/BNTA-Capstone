@@ -1,6 +1,6 @@
 .container__button_primary {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: center;
   color: orange;
 }
@@ -12,10 +12,18 @@
   border: none;
   color: white;
   display: inline-block;
-  background-color: orangered;
+  /* background-color: orangered; */
+  background-color: #fd6215;
   border-radius: 35px;
   height: 15em;
   width: 23em;
+
+  transition: all .5s ease;
+  text-transform: uppercase;
+}
+.button__primary:hover {
+    color: white;
+    background-color: #fda071;
 }
 
 .icon {
@@ -23,6 +31,12 @@
   height: 2em;
   width: auto;
   padding:1em;
+  transition: all .5s ease;
+}
+
+.icon:hover {
+  color: black;
+  background-color: #fda071;
 }
 
 .pageColor {
