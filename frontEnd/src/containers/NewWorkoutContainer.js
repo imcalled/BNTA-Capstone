@@ -5,7 +5,6 @@ import NewExerciseTargetList from "../components/NewExerciseTargetList";
 import SaveWorkoutModal from "../components/EditWorkoutComponents/SaveWorkoutModal"
 import EditWorkoutCSS from "../components/EditWorkoutComponents/EditWorkoutCSS.css"
 import { Link } from "react-router-dom";
-import ExerciseTargetForm from "../components/ExerciseTargetForm";
 
 const NewWorkoutContainer = () => {
     

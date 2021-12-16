@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "../Styles/Navbar.css"
+import github from "../Icons/github-icon.png"
 
 
 const Navbar = () =>{
@@ -18,6 +19,7 @@ const Navbar = () =>{
             </button>
             <button className={"navbar__button"}>Login</button>
             <button className={"navbar__button"}>Signup</button>
+            <a href="https://github.com/imcalled/BNTA-Capstone" ><img className={"navbar__icon" } src={github} /></a>
           </div>
         </div>
         <hr/>

@@ -12,7 +12,7 @@ const EditWorkoutPage = () => {
 
     const{id} = useParams();
 
-    const[exercises,setExercises] = useState([]);    
+    // const[exercises,setExercises] = useState([]);    
     const[allExercises, setAllExercises] = useState([]);
     const[selectedExercise, setSelectedExercise] = useState(null);
     const[DropSelect, setDropSelect]=useState(null);
@@ -40,8 +40,7 @@ const EditWorkoutPage = () => {
         fetch(`http://localhost:8080/api/v1/exercises/workout/id/${id}`)
         .then(response => response.json())
         .then(data => {
-            setExercises(data)
-            setNewExerciseTargetList(exercises)
+            setNewExerciseTargetList(data)
         })
     }
 
@@ -159,18 +158,9 @@ const EditWorkoutPage = () => {
         }
     }
 
-
     const successPopup = () => {
         {modal && <SaveWorkoutModal close={setModal}/>}
     }
-
-    const handleClick = () => {
-        // const modal = document.querySelector(".modal")
-        // const closeBtn = document.querySelector(".close")
-        // modal.style.display = "block";
-        // closeBtn.addEventListener("click", () => {
-        //     modal.style.display = "none";
-  }
 
     const postExerciseTargets = (workoutId) => {
         newExerciseTargetList.map(exerciseTarget => {
