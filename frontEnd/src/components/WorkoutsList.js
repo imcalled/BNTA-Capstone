@@ -24,7 +24,7 @@ const WorkoutsList= ({workouts}) => {
             <div className="container__button_primary">
             {workoutComponents}
 
-            <Link to={{ pathname:"/NewWorkoutPage"}}><button className="advanced-button">Create Custom Workout</button></Link>
+            <Link to={{ pathname:"/NewWorkoutPage"}}><button className="button__primary_alt">Create Custom Workout</button></Link>
             
             <section className="Workout-List">
 

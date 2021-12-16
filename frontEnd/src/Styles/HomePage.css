@@ -5,6 +5,12 @@
   color: orange;
 }
 
+.container__generic{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .button__primary {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;

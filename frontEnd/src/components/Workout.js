@@ -2,6 +2,8 @@ import React from 'react';
 import './Workout.css';
 import ExerciseCard from './ExerciseCard';
 import ExerciseTarget from './ExerciseTarget';
+import "../Styles/MyWorkoutsPage.css"
+import "../Styles/HomePage.css";
 
 const Workout = ({exercises}) => {
 
@@ -54,8 +56,9 @@ const Workout = ({exercises}) => {
     
     return (
         <>
+        <div className = "container__generic">
         {exerciseElements}
-
+        </div>
         {/* {exerciseName(exerciseTargets, exercises)} 
         {exercises.map(exercise => {if(exercise.id === exerciseName(exerciseTargets)) return <div> {exercise.name} </div>})}
         {exerciseTargets.map(exerciseTarget => <div> Sets {exerciseTarget.sets}</div>)}

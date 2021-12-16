@@ -1,7 +1,7 @@
 import React from 'react';
 import cardio from '../Icons/cardio.png';
 import calisthenic from '../Icons/back-lever.png';
-import weight from '../Icons/dumbbell.png';
+import weights from '../Icons/weights.png';
 
 const ExerciseCard = ({exercise}) => {
     switch(exercise.exerciseType)
@@ -26,7 +26,7 @@ const ExerciseCard = ({exercise}) => {
         case "WEIGHTS":
             return(
             <div className="weights-workout">
-                <img className = 'weight-image' src = "https://www.vippng.com/png/detail/55-554509_dumbbells-clipart-svg-gym-weight-icon-png.png" />
+                <img className = 'weight-image' src = {weights} />
                 <div className="weights-workout-container">
                     <p className="weights-workout-name">{exercise.name}</p>
                     <div className="cardio-workout-targets">

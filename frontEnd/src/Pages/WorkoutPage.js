@@ -5,11 +5,13 @@ import StartWorkoutButton from "../components/StartWorkoutButton";
 import { useNavigate } from "react-router-dom";
 import "../components/Workout.css"
 import EditWorkoutButton from "../components/EditWorkoutButton";
+import "../Styles/MyWorkoutsPage.css"
 
 const WorkoutPage = () => {
 
     const {id} = useParams();
     const [exercises,setExercises] = useState([])
+    const [name,setName] = useState([])
 
 
 
@@ -19,7 +21,14 @@ const WorkoutPage = () => {
         .then(data => setExercises(data))
     }
 
+    const getWorkoutName = () => {
+        fetch(`http://localhost:8080/api/v1/workout/id/${id}`)
+        .then(response => response.json())
+        .then(data => setName(data.name))
+    }
+
     useEffect(getExercisesByWorkoutId, []);
+    useEffect(getWorkoutName, []);
 
     let navigate = useNavigate();
 
@@ -33,17 +42,17 @@ const WorkoutPage = () => {
 
     return(
         <>
-        <div className="preset-beginner-title">
-            <h1>Workout Routine:</h1>
-        </div>
+            <h1 className="pageTitle">Workout Routine: {name}</h1>
+
 
         <div className="preset-beginner-exercises">
             <Workout exercises = {exercises}/>
         </div>
 
         <div className="start-workout-wrapper">
-            <StartWorkoutButton workoutId={id} goWorkout={goWorkout}/>
             <EditWorkoutButton workoutId={id} editWorkout={editWorkout}/>
+            <StartWorkoutButton workoutId={id} goWorkout={goWorkout}/>
+            
         </div>
 
         
