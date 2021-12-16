@@ -5,6 +5,8 @@ import ExerciseCard from "../components/ExerciseTargetCard";
 import ExerciseTargetForm from "../components/ExerciseTargetForm";
 import NewExerciseTargetList from "../components/NewExerciseTargetList";
 import { useParams } from "react-router-dom";
+import SaveWorkoutModal from "../components/EditWorkoutComponents/SaveWorkoutModal"
+import EditWorkoutCSS from "../components/EditWorkoutComponents/EditWorkoutCSS.css"
 
 const EditWorkoutPage = () => {
 
@@ -16,9 +18,9 @@ const EditWorkoutPage = () => {
     const[DropSelect, setDropSelect]=useState(null);
     const[exerciseTarget, setExerciseTarget] = useState(null);
     const[newExerciseTargetList, setNewExerciseTargetList] = useState([]);
-    const[workoutName, setWorkoutName] = useState([]);
-
-    const[visible, setVisible] = useState(false);
+    const[workoutName, setWorkoutName] = useState("");
+    const[modal, setModal] = useState(false);
+    const[empty, setEmpty] = useState(false);
 
     const getWorkoutNameById = () => {
         return fetch("http://localhost:8080/api/v1/workout")
@@ -112,29 +114,36 @@ const EditWorkoutPage = () => {
 
     const saveWorkout = () => {
         //create new workout object, post it, get workoutId
-        const newWorkout = {
-            "name": workoutName
-        }
 
-        fetch("http://localhost:8080/api/v1/workout", {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(newWorkout)
-        })
-        .then(() => getWorkoutId())
-        //anonymous function, take nothing and call the function
-        .then((workoutId) => {
-            console.log("workoutId: ", workoutId);
-            postExerciseTargets(workoutId)})
-        .then(setVisible(true))
-        .then(successPopup());
-        //pop up alert to say successful, redirect to 
+        if(workoutName === "") {
+            setEmpty(true);
+        }
+        else {
+            const newWorkout = {
+                "name": workoutName
+            }
+    
+            fetch("http://localhost:8080/api/v1/workout", {
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(newWorkout)
+            })
+            .then(() => getWorkoutId())
+            //anonymous function, take nothing and call the function
+            .then((workoutId) => {
+                console.log("workoutId: ", workoutId);
+                postExerciseTargets(workoutId)})
+            .then(setModal(true))
+            .then(successPopup());
+            //pop up alert to say successful, redirect to 
+        }
     }
 
 
     const successPopup = () => {
+        {modal && <SaveWorkoutModal close={setModal}/>}
     }
 
     const handleClick = () => {
@@ -179,7 +188,7 @@ const EditWorkoutPage = () => {
         <h1>Edit workout</h1>
             <form>
                 <label>Workout Name:
-                    <input type="text" value={workoutName} onChange={handleWorkoutName}/>
+                    <input className={empty ? "invalid" : "workoutName"} type="text" value={workoutName} onChange={handleWorkoutName}/>
                 </label>
             </form>
         {/* {workoutNameForm} */}
@@ -187,6 +196,7 @@ const EditWorkoutPage = () => {
         <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
         <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
         {saveButton}
+        {modal && <SaveWorkoutModal close={setModal}/>}
         {/* <saveButton /> */}
         {/* <button onClick={saveWorkout}>Save</button> */}
         
