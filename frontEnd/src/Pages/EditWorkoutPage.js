@@ -136,24 +136,28 @@ const EditWorkoutPage = () => {
         }
 
         else {
-            const newWorkout = {
-                "name": workoutName
-            }
+            // const newWorkout = {
+            //     "name": workoutName
+            // }
     
-            fetch("http://localhost:8080/api/v1/workout", {
-                method: "POST",
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(newWorkout)
-            })
-            .then(() => getWorkoutId())
+            // fetch("http://localhost:8080/api/v1/workout", {
+            //     method: "POST",
+            //     headers: {
+            //         'Content-type': 'application/json'
+            //     },
+            //     body: JSON.stringify(newWorkout)
+            // })
+            // .then(() => getWorkoutId())
             //anonymous function, take nothing and call the function
-            .then((workoutId) => {
-                console.log("workoutId: ", workoutId);
-                postExerciseTargets(workoutId)})
-            .then(setModal(true))
-            .then(successPopup());
+            // .then((workoutId) => {
+            //     console.log("workoutId: ", workoutId);
+            //     postExerciseTargets(workoutId)})
+            // .then(setModal(true))
+            // .then(successPopup());
+            
+            postExerciseTargets(id);
+            setModal(true);
+            successPopup();
             //pop up alert to say successful, redirect to 
         }
     }
@@ -187,27 +191,28 @@ const EditWorkoutPage = () => {
     getAllExerciseTargets();
 }
 
-    const saveButton = newExerciseTargetList.length > 0 ? <button onClick={saveWorkout}>Save</button> : null
+    const saveButton = newExerciseTargetList.length > 0 ? <button className="save-exercise-button" onClick={saveWorkout}>Save</button> : null
 
     return (
         allExercises.length > 0
         ?
         <>
+        <div className="editWorkoutPage">
         <h1>Edit workout</h1>
-
-        <div className="add-exercises-container">
-                <form>
-                    <label>Workout Name:
-                        <input className={empty ? "invalid" : "workoutName"} type="text" value={workoutName} onChange={handleWorkoutName}/>
-                    </label>
-                </form>
-                <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
+            <div className="add-exercises-container">
+                    <form>
+                        <label>Workout Name:
+                            <input className={empty ? "invalid" : "workoutName"} type="text" value={workoutName} onChange={handleWorkoutName}/>
+                        </label>
+                    </form>
+                    <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
+            </div>
+            <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
+            <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
+            {saveButton}
+            {modal && <SaveWorkoutModal close={setModal}/>}
         </div>
-        <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
 
-        <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
-        {saveButton}
-        {modal && <SaveWorkoutModal close={setModal}/>}
         {/* <saveButton /> */}
         {/* <button onClick={saveWorkout}>Save</button> */}
         
