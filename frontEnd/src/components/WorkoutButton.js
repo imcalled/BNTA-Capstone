@@ -1,6 +1,7 @@
 import React from 'react';
 import './Workout.css';
 import { useState, useEffect } from "react";
+import "../Styles/MyWorkoutsPage.css"
 import { Link } from "react-router-dom";
 
 const WorkoutButton = ({workout, goWorkout}) => {
@@ -16,7 +17,7 @@ const WorkoutButton = ({workout, goWorkout}) => {
         <Link to={{ pathname: `/WorkoutPage/${workout.id}` }}>
         {/* <div className="all-buttons"> */}
             
-            <button class = "workout-routine-button" onClick = {()=>goWorkout(workout.id)}>{workout.name}</button>
+            <button class = "button__primary" onClick = {()=>goWorkout(workout.id)}>{workout.name}</button>
 
             {/* <div className="button-1">
                 <button onClick = {getExerciseTargets(id)} className="beginner-button"> Beginner Workout </button>

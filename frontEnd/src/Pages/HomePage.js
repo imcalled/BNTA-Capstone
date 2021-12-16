@@ -21,7 +21,10 @@ const HomePage = () => {
 
   return (
     <>
-      <h1>My Dashboard</h1>
+    <div className = "pageColor">
+
+    
+      <h1 className="pageTitle">My Dashboard</h1>
       <div className={"container__button_primary"}>
         <div>
           <button className={"button__primary"} onClick={goWorkoutsPage}>
@@ -48,6 +51,7 @@ const HomePage = () => {
           />
           Protein Tracker
         </button>
+      </div>
       </div>
     </>
   );

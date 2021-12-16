@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import ExerciseDropdownSearch from '../components/ExerciseDropdownSearch';
 import Graph from '../components/Graph';
+import '../Styles/MyStatsPage.css';
 
 
 const MyStatsContainer =()=>{
@@ -42,20 +43,22 @@ const MyStatsContainer =()=>{
     useEffect(getAllExercises, []);
 
 
-    return (
-        allExercises.length > 0
-        ?
-        <>
-
-        <p>My Stats Page</p>
-
-        <ExerciseDropdownSearch allExercises = {allExercises} dropSelect={DropSelect} updateDrop={updateDrop}/>
-        <Graph valuesToGraph={valuesToGraph} exerciseType={exerciseType}/>
-
-        </>
-        :
-        <p>Loading...</p>
-    )
+    return allExercises.length > 0 ? (
+      <>
+        <h1 className="pageTitle">My Stats Page</h1>
+        
+          <ExerciseDropdownSearch
+            allExercises={allExercises}
+            dropSelect={DropSelect}
+            updateDrop={updateDrop}
+          />
+          <div className="container__graph">
+          <Graph valuesToGraph={valuesToGraph} exerciseType={exerciseType} />
+        </div>
+      </>
+    ) : (
+      <p>Loading...</p>
+    );
 }
 
 export default MyStatsContainer;

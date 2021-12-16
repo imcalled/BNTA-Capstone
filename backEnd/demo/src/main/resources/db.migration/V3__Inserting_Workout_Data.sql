@@ -82,7 +82,7 @@ INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,sets
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (13,'2022-01-25',0,0,5,5,70);
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (13,'2022-02-08',0,0,5,5,80);
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (13,'2022-02-09',0,0,5,6,90);
-INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (13,'2022-02-11',0,0,5,5,100);
+INSERT INTO    ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (13,'2022-02-11',0,0,5,5,100);
 INSERT INTO ExerciseDataPoint(exerciseID,date,timeAchieved,distanceAchieved,setsAchieved,repsAchieved,weightAchieved) VALUES (13,'2022-03-20',0,0,5,5,110);
 
 

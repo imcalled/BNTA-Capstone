@@ -1,3 +1,5 @@
+import "../Styles/MyStatsPage.css"
+
 const ExerciseDropdownSearch = ({allExercises, dropSelect, updateDrop}) => {
 
     const exerciseOptions = allExercises.map(exercise => {
@@ -10,7 +12,7 @@ const ExerciseDropdownSearch = ({allExercises, dropSelect, updateDrop}) => {
         <div class="ExerciseDropDownSearch">
 
         <form>
-        <select onChange={updateDrop}>
+        <select className="dropdown" onChange={updateDrop}>
             <option label="Select an exercise"/>
             {exerciseOptions}
         </select>

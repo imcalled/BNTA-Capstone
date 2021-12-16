@@ -82,8 +82,12 @@
 }
 
 .next-workout-button{
-  display: flex;
-  align-self: flex-end;
+  padding: 2rem;
+  background-color: black;
+  color: white;
+  border-radius: 35px;
+  height: 15em;
+  width: 19em;
 }
 
 .cardio-data-container{

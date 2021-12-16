@@ -2,6 +2,7 @@ import React from 'react';
 import Workout from './Workout';
 import { useNavigate } from "react-router-dom";
 import WorkoutButton from './WorkoutButton';
+import "../Styles/MyWorkoutsPage.css"
 import { Link } from "react-router-dom";
 
 const WorkoutsList= ({workouts}) => {
@@ -20,10 +21,7 @@ const WorkoutsList= ({workouts}) => {
 
     return (
         <>
-            <h1>
-            My workouts
-            </h1>
-
+            <div className="container__button_primary">
             {workoutComponents}
 
             <Link to={{ pathname:"/NewWorkoutPage"}}><button className="advanced-button">Create Custom Workout</button></Link>
@@ -31,6 +29,7 @@ const WorkoutsList= ({workouts}) => {
             <section className="Workout-List">
 
             </section>
+            </div>
         </>
     )
 }

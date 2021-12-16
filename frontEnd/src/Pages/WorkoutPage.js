@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Navigate, useParams } from "react-router";
 import StartWorkoutButton from "../components/StartWorkoutButton";
 import { useNavigate } from "react-router-dom";
+import "../components/Workout.css"
 
 const WorkoutPage = () => {
 

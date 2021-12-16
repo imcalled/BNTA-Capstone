@@ -8,7 +8,7 @@
 .button__primary {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-    font-size: medium;
+  font-size: medium;
   border: none;
   color: white;
   display: inline-block;
@@ -18,21 +18,21 @@
   width: 23em;
 }
 
-.icon {
-  display:inline-block;
-  height: 2em;
-  width: auto;
-  padding:1em;
-}
-
-.pageColor {
-  height:100%;
-  align-content: stretch;
-  color: white;
-  background-color: rgb(26,26,26);
-}
-
 .pageTitle {
-  font-size:3.5em;
+  font-size: 3.5em;
   padding-left: 0.5em;
+}
+
+.dropdown {
+  background-color: #848484;
+  border-radius: 0.5em;
+  margin-left: 2em;
+  height: 3em;
+  width: 12em;
+}
+
+.container__graph {
+  position: "relative";
+  height: 42em;
+  padding: 2em;
 }

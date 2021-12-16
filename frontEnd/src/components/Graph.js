@@ -1,9 +1,11 @@
 import {Line} from 'react-chartjs-2';
+import "../Styles/MyStatsPage.css";
 import { useEffect } from 'react';
 import { useState } from 'react';
 import {CategoryScale} from 'chart.js';
 import Chart from 'chart.js/auto';
 Chart.register(CategoryScale);
+
 
 const Graph=({valuesToGraph, exerciseType})=>{
 
@@ -66,9 +68,6 @@ const Graph=({valuesToGraph, exerciseType})=>{
       <>
         {console.log(exerciseType)}
         {console.log(data)}
-
-        <p>Hello</p>
-        <div id="name">
           <Line
             data={data}
             options={{
@@ -76,7 +75,7 @@ const Graph=({valuesToGraph, exerciseType})=>{
                 x: {
                   labels: chartData.labels,
                   title: {
-                    color: "black",
+                    color: "grey",
                     display: true,
                     text: "Date",
                   },
@@ -89,15 +88,17 @@ const Graph=({valuesToGraph, exerciseType})=>{
                     },
                   },
                   title: {
-                    color: "black",
+                    color: "grey",
                     display: true,
                     text: `${yAxisLabel}`,
                   },
                 },
               },
-            }}
+              responsive: true,
+              maintainAspectRatio: false,
+              aspectRatio:2.6
+                 }}
           />
-        </div>
       </>
     ) : (
       <p>Loading...</p>
