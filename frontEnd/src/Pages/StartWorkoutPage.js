@@ -124,7 +124,7 @@ const StartWorkoutPage = () => {
                     </div>    
 
                     <div className="rest-timer-wrapper">
-                        <h1 className="rest-timer-title">Rest Timer</h1>
+                        <h1 className="rest-timer-title"></h1>
                         <Timer/>
                     </div>
 

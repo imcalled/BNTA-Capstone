@@ -59,6 +59,7 @@ const ExerciseCard = ({exercise}) => {
 
     return (
         <>
+            <h1 className="beginner-current-exercise-title">Current Exercise</h1>
             {ExerciseCard}
 
 
