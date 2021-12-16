@@ -119,11 +119,6 @@ const StartWorkoutPage = () => {
                         <ExerciseCard exercise={exercise} />
                     </div>
 
-//                 <div>
-//                     <Timer seconds={seconds} isActive={isActive}/>
-//                 </div>
-
-
                     <div>
                         <RecordForm exercise={exercise} onAddExerciseDataPoint = {onAddExerciseDataPoint}/>
                     </div>    
