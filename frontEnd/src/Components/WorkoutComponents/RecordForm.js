@@ -90,14 +90,14 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                                         <label>Date:
                                         <div className = "container__date">
                                             <input value={date} type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
-                                            <button onClick={handleDateChangeToday}>Use Today's Date</button>
+                                            <button type="button" onClick={handleDateChangeToday}>Use Today's Date</button>
                                         </div>
                                         </label>
                                         <label>Sets Achieved:
-                                            <input type="text" placeholder = "enter sets completed" onChange={handleSetsChange}/>
+                                            <input value={sets} type="text" placeholder = "enter sets completed" onChange={handleSetsChange}/>
                                         </label>
                                         <label>Reps Achieved:
-                                            <input type="text" placeholder = "enter reps completed" onChange={handleRepsChange}/>
+                                            <input value={reps} type="text" placeholder = "enter reps completed" onChange={handleRepsChange}/>
                                         </label>
                                         <input type="submit" value="Add"/>
                                     </form>
@@ -124,13 +124,13 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                                     </label>
                                     
                                     <label>Sets Achieved:
-                                        <input type="text" placeholder = "enter sets completed" onChange={handleSetsChange}/>
+                                        <input value={sets} type="text" placeholder = "enter sets completed" onChange={handleSetsChange}/>
                                     </label>
                                     <label>Reps Achievced:
-                                        <input type="text" placeholder = "enter reps completed" onChange={handleRepsChange}/>
+                                        <input value={reps} type="text" placeholder = "enter reps completed" onChange={handleRepsChange}/>
                                     </label>
                                     <label>Weights Achievced:
-                                        <input type="text" placeholder = "enter weights completed" onChange={handleWeightsChange}/>
+                                        <input value={weights} type="text" placeholder = "enter weights completed" onChange={handleWeightsChange}/>
                                     </label>
                                     <input type="submit" value="Add"/>
                                 </form>
