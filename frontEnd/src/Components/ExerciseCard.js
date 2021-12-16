@@ -32,7 +32,7 @@ const ExerciseCard = ({exercise}) => {
                     <div className="cardio-workout-targets">
                         <p id = "weights-workout-sets">Sets: {exercise.targetSets}</p>
                         <p id = "weights-workout-reps"> Reps: {exercise.targetReps}</p>
-                        <p id = "weights-workout-weights">Weights: {exercise.targetWeights}</p>
+                        <p id = "weights-workout-weights">Weight: {exercise.targetWeight}kg</p>
                  </div>
                 </div>
             </div>
@@ -47,8 +47,8 @@ const ExerciseCard = ({exercise}) => {
                         <p className="cardio-workout-name">{exercise.name}</p>
 
                         <div className="cardio-workout-targets">
-                            <p id="cardio-workout-distance">Distance: {exercise.targetDistance}</p>
-                            <p id="cardio-workout-time">Time: {exercise.targetTime}</p>
+                            <p id="cardio-workout-distance">Distance: {exercise.targetDistance}m</p>
+                            <p id="cardio-workout-time">Time: {exercise.targetTime}mins</p>
                         </div>
                     </div>
                 </div>
