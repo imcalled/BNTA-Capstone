@@ -1,4 +1,3 @@
-
 import ExerciseTargetCard from "./ExerciseTargetCard"
 import { useEffect } from "react/cjs/react.development"
 
@@ -14,15 +13,9 @@ const NewExerciseTargetList = ({newExerciseTargetList, deleteCard}) => {
     });
 
     return (
-        // newExerciseTargetList.length > 0
-        // ?
         <>
         {exerciseTargets}
         </>
-        // :
-        // <>
-        // <p>Loading...</p>
-        // </>
     )
 }
 export default NewExerciseTargetList;

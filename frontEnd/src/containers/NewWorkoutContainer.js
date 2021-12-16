@@ -3,6 +3,8 @@ import ExerciseDropdownSearch from "../components/ExerciseDropdownSearch";
 // import ExerciseTargetForm from "../components/ExerciseTargetForm";
 import NewExerciseTargetList from "../components/NewExerciseTargetList";
 import { Link } from "react-router-dom";
+import ExerciseTargetForm from "../components/ExerciseTargetForm";
+
 const NewWorkoutContainer = () => {
     
     const[allExercises, setAllExercises] = useState([]);
@@ -44,7 +46,6 @@ const NewWorkoutContainer = () => {
     }
 
     const onAddExerciseTarget = (newExerciseTarget) => {
-        // console.log(newExerciseTarget);
 
         if(newExerciseTarget === newExerciseTargetList[newExerciseTargetList.length-1]) {
             console.log("same");
@@ -52,17 +53,6 @@ const NewWorkoutContainer = () => {
         else{
             setNewExerciseTargetList([...newExerciseTargetList, newExerciseTarget]);
         }
-
-        //add exercise target to a list of newWorkoutExerciseTargetsList
-        
-        // fetch("http://localhost:8080/api/v1/exerciseTargets", {
-        //     method: "POST",
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newExerciseTarget)
-        // })
-        // .then(() => getAllExerciseTargets());
     }
 
     const deleteCard = (id) => {
@@ -77,16 +67,6 @@ const NewWorkoutContainer = () => {
     const handleWorkoutName = (event) => {
         setWorkoutName(event.target.value);
     }
-
-    // const workoutNameForm = () => {
-    //     return (
-    //         <form>
-    //             <label>Workout Name:
-    //                 <input type="text" onChange={handleWorkoutName}/>
-    //             </label>
-    //         </form>
-    //     )
-    // }
 
     const getWorkoutId = () => {
         return fetch("http://localhost:8080/api/v1/workout")
@@ -117,10 +97,11 @@ const NewWorkoutContainer = () => {
         //anonymous function, take nothing and call the function
         .then((workoutId) => {
             console.log("workoutId: ", workoutId);
-            postExerciseTargets(workoutId)});
+            postExerciseTargets(workoutId)})
         
         //exerciseTarget object to match with database
         // postExerciseTargets();
+        .then(() => console.log("workout saved!"));
     }
 
     const postExerciseTargets = (workoutId) => {
@@ -154,8 +135,6 @@ const NewWorkoutContainer = () => {
         allExercises.length > 0
         ?
         <>
-        <p>NavBar</p> 
-        <p>New Workout Page</p>
             <form>
                 <label>Workout Name:
                     <input type="text" onChange={handleWorkoutName}/>
@@ -163,7 +142,7 @@ const NewWorkoutContainer = () => {
             </form>
         {/* {workoutNameForm} */}
         <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
-        {/* <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/> */}
+        <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
         <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
         {saveButton}
         {/* <saveButton /> */}
