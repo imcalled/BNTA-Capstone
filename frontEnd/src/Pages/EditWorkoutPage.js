@@ -1,22 +1,51 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import ExerciseDropdownSearch from "../components/ExerciseDropdownSearch";
-// import ExerciseTargetForm from "../components/ExerciseTargetForm";
-import NewExerciseTargetList from "../components/NewExerciseTargetList";
-import { Link } from "react-router-dom";
+import ExerciseCardList from "../components/ExerciseCardList";
+import ExerciseCard from "../components/ExerciseTargetCard";
 import ExerciseTargetForm from "../components/ExerciseTargetForm";
+import NewExerciseTargetList from "../components/NewExerciseTargetList";
+import { useParams } from "react-router-dom";
 
-const NewWorkoutContainer = () => {
-    
+const EditWorkoutPage = () => {
+
+    const{id} = useParams();
+
+    const[exercises,setExercises] = useState([]);    
     const[allExercises, setAllExercises] = useState([]);
     const[selectedExercise, setSelectedExercise] = useState(null);
     const[DropSelect, setDropSelect]=useState(null);
     const[exerciseTarget, setExerciseTarget] = useState(null);
     const[newExerciseTargetList, setNewExerciseTargetList] = useState([]);
     const[workoutName, setWorkoutName] = useState([]);
-    // const[workoutId, setWorkoutId] = useState("");
-    const[visibleSaveButton, setVisibleSaveButton] = useState(false);
 
-    const getSelectedExercise =()=>{
+    const[visible, setVisible] = useState(false);
+
+    const getWorkoutNameById = () => {
+        return fetch("http://localhost:8080/api/v1/workout")
+            .then(response => response.json())
+            .then(data => data.filter(workout => {
+                return (
+                    workout.id == id
+                )
+            }))
+            .then(workout => setWorkoutName(workout[0].name))
+            .then(() => console.log(workoutName))
+    }
+
+    useEffect(getWorkoutNameById, []);
+
+    const getExercisesByWorkoutId = () => {
+        fetch(`http://localhost:8080/api/v1/exercises/workout/id/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            setExercises(data)
+            setNewExerciseTargetList(exercises)
+        })
+    }
+
+    useEffect(getExercisesByWorkoutId, []);
+
+    const getSelectedExercise = () =>{
         if(DropSelect){
         fetch(`http://localhost:8080/api/v1/exercises/id/${DropSelect}`)
         .then(response => response.json())
@@ -46,6 +75,7 @@ const NewWorkoutContainer = () => {
     }
 
     const onAddExerciseTarget = (newExerciseTarget) => {
+        // console.log(newExerciseTarget);
 
         if(newExerciseTarget === newExerciseTargetList[newExerciseTargetList.length-1]) {
             console.log("same");
@@ -98,11 +128,22 @@ const NewWorkoutContainer = () => {
         .then((workoutId) => {
             console.log("workoutId: ", workoutId);
             postExerciseTargets(workoutId)})
-        
-        //exerciseTarget object to match with database
-        // postExerciseTargets();
-        .then(() => console.log("workout saved!"));
+        .then(setVisible(true))
+        .then(successPopup());
+        //pop up alert to say successful, redirect to 
     }
+
+
+    const successPopup = () => {
+    }
+
+    const handleClick = () => {
+        // const modal = document.querySelector(".modal")
+        // const closeBtn = document.querySelector(".close")
+        // modal.style.display = "block";
+        // closeBtn.addEventListener("click", () => {
+        //     modal.style.display = "none";
+  }
 
     const postExerciseTargets = (workoutId) => {
         newExerciseTargetList.map(exerciseTarget => {
@@ -135,9 +176,10 @@ const NewWorkoutContainer = () => {
         allExercises.length > 0
         ?
         <>
+        <h1>Edit workout</h1>
             <form>
                 <label>Workout Name:
-                    <input type="text" onChange={handleWorkoutName}/>
+                    <input type="text" value={workoutName} onChange={handleWorkoutName}/>
                 </label>
             </form>
         {/* {workoutNameForm} */}
@@ -153,4 +195,4 @@ const NewWorkoutContainer = () => {
         <p>Loading...</p>
     )
 }
-export default NewWorkoutContainer;
+export default EditWorkoutPage;

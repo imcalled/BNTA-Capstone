@@ -155,10 +155,10 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                                         </div>
                                         </label>
                                         <label>Time Achieved:
-                                            <input type="text" placeholder = "enter duration" onChange={handleTimeChange}/>
+                                            <input type="text" placeholder = "enter minutes" onChange={handleTimeChange}/>
                                         </label>
                                         <label>Distance Achieved:
-                                            <input type="text" placeholder = "enter distance achieved" onChange={handleDistanceChange}/>
+                                            <input type="text" placeholder = "enter meters" onChange={handleDistanceChange}/>
                                         </label>
                                         <input type="submit" value="Add"/>
                                     </form>
