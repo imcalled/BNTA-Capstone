@@ -1,7 +1,5 @@
 import { useState, useEffect} from "react";
 import ExerciseDropdownSearch from "../components/ExerciseDropdownSearch";
-import ExerciseCardList from "../components/ExerciseCardList";
-import ExerciseCard from "../components/ExerciseTargetCard";
 import ExerciseTargetForm from "../components/ExerciseTargetForm";
 import NewExerciseTargetList from "../components/NewExerciseTargetList";
 import { useParams } from "react-router-dom";
@@ -19,17 +17,6 @@ const EditWorkoutPage = () => {
     const[workoutName, setWorkoutName] = useState([]);
 
     const[visible, setVisible] = useState(false);
-
-    const customStyles = {
-        content: {
-          top: '50%',
-          left: '50%',
-          right: 'auto',
-          bottom: 'auto',
-          marginRight: '-50%',
-          transform: 'translate(-50%, -50%)',
-        },
-      };
 
     const getWorkoutNameById = () => {
         return fetch("http://localhost:8080/api/v1/workout")

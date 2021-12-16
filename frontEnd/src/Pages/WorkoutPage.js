@@ -11,8 +11,6 @@ const WorkoutPage = () => {
     const {id} = useParams();
     const [exercises,setExercises] = useState([])
 
-
-
     const getExercisesByWorkoutId = () => {
         fetch(`http://localhost:8080/api/v1/exercises/workout/id/${id}`)
         .then(response => response.json())

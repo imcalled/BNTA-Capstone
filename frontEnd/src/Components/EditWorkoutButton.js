@@ -1,3 +1,4 @@
+import './Workout.css';
 import { Link } from "react-router-dom";
 
 const EditWorkoutButton = ({workoutId, editWorkout}) => {
@@ -5,7 +6,7 @@ const EditWorkoutButton = ({workoutId, editWorkout}) => {
     return(
         <>
             <Link to={{ pathname: `/EditWorkoutPage/${workoutId}` }}>
-                <button onClick = {() =>editWorkout(workoutId)}>Edit Workout</button>
+                <button className="start-workout-button" onClick = {() => editWorkout(workoutId)}>Edit Workout</button>
             </Link>
         </>
     )
