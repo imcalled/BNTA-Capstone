@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import ExerciseDropdownSearch from "../components/ExerciseDropdownSearch";
-// import ExerciseTargetForm from "../components/ExerciseTargetForm";
+import ExerciseTargetForm from "../components/ExerciseTargetForm";
 import NewExerciseTargetList from "../components/NewExerciseTargetList";
 import { Link } from "react-router-dom";
+
 const NewWorkoutContainer = () => {
     
     const[allExercises, setAllExercises] = useState([]);
@@ -154,8 +155,6 @@ const NewWorkoutContainer = () => {
         allExercises.length > 0
         ?
         <>
-        <p>NavBar</p> 
-        <p>New Workout Page</p>
             <form>
                 <label>Workout Name:
                     <input type="text" onChange={handleWorkoutName}/>
@@ -163,7 +162,7 @@ const NewWorkoutContainer = () => {
             </form>
         {/* {workoutNameForm} */}
         <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
-        {/* <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/> */}
+        <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
         <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
         {saveButton}
         {/* <saveButton /> */}
