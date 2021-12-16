@@ -220,3 +220,8 @@
 body {
   background-color: #1A1A1A;
 }
+
+.exercise-to-add{
+  background-color: grey;
+  opacity: 0.8;
+}
