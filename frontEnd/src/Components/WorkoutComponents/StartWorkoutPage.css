@@ -6,14 +6,19 @@
 
 }
 
+.beginner-current-exercise-title {
+  color: white;
+}
+
 .beginner-current-exercise-name {
     font-size: 24px;
+    color: white;
 }
 
 .rest-timer-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 4rem;
 }
 
 .timer-container{
@@ -23,7 +28,7 @@
     height: 20rem;
     border: solid 2px black;
     border-radius: 10rem;
-    box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+    box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -33,6 +38,7 @@
   .display-time {
     font-size: 3rem;
     padding: 2rem;
+    color: white;
   }
   
   .timer-button {
@@ -72,6 +78,7 @@
   .rest-timer-title {
     display: flex;
     justify-content: center;
+    color: white;
 }
 
 .next-workout-button{
@@ -104,9 +111,10 @@
   justify-content: center;
   border: solid 2px black;
   border-radius: 50px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2);
   width: 26rem;
   height: 26rem;
+  background-color: #F1562D;
 }
 
 .weights-data-container{
@@ -120,7 +128,7 @@
 .weights-data-name{
   display: flex;
   justify-content: center;
-  font-size: 40px;
+  font-size: 2rem;
   
 }
 
@@ -135,9 +143,10 @@
   justify-content: center;
   border: solid 2px black;
   border-radius: 50px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2);
   width: 26rem;
   height: 26rem;
+  background-color: #F1562D;
 }
 
 .calisthenics-data-container{
@@ -164,14 +173,16 @@
   justify-content: center;
   border: solid 2px black;
   border-radius: 50px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 35, 11, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2);
   width: 26rem;
   height: 26rem;
+  background-color: #F1562D;
 }
 
 .review-form-name{
   display: flex;
   justify-content: space-evenly;
+  color: white;
 }
 
 .record-form-wrapper {

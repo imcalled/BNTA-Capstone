@@ -88,7 +88,7 @@ const StartWorkoutPage = () => {
                 <div className="start-workout-page-container">
 
                     <div className="beginner-current-exercise">
-                        <h1>Current Exercise</h1>
+                        <h1 className="beginner-current-exercise-title">Current Exercise</h1>
                         <ExerciseCard exercise={exercise} />
                     </div>
 
