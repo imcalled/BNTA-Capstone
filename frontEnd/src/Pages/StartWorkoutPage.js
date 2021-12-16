@@ -18,8 +18,6 @@ const StartWorkoutPage = () => {
     const [seconds, setSeconds] = useState(0);
     const [isActive, setIsActive] = useState(false);
 
-
-
     const getAllExercisesByWorkoutId = () => {
         fetch(`http://localhost:8080/api/v1/exercises/workout/id/${id}`)
         .then(response => response.json())

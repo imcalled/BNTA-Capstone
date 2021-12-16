@@ -19,6 +19,17 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
            setDate(event.target.value)
        } 
 
+    const handleDateChangeToday = () => {
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2,'0');
+        var mm = String(today.getMonth() +1).padStart(2,'0');
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        console.log(String(today));
+        setDate(String(today));
+    }
+
     const handleRepsChange = (event) => {
         setReps(event.target.value);
     }
@@ -77,13 +88,16 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                                 <div className="calisthenics-data-targets">
                                     <form className="record-form-wrapper"onSubmit={handleSubmitTarget}>
                                         <label>Date:
-                                            <input type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
+                                        <div className = "container__date">
+                                            <input value={date} type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
+                                            <button type="button" onClick={handleDateChangeToday}>Use Today's Date</button>
+                                        </div>
                                         </label>
                                         <label>Sets Achieved:
-                                            <input type="text" placeholder = "enter sets completed" onChange={handleSetsChange}/>
+                                            <input value={sets} type="text" placeholder = "enter sets completed" onChange={handleSetsChange}/>
                                         </label>
                                         <label>Reps Achieved:
-                                            <input type="text" placeholder = "enter reps completed" onChange={handleRepsChange}/>
+                                            <input value={reps} type="text" placeholder = "enter reps completed" onChange={handleRepsChange}/>
                                         </label>
                                         <input type="submit" value="Add"/>
                                     </form>
@@ -103,16 +117,20 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                         <div className="weights-data-targets">
                                 <form className="record-form-wrapper"onSubmit={handleSubmitTarget}>
                                     <label>Date:
-                                            <input type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
+                                        <div className = "container__date">
+                                            <input value={date} type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
+                                            <button type="button" onClick={handleDateChangeToday}>Use Today's Date</button>
+                                        </div>
                                     </label>
+                                    
                                     <label>Sets Achieved:
-                                        <input type="text" placeholder = "enter sets completed" onChange={handleSetsChange}/>
+                                        <input value={sets} type="text" placeholder = "enter sets completed" onChange={handleSetsChange}/>
                                     </label>
                                     <label>Reps Achievced:
-                                        <input type="text" placeholder = "enter reps completed" onChange={handleRepsChange}/>
+                                        <input value={reps} type="text" placeholder = "enter reps completed" onChange={handleRepsChange}/>
                                     </label>
                                     <label>Weights Achievced:
-                                        <input type="text" placeholder = "enter weights completed" onChange={handleWeightsChange}/>
+                                        <input value={weights} type="text" placeholder = "enter weights completed" onChange={handleWeightsChange}/>
                                     </label>
                                     <input type="submit" value="Add"/>
                                 </form>
@@ -131,13 +149,16 @@ const RecordForm = ({exercise, onAddExerciseDataPoint}) => {
                                 <div className="cardio-data-targets">
                                     <form className="record-form-wrapper" onSubmit={handleSubmitTarget}>
                                         <label>Date:
-                                            <input type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
+                                        <div className = "container__date">
+                                            <input value={date} type="text" placeholder = "yyyy-mm-dd" onChange={handleDateChange}/>
+                                            <button type="button" onClick={handleDateChangeToday}>Use Today's Date</button>
+                                        </div>
                                         </label>
                                         <label>Time Achieved:
-                                            <input type="text" placeholder = "enter duration" onChange={handleTimeChange}/>
+                                            <input type="text" placeholder = "enter minutes" onChange={handleTimeChange}/>
                                         </label>
                                         <label>Distance Achieved:
-                                            <input type="text" placeholder = "enter distance achieved" onChange={handleDistanceChange}/>
+                                            <input type="text" placeholder = "enter meters" onChange={handleDistanceChange}/>
                                         </label>
                                         <input type="submit" value="Add"/>
                                     </form>

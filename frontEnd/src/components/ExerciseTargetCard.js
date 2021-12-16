@@ -30,7 +30,7 @@ const ExerciseTargetCard = ({exercise, deleteCard}) => {
                             <div className="calisthenics-workout-targets">
                                 <p>Sets: {exercise.targetReps}</p>
                                 <p>Reps: {exercise.targetSets}</p>
-                                <button onClick={handleDelete}>Delete
+                                <button className="delete-exercise-button"  onClick={handleDelete}>Delete
                                     {/* <image className="bin-icon" src={bin}/> */}
                                 </button>
                             </div>
@@ -43,13 +43,17 @@ const ExerciseTargetCard = ({exercise, deleteCard}) => {
                     console.log("weights");
                     return(
                     <div className="weights-workout">
+                        <img className="weights-image2" src="https://www.vippng.com/png/detail/55-554509_dumbbells-clipart-svg-gym-weight-icon-png.png" />
                         <p className="weights-workout-name">{exercise.name}</p>
+                        <div className="weight-issue">
                         <p>Sets: {exercise.targetSets}</p>
                         <p>Reps: {exercise.targetReps}</p>
-                        <p>Weights: {exercise.targetWeights}</p>
-                        <button onClick={handleDelete}>Delete
+                        <p>Weight: {exercise.targetWeights}</p>
+                        <button className="delete-exercise-button" onClick={handleDelete}>Delete</button>
+                        </div>
+                       
                                     {/* <image className="bin-icon" src={bin}/> */}
-                        </button>
+                        
                     </div>
                     )
                 case "CARDIO":
@@ -63,9 +67,9 @@ const ExerciseTargetCard = ({exercise, deleteCard}) => {
                                 <p className="cardio-workout-name">{exercise.name}</p>
 
                                 <div className="cardio-workout-targets">
-                                    <p id="cardio-workout-time">Time: {exercise.targetTime}</p>
-                                    <p id="cardio-workout-distance">Distance: {exercise.targetDistance}</p>
-                                    <button onClick={handleDelete}>Delete
+                                    <p>Time: {exercise.targetTime}mins</p>
+                                    <p>Distance: {exercise.targetDistance}m</p>
+                                    <button className="delete-exercise-button" onClick={handleDelete}>Delete
                                     {/* <image className="bin-icon" src={bin}/> */}
                                 </button>
                                 </div>
