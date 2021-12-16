@@ -41,9 +41,5 @@ VALUES (11,3,0,0,5,5,60);
 INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
 VALUES (12,3,0,0,5,5,45);
 INSERT INTO ExerciseTarget(exerciseID, workoutID,time,distance,sets,reps,weight)
-<<<<<<< HEAD
 VALUES (13,3,0,0,3,5,80);
-=======
-VALUES (13,3,0,0,5,80);
->>>>>>> 2a368a62 (adding time to the treadmill of advanced workout)
 
