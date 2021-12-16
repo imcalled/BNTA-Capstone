@@ -162,6 +162,8 @@ const NewWorkoutContainer = () => {
             </form>
         {/* {workoutNameForm} */}
         <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
+        </div>
+        
         <div className="container__exercise_selected">
         <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
         </div>
@@ -172,7 +174,6 @@ const NewWorkoutContainer = () => {
         {modal && <SaveWorkoutModal close={setModal} id={workoutId}/>}
         {/* <saveButton /> */}
         {/* <button onClick={saveWorkout}>Save</button> */}
-        
         </>
         :
         <p>Loading...</p>

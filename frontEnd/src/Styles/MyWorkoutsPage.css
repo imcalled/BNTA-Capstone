@@ -38,13 +38,15 @@
     height: 15em;
     width: 23em;
      margin-top: 2em;
+     cursor: pointer;
 
     transition: all .5s ease;
     text-transform: uppercase;
 }
-  .button__primary:hover {
+
+  .button__primary_alt:hover {
       color: white;
-      background-color: #fda071;
+      background-color: rgb(151, 151, 151);
   }
 
   .pageTitle {
