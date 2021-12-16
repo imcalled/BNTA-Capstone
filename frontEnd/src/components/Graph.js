@@ -48,7 +48,7 @@ const Graph=({valuesToGraph, exerciseType})=>{
     const data = {
       datasets: [
         {
-          label: valuesToGraph.date,
+          label:"Exercise Logs",
           data: yAxisData,
           fill: true,
           backgroundColor: "transparent",
@@ -64,13 +64,13 @@ const Graph=({valuesToGraph, exerciseType})=>{
       ],
     };
 
-    return valuesToGraph ? (
-      <>
-        {console.log(exerciseType)}
-        {console.log(data)}
-          <Line
+    return (
+      exerciseType ?(
+
+        <Line
             data={data}
             options={{
+
               scales: {
                 x: {
                   labels: chartData.labels,
@@ -98,10 +98,14 @@ const Graph=({valuesToGraph, exerciseType})=>{
               maintainAspectRatio: false,
               aspectRatio:2.6
                  }}
-          />
-      </>
-    ) : (
-      <p>Loading...</p>
+                
+          />)
+          :
+
+          (<p>Select an exercise to see your progress</p>)
+          
+          
+
     );
 }
  
