@@ -9,6 +9,7 @@ import WorkoutPage from './Pages/WorkoutPage';
 import StartWorkoutPage from './Pages/StartWorkoutPage';
 import './Styles/HomePage.css'
 import NewWorkoutContainer from './containers/NewWorkoutContainer'
+import EditWorkoutPage from './components/EditWorkoutButton';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path= "/NewWorkoutPage" element={<NewWorkoutContainer/>} />
         <Route path = "/WorkoutPage/:id" element={<WorkoutPage/>} />
         <Route path = "/StartWorkoutPage/:id" element={<StartWorkoutPage/>} />
+        <Route path = "/EditWorkoutPage/:id" element={<EditWorkoutPage/>} />
       </Routes>
     </div>
     </BrowserRouter>

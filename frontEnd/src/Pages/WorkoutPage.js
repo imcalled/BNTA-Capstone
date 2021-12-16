@@ -4,6 +4,7 @@ import { Navigate, useParams } from "react-router";
 import StartWorkoutButton from "../components/StartWorkoutButton";
 import { useNavigate } from "react-router-dom";
 import "../components/Workout.css"
+import EditWorkoutButton from "../components/EditWorkoutButton";
 
 const WorkoutPage = () => {
 
@@ -26,6 +27,10 @@ const WorkoutPage = () => {
         navigate("/StartWorkoutPage")
     }
 
+    const editWorkout = () => {
+        navigate("/EditWorkoutPage")
+    }
+
     return(
         <>
         <div className="preset-beginner-title">
@@ -38,10 +43,8 @@ const WorkoutPage = () => {
 
         <div className="start-workout-wrapper">
             <StartWorkoutButton workoutId={id} goWorkout={goWorkout}/>
+            <EditWorkoutButton workoutId={id} editWorkout={editWorkout} />
         </div>
-
-        
-        {/* {exerciseTargets.map(exerciseTarget => <div>{exerciseTarget.exercise_Id}</div>)} */}
         </>
     )
 
