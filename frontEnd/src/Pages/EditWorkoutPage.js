@@ -117,7 +117,25 @@ const EditWorkoutPage = () => {
 
         if(workoutName === "") {
             setEmpty(true);
+            alert("Enter a workout name");
+            window.scrollTo({
+                top: 0, 
+                behavior: 'smooth'
+                /* you can also use 'auto' behaviour
+                   in place of 'smooth' */
+              });
         }
+
+        if(newExerciseTargetList === []) {
+            alert("Add exercises to your workout!");
+            window.scrollTo({
+                top: 0, 
+                behavior: 'smooth'
+                /* you can also use 'auto' behaviour
+                   in place of 'smooth' */
+              });
+        }
+
         else {
             const newWorkout = {
                 "name": workoutName
