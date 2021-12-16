@@ -1,7 +1,7 @@
 import '../components/WorkoutComponents/StartWorkoutPage.css';
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import ExerciseCard from '../components/ExerciseCard';
+import ExerciseCard from "../components/ExerciseCard"
 import RecordForm from '../components/WorkoutComponents/RecordForm';
 import Timer from '../components/WorkoutComponents/Timer';
 import '../components/WorkoutComponents/StartWorkoutPage.css';

@@ -10,6 +10,7 @@ import StartWorkoutPage from './Pages/StartWorkoutPage';
 import './Styles/HomePage.css'
 import NewWorkoutContainer from './containers/NewWorkoutContainer'
 import EditWorkoutPage from './Pages/EditWorkoutPage';
+import Footer from "./components/Footer"
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
         <Route path = "/EditWorkoutPage/:id" element={<EditWorkoutPage/>} />
 
       </Routes>
+    </div>
+    <div>
+    <Footer />
     </div>
     </BrowserRouter>
     
