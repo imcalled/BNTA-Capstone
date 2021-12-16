@@ -6,6 +6,7 @@
 }
 
 .button__primary {
+  cursor:pointer;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
     font-size: medium;
@@ -22,6 +23,7 @@
   text-transform: uppercase;
 }
 .button__primary:hover {
+  cursor:pointer;
     color: white;
     background-color: #fda071;
 }
@@ -41,7 +43,7 @@
 
 .container__graph {
   position: "relative";
-  height: 34em;
+  height: 30em;
   padding: 2em;
 }
 

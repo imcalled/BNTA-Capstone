@@ -31,6 +31,7 @@
   text-transform: uppercase;
 }
 .button__primary:hover {
+  cursor:pointer;
   color: white;
   background-color: #fda071;
 }
@@ -66,13 +67,13 @@
   justify-content: space-evenly;
 
   background: rgba(26,26,26, 1);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  padding-top: 1em;
-  padding-bottom: 1em;
+  /* padding-top: 1em; */
+  /* padding-bottom: 1em; */
 
   margin-bottom: 0;
   position: fixed;

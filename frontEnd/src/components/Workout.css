@@ -1,4 +1,5 @@
 .all-buttons{
+  cursor: pointer;
   display: grid;
   grid-template-columns: 30% 30% 30% 30%;
   margin-left: auto;
@@ -229,6 +230,7 @@
 }
 
 .start-workout-button {
+  cursor: pointer;
   background-color: #0CA789; /* Green */
   border: none;
   color: white;
@@ -250,6 +252,7 @@
 }
 
 .edit-workout-button {
+  cursor: pointer;
   background-color: #808080; /* Green */
   border: none;
   color: white;
@@ -294,6 +297,7 @@ font-size: 13px;}
 background-color: red;
 border-radius: 10px;
 font-size: 13px;}
+
 .exercise-to-add{
   background-color: grey;
   opacity: 0.8;
@@ -426,6 +430,11 @@ font-size: 13px;}
     width: 15rem;
   }
 
+  .edit-workout-button{
+    cursor:pointer;
+    padding: 0.5rem;
+  }
+
   .weights-workout {
     height: 15rem;
     width: 15rem;
@@ -437,6 +446,7 @@ font-size: 13px;}
   }
 
   .start-workout-button {
+    cursor:pointer;
     padding: 0.5rem;
   }
 }
@@ -462,6 +472,12 @@ font-size: 13px;}
   .cardio-workout {
     height: 10rem;
     width: 10rem;
+  }
+
+  .edit-workout-button{
+    cursor:pointer;
+    padding: 0.3rem;
+    font-size: 10px;
   }
 
   .calisthenics-workout {
@@ -502,6 +518,7 @@ font-size: 13px;}
   }
 
   .start-workout-button {
+    cursor:pointer;
     padding: 0.3rem;
     font-size: 10px;
   }

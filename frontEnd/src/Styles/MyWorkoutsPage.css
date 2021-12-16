@@ -13,6 +13,7 @@
 }
   
   .button__primary {
+    cursor:pointer;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
       font-size: medium;
@@ -28,6 +29,7 @@
   }
 
   .button__primary_alt {
+    cursor:pointer;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
       font-size: medium;
@@ -46,6 +48,7 @@
 }
 
   .button__primary_alt:hover {
+    cursor:pointer;
       color: white;
       background-color: rgb(151, 151, 151);
   }
