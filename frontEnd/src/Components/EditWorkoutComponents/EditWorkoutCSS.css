@@ -67,6 +67,11 @@
   justify-content: center;
 }
 
+.modal-buttons {
+  flex-direction: row;
+  align-self: center;
+}
+
 .add-exercises-container {
   display: inline-flex;
   flex-direction: row;
@@ -76,9 +81,32 @@
   border-radius: 0.5em;
 }
 
-.save-exercise-button {
-  height: 2.5em;
-  background-color: green;
-  border-radius: 10px;
-  font-size: 13px;
+.save-workout-button {
+  cursor: pointer;
+  background-color: #0CA789;;
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 6px;
+  text-align: center;
+  margin-left: 2em;
+}
+
+.delete-workout-button {
+  cursor: pointer;
+  background-color: rgb(245, 68, 68);
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 6px;
+  text-align: center;
+  margin-left: 2em;
 }

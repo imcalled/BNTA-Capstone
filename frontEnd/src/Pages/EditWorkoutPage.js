@@ -1,12 +1,12 @@
 import { useState, useEffect} from "react";
 import ExerciseDropdownSearch from "../components/ExerciseDropdownSearch";
-import ExerciseCardList from "../components/ExerciseCardList";
-import ExerciseCard from "../components/ExerciseTargetCard";
 import ExerciseTargetForm from "../components/ExerciseTargetForm";
 import NewExerciseTargetList from "../components/NewExerciseTargetList";
 import { useParams } from "react-router-dom";
 import SaveWorkoutModal from "../components/EditWorkoutComponents/SaveWorkoutModal"
 import EditWorkoutCSS from "../components/EditWorkoutComponents/EditWorkoutCSS.css"
+import DeleteWorkoutModal from "../components/EditWorkoutComponents/DeleteWorkoutModal";
+import AreYouSureModal from "../components/EditWorkoutComponents/AreYouSureModal";
 
 const EditWorkoutPage = () => {
 
@@ -19,8 +19,10 @@ const EditWorkoutPage = () => {
     const[exerciseTarget, setExerciseTarget] = useState(null);
     const[newExerciseTargetList, setNewExerciseTargetList] = useState([]);
     const[workoutName, setWorkoutName] = useState("");
-    const[modal, setModal] = useState(false);
+    const[saveModal, setSaveModal] = useState(false);
     const[empty, setEmpty] = useState(false);
+    const[areYouSureModal, setAreYouSureModal] = useState(false);
+    const[deleteModal, setDeleteModal] = useState(false);
 
     const getWorkoutNameById = () => {
         return fetch("http://localhost:8080/api/v1/workout")
@@ -156,15 +158,15 @@ const EditWorkoutPage = () => {
             // .then(successPopup());
             
             postExerciseTargets(id);
-            setModal(true);
-            successPopup();
+            setSaveModal(true);
+            // successPopup();
             //pop up alert to say successful, redirect to 
         }
     }
 
-    const successPopup = () => {
-        {modal && <SaveWorkoutModal close={setModal}/>}
-    }
+    // const successPopup = () => {
+    //     {saveModal && <SaveWorkoutModal close={setSaveModal}/>}
+    // }
 
     const postExerciseTargets = (workoutId) => {
         newExerciseTargetList.map(exerciseTarget => {
@@ -189,9 +191,41 @@ const EditWorkoutPage = () => {
         .then(data => console.log(data))  
     })
     getAllExerciseTargets();
+
 }
 
-    const saveButton = newExerciseTargetList.length > 0 ? <button className="save-exercise-button" onClick={saveWorkout}>Save</button> : null
+    const areYouSure = () => {
+        setAreYouSureModal(true);
+    }
+
+    const deleteWorkout = () => {
+        //delete exercise targets
+        fetch(`http://localhost:8080/api/v1/exerciseTargets/id/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        .then(data => console.log(data))
+
+        //delete workout with id
+        .then(fetch(`http://localhost:8080/api/v1/workout/id/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }))
+        .then(data => console.log(data))
+
+        setAreYouSureModal(false);
+        setDeleteModal(true);
+    }
+
+    const closeModal = () => {setAreYouSureModal(false)};
+
+
+    const saveButton = newExerciseTargetList.length > 0 ? <button className="save-workout-button" onClick={saveWorkout}>Save</button> : null;
+    const deleteButton = newExerciseTargetList.length > 0 ? <button className="delete-workout-button" onClick={areYouSure}>Delete</button> : null;
 
     return (
         allExercises.length > 0
@@ -210,7 +244,11 @@ const EditWorkoutPage = () => {
             <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
             <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
             {saveButton}
-            {modal && <SaveWorkoutModal close={setModal}/>}
+            {deleteButton}
+
+            {saveModal && <SaveWorkoutModal/>}
+            {deleteModal && <DeleteWorkoutModal/>}
+            {areYouSureModal && <AreYouSureModal deleteWorkout={deleteWorkout} close={closeModal}/>}
         </div>
 
         {/* <saveButton /> */}

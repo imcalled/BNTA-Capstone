@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const SaveWorkoutModal = () => {
+const DeleteWorkoutModal = () => {
 
     let navigate = useNavigate();
 
@@ -21,7 +21,7 @@ const SaveWorkoutModal = () => {
                 </div>
                 <div className="modal-content">
                     <p>
-                        Your workout has been saved
+                        Workout has been deleted
                     </p>
                     <button className="modal-redirect-My-Workouts" onClick={goMyWorkouts}>Back to My Workouts</button>
                     {/* <button className="modal-redirect-start-workouts" onClick={() => goStartWorkout}>Start Workout</button> */}
@@ -31,4 +31,4 @@ const SaveWorkoutModal = () => {
     )
 }
 
-export default SaveWorkoutModal;
+export default DeleteWorkoutModal;
