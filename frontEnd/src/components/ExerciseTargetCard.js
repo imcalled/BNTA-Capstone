@@ -1,5 +1,6 @@
 import cardio from '../Icons/cardio.png'
 import calisthenic from '../Icons/back-lever.png'
+import weights from '../Icons/weights.png'
 import { useEffect } from 'react/cjs/react.development'
 import './Workout.css'
 import bin from '../Icons/binIcon.png'
@@ -43,7 +44,7 @@ const ExerciseTargetCard = ({exercise, deleteCard}) => {
                     console.log("weights");
                     return(
                     <div className="weights-workout">
-                        <img className="weights-image2" src="https://www.vippng.com/png/detail/55-554509_dumbbells-clipart-svg-gym-weight-icon-png.png" />
+                        <img className="calisthenics-image" src={weights} />
                         <p className="weights-workout-name">{exercise.name}</p>
                         <div className="weight-issue">
                         <p>Sets: {exercise.targetSets}</p>
