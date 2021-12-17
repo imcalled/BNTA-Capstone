@@ -2,7 +2,6 @@ import cardio from '../Icons/cardio.png'
 import calisthenic from '../Icons/back-lever.png'
 import { useEffect } from 'react/cjs/react.development'
 import './Workout.css'
-import bin from '../Icons/binIcon.png'
 
 const ExerciseTargetCard = ({exercise, deleteCard}) => {
 

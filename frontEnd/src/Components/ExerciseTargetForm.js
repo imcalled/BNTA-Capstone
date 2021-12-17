@@ -85,6 +85,7 @@ const ExerciseTargetForm = ({exercise, onAddExerciseTarget}) => {
 
                                 <div className="calisthenics-workout-targets">
                                     <form onSubmit={handleSubmitTarget}>
+                                        <div className="yacines-way">
                                         <label>Sets:
                                             <input type="number" onChange={handleSetsChange}/>
                                         </label>
@@ -93,6 +94,7 @@ const ExerciseTargetForm = ({exercise, onAddExerciseTarget}) => {
                                         </label>
                                         <div className="add-exercise-button-container" >
                                         <input className="add-exercise-button" type="submit" value="Add"/>
+                                        </div>
                                         </div>
                                     </form>
                                 </div>
@@ -111,17 +113,19 @@ const ExerciseTargetForm = ({exercise, onAddExerciseTarget}) => {
 
                         <div className="calisthenics-workout-targets">
                                 <form  onSubmit={handleSubmitTarget}>
+                                    <div className="yacines-way">
                                     <label>Sets:
                                         <input type="number" onChange={handleSetsChange}/>
                                     </label>
                                     <label>Reps:
                                         <input type="number" onChange={handleRepsChange}/>
                                     </label>
-                                    <label>Weight(kg):
-                                        <input type="number" onChange={handleWeightsChange}/>
+                                    <label>Weight:
+                                        <input type="number" onChange={handleWeightsChange}/>(kg)
                                     </label>
                                     <div className="add-exercise-button-container">
                                     <input className="add-exercise-button" type="submit" value="Add"/>
+                                    </div>
                                     </div>
                                 </form>
                             </div>
@@ -140,6 +144,7 @@ const ExerciseTargetForm = ({exercise, onAddExerciseTarget}) => {
 
                                 <div className="cardio-workout-targets">
                                     <form  onSubmit={handleSubmitTarget}>
+                                        <div className="yacines-way">
                                         <label>Time:
                                             <input type="number" onChange={handleTimeChange}/>
                                         </label>
@@ -148,6 +153,7 @@ const ExerciseTargetForm = ({exercise, onAddExerciseTarget}) => {
                                         </label>
                                         <div className="add-exercise-button-container">
                                         <input className="add-exercise-button" type="submit" value="Add"/>
+                                        </div>
                                         </div>
                                     </form>
                                 </div>

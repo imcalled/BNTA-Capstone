@@ -258,3 +258,10 @@
  font-size: 13px;
 
 }
+
+.yacines-way{
+  display:flex;
+  flex-direction:column;
+
+
+}
