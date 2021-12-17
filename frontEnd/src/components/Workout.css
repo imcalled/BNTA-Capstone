@@ -130,8 +130,8 @@
 .weights-workout-container{
   display: flex;
   flex-direction: column;
-  gap:2rem;
-  justify-content: center;
+  gap:0.2rem;
+  padding-bottom: 4em;
 }
 
 .weights-workout-name{
@@ -165,8 +165,9 @@
 .cardio-workout-container{
   display: flex;
   flex-direction: column;
-  gap:2rem;
-  justify-content: center;
+  gap:0.2rem;
+  padding-bottom: 4em;
+  
 }
 
 .cardio-workout-targets {
@@ -179,32 +180,35 @@
   height: 18rem;
   width: 18rem;
   border-radius: 5rem;
+  margin-top:2em
 }
 
 .weight-image{
   height: 18rem;
   width: 18rem;
   border-radius: 9rem;
+  margin-top:2em
 }
 
 .calisthenics-image {
   height: 18rem;
   width: 18rem;
   border-radius: 9rem;
+  margin-top:2em
 }
 
 .calisthenics-workout-container {
   display: flex;
   flex-direction: column;
-  gap:2rem;
-  justify-content: center;
+  gap:0.2rem;
+  padding-bottom: 4em;
 }
 
 .calisthenics-workout-targets {
   
   display: flex;
   flex-direction: row;
-  gap: 5rem;
+  gap: 1rem;
 }
 
 .workout-routine-button{
@@ -245,6 +249,8 @@
   text-align: center;
   margin-left: 2em;
 }
+
+
 
 .start-workout-icon{
   height: 1.2em;
@@ -300,22 +306,37 @@ body {
   justify-content: center;
 }
 .add-exercise-button{
-
-  height:2.5em;
-background-color: green;
-border-radius: 10px;
-font-size: 13px;}
+  cursor: pointer;
+  background-color: #0CA789; /* Green */
+  border: none;
+  color: white;
+  padding:8px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  border-radius: 6px;
+  text-align: center;
+  margin-top:0.1em
+}
 
 .delete-exercise-button-container{
   display:flex;
   justify-content: center;
 }
 .delete-exercise-button{
-
-  height:2.5em;
-background-color: red;
-border-radius: 10px;
-font-size: 13px;}
+  cursor: pointer;
+  background-color: rgb(236, 31, 4); /* Green */
+  border: 1px solid black;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  border-radius: 6px;
+  text-align: center;
+}
 
 .exercise-to-add{
   background-color: grey;
@@ -338,6 +359,7 @@ font-size: 13px;}
     height: 12rem;
     width: 12rem;
     border-radius: 3rem;
+    
   }
 
   .weight-image{
@@ -408,11 +430,14 @@ font-size: 13px;}
   }
 
   .cardio-workout-targets {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
   }
 
   .calisthenics-workout-targets {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
   }
 
@@ -467,8 +492,9 @@ font-size: 13px;}
   }
 
   .weights-workout-targets {
-    flex-direction: column;
-    gap: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
   }
 
   .start-workout-button {

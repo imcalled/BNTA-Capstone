@@ -39,9 +39,38 @@
   padding: 2rem;
   color: white;
 }
+.button-primary {
+  cursor: pointer;
+  background-color: #0ca789; /* Green */
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 6px;
+  text-align: center;
+  margin-left: 2em;
+}
+
+.button-secondary {
+  cursor: pointer;
+  background-color: #0ca789; /* Green */
+  border: none;
+  color: white;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 9px;
+  border-radius: 6px;
+  text-align: center;
+  margin-left: 2em;
+}
 
 .timer-button {
-  cursor:pointer;
+  cursor: pointer;
   padding: 0.6rem 1.5rem;
   margin: 0.4rem;
   border-radius: 3px;
@@ -51,14 +80,14 @@
 }
 
 .timer-button-primary-active {
-  cursor:pointer;
+  cursor: pointer;
   background-color: #ba3f38;
   border: 1px solid #152684;
   color: white;
 }
 
 .timer-button-primary-inactive {
-  cursor:pointer;
+  cursor: pointer;
   background-color: #0d865d;
   border: 1px solid #152684;
   color: white;
@@ -101,7 +130,7 @@
   align-self: center;
 }
 .cardio-data {
-  margin-top:2.39em;
+  margin-top: 2.39em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,7 +161,7 @@
   align-self: center;
 }
 .weights-data {
-  margin-top:2.39em;
+  margin-top: 2.39em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,7 +191,7 @@
   align-self: center;
 }
 .calisthenics-data {
-  margin-top:2.39em;
+  margin-top: 2.39em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,7 +210,8 @@
 }
 
 .record-form-wrapper {
-  font-size: 20px;
+  font-size: 12px;
+  display: flex;
 }
 
 .slider {
@@ -238,7 +268,7 @@
 }
 
 .finish-workout-button {
-  cursor:pointer;
+  cursor: pointer;
   padding: 1rem;
   background-color: green;
   border-radius: 10px;
@@ -249,19 +279,16 @@
   display: flex;
 }
 
-.record-form-button{
- cursor: pointer;
- height:auto;
- color:white;
- background-color: green;
- border-radius: 10px;
- font-size: 13px;
-
+.record-form-button {
+  cursor: pointer;
+  height: auto;
+  color: white;
+  background-color: green;
+  border-radius: 10px;
+  font-size: 13px;
 }
 
-.yacines-way{
-  display:flex;
-  flex-direction:column;
-
-
+.yacines-way {
+  display: flex;
+  flex-direction: column;
 }

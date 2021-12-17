@@ -79,6 +79,24 @@
   padding: 2em;
   outline-width: 10em;
   border-radius: 0.5em;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+.center{
+  text-align:center;
+  justify-content: center;
+}
+.add-exercises-container-parent {
+  display:inline-block;
+  flex-direction: column;
+  background-color: rgb(50, 50, 50);
+  padding: 2em;
+  outline-width: 10em;
+  border-radius: 0.5em;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }
 
 .save-workout-button {

@@ -149,13 +149,16 @@ const NewWorkoutContainer = () => {
     getAllExerciseTargets();
 }
 
-    const saveButton = newExerciseTargetList.length > 0 ? <button onClick={saveWorkout}>Save</button> : null
+    const saveButton = newExerciseTargetList.length > 0 ? <button className = "save-workout-button" onClick={saveWorkout}>Save</button> : null
 
     return (
         allExercises.length > 0
         ?
         <>
-        <div className ="add-exercises-container">
+        <div className="pageSize">
+        <div className="center">
+        <div className ="add-exercises-container-parent">
+          <div className ="add-exercises-container">
             <form>
                 <label>Workout Name:
                     <input className={empty ? "invalid" : "workoutName"} type="text" onChange={handleWorkoutName}/>
@@ -165,16 +168,22 @@ const NewWorkoutContainer = () => {
         <ExerciseDropdownSearch allExercises = {allExercises} updateDrop={updateDrop}/>
         </div>
         
+        
         <div className="container__exercise_selected">
         <ExerciseTargetForm exercise={selectedExercise} onAddExerciseTarget={onAddExerciseTarget}/>
+        </div>
+        </div>
         </div>
         <div className="container__exercises_added">
         <NewExerciseTargetList newExerciseTargetList={newExerciseTargetList} deleteCard={deleteCard} />
         </div>
+        <div className = "save-workout-wrapper">
         {saveButton}
+        </div>
         {modal && <SaveWorkoutModal close={setModal} id={workoutId}/>}
         {/* <saveButton /> */}
         {/* <button onClick={saveWorkout}>Save</button> */}
+        </div>
         </>
         :
         <p>Loading...</p>

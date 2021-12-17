@@ -83,7 +83,7 @@ const StartWorkoutPage = () => {
     
 }
 
-    const nextButton = <button className="finish-workout-button"onClick={counter}>{finishWorkout}</button> 
+    const nextButton = <button className="button-primary"onClick={counter}>{finishWorkout}</button> 
 
     const changeText = (text) => {
         setFinishWorkout(text)

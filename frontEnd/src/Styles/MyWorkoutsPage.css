@@ -6,6 +6,10 @@
     margin-bottom: 8em;
   }
 
+  .pageSize{
+    margin-bottom: 4em;
+  }
+
 .container__generic{
   display: flex;
   flex-wrap: wrap;
@@ -26,6 +30,27 @@
     height: 15em;
     width: 23em;
     margin-top: 2em;
+  }
+
+  .save-workout-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 8rem;
+  }
+  
+  .save-workout-button {
+    cursor: pointer;
+    background-color: #0CA789; /* Green */
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 6px;
+    text-align: center;
+    margin-left: 2em;
   }
 
   .button__primary_alt {

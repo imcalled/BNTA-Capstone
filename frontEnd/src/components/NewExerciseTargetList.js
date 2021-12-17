@@ -1,5 +1,6 @@
 import ExerciseTargetCard from "./ExerciseTargetCard"
 import { useEffect } from "react/cjs/react.development"
+import "../Styles/MyWorkoutsPage.css"
 
 //an array of the exerciseTargetLists
 const NewExerciseTargetList = ({newExerciseTargetList, deleteCard}) => {
@@ -14,7 +15,9 @@ const NewExerciseTargetList = ({newExerciseTargetList, deleteCard}) => {
 
     return (
         <>
+        
         {exerciseTargets}
+    
         </>
     )
 }

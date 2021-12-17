@@ -16,69 +16,87 @@ const ExerciseTargetCard = ({exercise, deleteCard}) => {
     const displayCard = () => {
         // console.log("card: ", exercise);
         if(exercise) {
-                switch(exercise.exerciseType) {
-                case "CALISTHENICS":
-                    console.log("calisthenics");
+                switch (exercise.exerciseType) {
+                  case "CALISTHENICS":
                     return (
-                    <>
+                      <>
                         <div className="calisthenics-workout">
-                            <img className="calisthenics-image" src={calisthenic} />
-                            
-                            <div className="calisthenics-workout-container">
-                                <p className="calisthenics-workout-name">{exercise.name}</p>
+                          <img className="calisthenics-image" src={calisthenic}/>
+
+                          <div className="calisthenics-workout-container">
+                            <p className="calisthenics-workout-name">
+                              {exercise.name}
+                            </p>
 
                             <div className="calisthenics-workout-targets">
-                                <p>Sets: {exercise.targetReps}</p>
-                                <p>Reps: {exercise.targetSets}</p>
-                                <button className="delete-exercise-button"  onClick={handleDelete}>Delete
-                                    {/* <image className="bin-icon" src={bin}/> */}
-                                </button>
+                              <p>Sets: {exercise.targetReps}</p>
+                              <p>Reps: {exercise.targetSets}</p>
+                              
                             </div>
-
+                            <button
+                                className="delete-exercise-button"
+                                onClick={handleDelete}
+                              >
+                                Delete
+                                {/* <image className="bin-icon" src={bin}/> */}
+                              </button>
+                          </div>
                         </div>
-                    </div>
-                    </>
-                    )
-                case "WEIGHTS":
+                      </>
+                    );
+                  case "WEIGHTS":
                     console.log("weights");
-                    return(
-                    <div className="weights-workout">
+                    return (
+                      <div className="weights-workout">
                         <img className="calisthenics-image" src={weights} />
+                        <div className = "weights-workout-container">
                         <p className="weights-workout-name">{exercise.name}</p>
                         <div className="weight-issue">
-                        <p>Sets: {exercise.targetSets}</p>
-                        <p>Reps: {exercise.targetReps}</p>
-                        <p>Weight: {exercise.targetWeights}</p>
-                        <button className="delete-exercise-button" onClick={handleDelete}>Delete</button>
+                          <p>Sets: {exercise.targetSets}</p>
+                          <p>Reps: {exercise.targetReps}</p>
+                          <p>Weight: {exercise.targetWeights}</p>
+                          
                         </div>
-                       
-                                    {/* <image className="bin-icon" src={bin}/> */}
-                        
-                    </div>
-                    )
-                case "CARDIO":
+                        <button
+                            className="delete-exercise-button"
+                            onClick={handleDelete}
+                          >
+                            Delete
+                          </button>
+                        {/* <image className="bin-icon" src={bin}/> */}
+                      </div>
+                      </div>
+                    );
+                  case "CARDIO":
                     // console.log("cardio")
-                    return(
-                    <>
+                    return (
+                      <>
                         <div className="cardio-workout">
-                            <img className="cardio-image" src={cardio}/>    
+                          <img className="cardio-image" src={cardio} />
 
-                            <div className="cardio-workout-container">
-                                <p className="cardio-workout-name">{exercise.name}</p>
+                          <div className="cardio-workout-container">
+                            <p className="cardio-workout-name">
+                              {exercise.name}
+                            </p>
 
-                                <div className="cardio-workout-targets">
-                                    <p>Time: {exercise.targetTime}mins</p>
-                                    <p>Distance: {exercise.targetDistance}m</p>
-                                    <button className="delete-exercise-button" onClick={handleDelete}>Delete
-                                    {/* <image className="bin-icon" src={bin}/> */}
-                                </button>
-                                </div>
+                            <div className="cardio-workout-targets">
+                              <p>Time: {exercise.targetTime}mins</p>
+                              <p>Distance: {exercise.targetDistance}m</p>
                             </div>
+                            <button
+                              className="delete-exercise-button"
+                              onClick={handleDelete}
+                            >
+                              Delete
+                              {/* <image className="bin-icon" src={bin}/> */}
+                            </button>
+                          </div>
                         </div>
-                    </>
-                    )
-                default: console.log("Unmatched exercise type")
-            }
+                      </>
+                    );
+                  default:
+                    console.log("Unmatched exercise type");
+                }
         }
     }
 

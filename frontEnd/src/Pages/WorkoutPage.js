@@ -48,8 +48,9 @@ const WorkoutPage = () => {
 
     return(
         <>
+        <div className="pageSize">
             <h1 className="pageTitle">{name}</h1>
-                
+
 
         <div className="preset-beginner-exercises">
             <Workout exercises = {exercises}/>
@@ -64,6 +65,7 @@ const WorkoutPage = () => {
 
         
         {/* {exerciseTargets.map(exerciseTarget => <div>{exerciseTarget.exercise_Id}</div>)} */}
+        </div>
         </>
     )
 
