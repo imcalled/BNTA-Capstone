@@ -31,4 +31,8 @@ public class WorkoutController {
 
     @PostMapping
     public void createWorkout(@RequestBody Workout workout) {workoutService.createWorkout(workout);}
+
+    @DeleteMapping("/id/{id}")
+    public void deleteWorkoutById(@PathVariable("id") int id) {
+        workoutService.deleteWorkoutById(id);}
 }

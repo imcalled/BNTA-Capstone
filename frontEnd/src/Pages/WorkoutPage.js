@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "../components/Workout.css"
 import EditWorkoutButton from "../components/EditWorkoutComponents/EditWorkoutButton";
 import "../Styles/MyWorkoutsPage.css";
+import BackToWorkoutsButton from "../components/BackToWorkoutsButton";
 
 const WorkoutPage = () => {
 
@@ -36,20 +37,26 @@ const WorkoutPage = () => {
         navigate("/StartWorkoutPage")
     }
 
+    const goMyWorkouts = () => {
+        navigate("/MyWorkoutsPage")
+    }
+
+
     const editWorkout = () => {
         navigate("/EditWorkoutPage")
     }
 
     return(
         <>
-            <h1 className="pageTitle">Workout Routine: {name}</h1>
-
+            <h1 className="pageTitle">{name}</h1>
+                
 
         <div className="preset-beginner-exercises">
             <Workout exercises = {exercises}/>
         </div>
 
         <div className="start-workout-wrapper">
+            <BackToWorkoutsButton goMyWorkouts={goMyWorkouts}/>
             <EditWorkoutButton workoutId={id} editWorkout={editWorkout}/>
             <StartWorkoutButton workoutId={id} goWorkout={goWorkout}/>
             

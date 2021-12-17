@@ -48,5 +48,13 @@ public class WorkoutDataAccessService implements WorkoutDAO {
         return jdbcTemplate.update(sql,workout.getName());
     }
 
+    @Override
+    public int deleteWorkoutById(int id) {
+        String sql = """
+                DELETE FROM workouts
+                WHERE id = ?
+                """;
+        return jdbcTemplate.update(sql,id);
+    };
 
 }

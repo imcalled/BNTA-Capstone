@@ -87,7 +87,7 @@ public class ExerciseTargetDataAccessService implements ExerciseTargetDAO{
     public int deleteExerciseTargetById(int id){
         String sql = """
                 DELETE FROM ExerciseTarget
-                WHERE id = ?
+                WHERE workoutID = ?
                 """;
         return jdbcTemplate.update(sql,id);
     };

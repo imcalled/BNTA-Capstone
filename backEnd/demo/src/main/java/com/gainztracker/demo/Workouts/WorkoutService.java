@@ -24,4 +24,7 @@ public class WorkoutService {
     public Optional<Workout> getWorkoutById(int id) {
         return workoutDAO.getWorkoutById(id);
     }
+
+    public void deleteWorkoutById(int id) {workoutDAO.deleteWorkoutById(id);
+    }
 }

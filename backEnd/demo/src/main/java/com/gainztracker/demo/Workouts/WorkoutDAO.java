@@ -10,4 +10,6 @@ public interface WorkoutDAO {
     int createWorkout(Workout workout);
 
     Optional<Workout> getWorkoutById(int id);
+
+    int deleteWorkoutById(int id);
 }
