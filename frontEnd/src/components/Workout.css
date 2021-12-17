@@ -94,6 +94,7 @@
   margin-bottom: 0;
 }
 
+
 .cardio-workout {
   gap:1rem;
   margin-bottom: 5rem;
@@ -200,6 +201,7 @@
 }
 
 .calisthenics-workout-targets {
+  
   display: flex;
   flex-direction: row;
   gap: 5rem;
@@ -320,6 +322,13 @@ font-size: 13px;}
   opacity: 0.8;
 }
 
+.yacines-way{
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 20%;
+  justify-content:center;
+  align-items:center;
+}
 
 
 /* Responsive Design  */
