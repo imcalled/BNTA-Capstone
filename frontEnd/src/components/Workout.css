@@ -501,6 +501,11 @@ body {
     cursor:pointer;
     padding: 0.5rem;
   }
+
+  .back-button {
+    cursor:pointer;
+    padding: 0.5rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -594,6 +599,12 @@ body {
   .preset-beginner-title {
     font-size: 0.6rem;
     text-align: center;
+  }
+
+  .back-button {
+    cursor:pointer;
+    padding: 0.3rem;
+    font-size: 10px;
   }
 
 }
